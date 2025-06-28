@@ -11,7 +11,7 @@ const Footer = () => {
     { icon: FaEnvelope, href: '#', label: 'Email' }
   ]
 
-  return (
+    return (
     <footer className="relative mt-20">
       {/* Background glow */}
       <div className="absolute inset-0 bg-gradient-to-t from-black via-gray-900/50 to-transparent"></div>

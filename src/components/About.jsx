@@ -54,124 +54,99 @@ const About = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* About Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Hi, I'm Nishad Mahmud 👋
-              </h3>
-              <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                I'm a Computer Science student passionate about building intuitive, efficient, and user-friendly software. 
-                I love exploring the intersection of design and logic, whether it's through full-stack web development, 
-                Java-based desktop applications, or solving complex problems with clean code.
-              </p>
-              <p className="text-gray-300 text-lg leading-relaxed">
-                Currently learning and building with React, Node.js, and Firebase, while also experienced in Java, 
-                JavaScript, Python, and C++. I enjoy developing visual tools, automation scripts, and educational software.
-              </p>
-            </div>
+        {/* Main Details - Full Width */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 mb-8 max-w-4xl mx-auto"
+        >
+          <h3 className="text-2xl font-bold text-white mb-4">
+            Hi, I'm Nishad Mahmud <span className="inline-block">👋</span>
+          </h3>
+          <p className="text-gray-300 text-lg leading-relaxed mb-4">
+            I'm a Computer Science student passionate about building intuitive, efficient, and user-friendly software. 
+            I love exploring the intersection of design and logic, whether it's through full-stack web development, 
+            Java-based desktop applications, or solving complex problems with clean code.
+          </p>
+          <p className="text-gray-300 text-lg leading-relaxed">
+            Currently learning and building with React, Node.js, and Firebase, while also experienced in Java, 
+            JavaScript, Python, and C++. I enjoy developing visual tools, automation scripts, and educational software.
+          </p>
+        </motion.div>
 
-            {/* Highlights Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {highlights.map((highlight, index) => (
-                <motion.div
-                  key={highlight.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ 
-                    scale: 1.02,
-                    boxShadow: "0 0 20px rgba(0, 212, 255, 0.3)"
-                  }}
-                  className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-6 hover:border-cyan-400/50 transition-all duration-300"
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-                      <highlight.icon size={20} className="text-white" />
-                    </div>
-                    <h4 className="text-white font-semibold">{highlight.title}</h4>
+        {/* Highlights + Projects Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+          {/* Highlights 2x2 Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:col-span-2">
+            {highlights.map((highlight, index) => (
+              <motion.div
+                key={highlight.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  scale: 1.02,
+                  boxShadow: "0 0 20px rgba(0, 212, 255, 0.3)"
+                }}
+                className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-6 h-full flex flex-col justify-center hover:border-cyan-400/50 transition-all duration-300"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
+                    <highlight.icon size={20} className="text-white" />
                   </div>
-                  <p className="text-gray-400 text-sm leading-relaxed">
-                    {highlight.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+                  <h4 className="text-white font-semibold">{highlight.title}</h4>
+                </div>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {highlight.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
 
-          {/* Skills & Stats */}
+          {/* Projects I'm Proud Of */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 h-full flex flex-col justify-center"
           >
-            {/* Featured Projects */}
-            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">
-                Projects I'm Proud Of
-              </h3>
-              <div className="space-y-4">
-                {[
-                  {
-                    name: "Logic Gates Simulator",
-                    description: "Java-based tool to design and simulate digital circuits"
-                  },
-                  {
-                    name: "Plantopia",
-                    description: "Full-stack e-commerce platform for gardening and plant care"
-                  },
-                  {
-                    name: "Algorithm Visualizer",
-                    description: "Interactive tool for visualizing data structures and algorithms"
-                  }
-                ].map((project, index) => (
-                  <motion.div
-                    key={project.name}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex items-start gap-3"
-                  >
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <div>
-                      <h4 className="text-white font-semibold">{project.name}</h4>
-                      <p className="text-gray-400 text-sm">{project.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            {/* Skills */}
-            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">
-                Technologies I Work With
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill, index) => (
-                  <motion.span
-                    key={skill}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: 0.4 + index * 0.05 }}
-                    viewport={{ once: true }}
-                    className="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 rounded-full text-cyan-400 text-sm font-medium"
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
-              </div>
+            <h3 className="text-2xl font-bold text-white mb-6">
+              Projects I'm Proud Of
+            </h3>
+            <div className="space-y-4">
+              {[
+                {
+                  name: "Logic Gates Simulator",
+                  description: "Java-based tool to design and simulate digital circuits"
+                },
+                {
+                  name: "Plantopia",
+                  description: "Full-stack e-commerce platform for gardening and plant care"
+                },
+                {
+                  name: "Algorithm Visualizer",
+                  description: "Interactive tool for visualizing data structures and algorithms"
+                }
+              ].map((project, index) => (
+                <motion.div
+                  key={project.name}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-start gap-3"
+                >
+                  <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <h4 className="text-white font-semibold">{project.name}</h4>
+                    <p className="text-gray-400 text-sm">{project.description}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
