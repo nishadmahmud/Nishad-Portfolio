@@ -1,13 +1,37 @@
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 const Navbar = () => {
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: '#home', id: 'home' },
+    { name: 'About', href: '#about', id: 'about' },
+    { name: 'Skills', href: '#skills', id: 'skills' },
+    { name: 'Projects', href: '#projects', id: 'projects' },
+    { name: 'Contact', href: '#contact', id: 'contact' }
   ]
+
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    const sectionIds = navItems.map(item => item.id);
+    const sections = sectionIds.map(id => document.getElementById(id));
+    const handleScroll = () => {
+      let current = 'home';
+      for (let i = 0; i < sections.length; i++) {
+        const section = sections[i];
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 120) {
+            current = sectionIds[i];
+          }
+        }
+      }
+      setActiveSection(current);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <motion.nav
@@ -42,10 +66,12 @@ const Navbar = () => {
                     scale: 1.05,
                     textShadow: "0 0 20px rgba(0, 212, 255, 0.8)"
                   }}
-                  className="text-gray-200 hover:text-cyan-400 transition-colors duration-300 font-medium relative group px-2"
+                  className={`transition-colors duration-300 font-medium relative group px-2 
+                    ${activeSection === item.id ? 'text-cyan-400' : 'text-gray-200 hover:text-cyan-400'}`}
                 >
                   {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 
+                    ${activeSection === item.id ? 'w-full' : 'w-0'} group-hover:w-full`}></span>
                 </motion.a>
               ))}
             </div>

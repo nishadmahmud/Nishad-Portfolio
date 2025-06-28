@@ -16,7 +16,7 @@ const Footer = () => {
     { icon: FaEnvelope, href: "mailto:mahmudnishad253@gmail.com", label: "Email" },
   ];
 
-  return (
+    return (
     <footer className="relative mt-20">
       {/* Background glow */}
       <div className="absolute inset-0 bg-gradient-to-t from-black via-gray-900/50 to-transparent"></div>
@@ -142,9 +142,9 @@ const Footer = () => {
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
             >
-              <FaHeart className="text-red-500" size={14} />
+              <FaHeart className="text-blue-500" size={14} />
             </motion.div>
-            <span>and lots of coffee</span>
+            <span>and lots of caffeine</span>
           </motion.div>
         </div>
       </div>
@@ -152,7 +152,7 @@ const Footer = () => {
       {/* Bottom glow effect */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
     </footer>
-  );
+    );
 };
 
 export default Footer;

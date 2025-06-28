@@ -1,64 +1,40 @@
-import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa'
 import { SiTypescript, SiTailwindcss, SiMongodb } from 'react-icons/si'
+import ProjectDetail from './ProjectDetail';
+import { motion } from 'framer-motion';
+
+const techIconMap = {
+  react: FaReact,
+  typescript: SiTypescript,
+  nodejs: FaNodeJs,
+  mongodb: SiMongodb,
+  tailwindcss: SiTailwindcss,
+  database: FaDatabase,
+};
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with real-time inventory, payment processing, and admin dashboard.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop",
-      technologies: [FaReact, SiTypescript, FaNodeJs, SiMongodb],
-      github: "#",
-      live: "#",
-      featured: true
-    },
-    {
-      title: "Task Management App",
-      description: "Collaborative task management with real-time updates, drag-and-drop, and team features.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop",
-      technologies: [FaReact, SiTailwindcss, FaNodeJs, FaDatabase],
-      github: "#",
-      live: "#",
-      featured: true
-    },
-    {
-      title: "Weather Dashboard",
-      description: "Real-time weather application with location-based forecasts and interactive maps.",
-      image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=500&h=300&fit=crop",
-      technologies: [FaReact, SiTypescript, SiTailwindcss],
-      github: "#",
-      live: "#",
-      featured: false
-    },
-    {
-      title: "Portfolio Website",
-      description: "Modern portfolio website with glass morphism effects and smooth animations.",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop",
-      technologies: [FaReact, SiTailwindcss],
-      github: "#",
-      live: "#",
-      featured: false
-    },
-    {
-      title: "Chat Application",
-      description: "Real-time chat application with user authentication and message history.",
-      image: "https://images.unsplash.com/photo-1526378722484-bd91ca387e72?w=500&h=300&fit=crop",
-      technologies: [FaReact, FaNodeJs, SiMongodb],
-      github: "#",
-      live: "#",
-      featured: false
-    },
-    {
-      title: "Fitness Tracker",
-      description: "Personal fitness tracking app with workout plans and progress analytics.",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop",
-      technologies: [FaReact, SiTypescript, FaDatabase],
-      github: "#",
-      live: "#",
-      featured: false
-    }
-  ]
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    fetch('/projects.json')
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to load projects');
+        return res.json();
+      })
+      .then(data => {
+        setProjects(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -75,7 +51,21 @@ const Projects = () => {
     visible: { opacity: 1, y: 0 }
   }
 
-    return (
+  const openModal = (project) => {
+    setSelectedProject(project);
+    setModalOpen(true);
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+    setSelectedProject(null);
+    document.body.style.overflow = '';
+  };
+
+  if (loading) return <div className="text-center text-gray-400 py-20">Loading projects...</div>;
+  if (error) return <div className="text-center text-red-400 py-20">{error}</div>;
+
+  return (
     <section id="projects" className="py-20 relative">
       {/* Background glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-transparent"></div>
@@ -99,73 +89,97 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        {/* Featured Projects */}
+        {/* All Projects as Wide Cards */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="space-y-12 mb-16"
+          className="space-y-12"
         >
-          {projects.filter(p => p.featured).map((project, index) => (
+          {projects.map((project) => (
             <motion.div
               key={project.title}
               variants={itemVariants}
-              className="group relative"
+              className="group relative cursor-pointer"
+              onClick={() => openModal(project)}
+              tabIndex={0}
+              role="button"
+              onKeyDown={e => { if (e.key === 'Enter') openModal(project); }}
             >
               <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-3xl overflow-hidden hover:border-cyan-400/50 transition-all duration-300">
-                <div className="grid lg:grid-cols-2 gap-0">
+                <div className="grid lg:grid-cols-2 gap-0 h-full min-h-[10rem] lg:min-h-[14rem]">
                   {/* Project Image */}
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-64 lg:h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div
+                    className="relative h-full min-h-[10rem] lg:min-h-[14rem] overflow-hidden w-full"
+                    style={{
+                      backgroundImage: `url(${project.image})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      transition: 'transform 0.5s',
+                    }}
+                  >
+                    {/* Optionally, add a gradient overlay for readability */}
+                    {/* <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div> */}
                   </div>
 
                   {/* Project Content */}
-                  <div className="p-8 lg:p-12 flex flex-col justify-center">
-                    <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+                  <div className="p-5 lg:p-8 flex flex-col justify-center h-full">
+                    <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">
                       {project.title}
                     </h3>
-                    <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                      {project.description}
-                    </p>
+                    {project.overview && (
+                      <p className="text-gray-400 text-base leading-snug mb-3">
+                        {project.overview}
+                      </p>
+                    )}
 
                     {/* Technologies */}
-                    <div className="flex flex-wrap gap-3 mb-8">
-                      {project.technologies.map((Tech, techIndex) => (
-                        <div
-                          key={techIndex}
-                          className="p-2 rounded-lg bg-white/10 border border-white/20 backdrop-blur-sm"
-                        >
-                          <Tech size={20} className="text-cyan-400" />
-                        </div>
-                      ))}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {(() => {
+                        const techList = [
+                          ...(project.technologies?.frontend || []),
+                          ...(project.technologies?.backend || []),
+                          ...(project.technologies?.tools || [])
+                        ];
+                        return techList.slice(0, 4).map((tech, techIndex) => {
+                          const TechIcon = techIconMap[tech.toLowerCase()] || null;
+                          return (
+                            <div
+                              key={techIndex}
+                              className="p-1 rounded-md bg-white/10 border border-white/20 backdrop-blur-sm text-xs"
+                            >
+                              {TechIcon ? <TechIcon size={14} className="text-cyan-400" /> : <span className="text-xs text-gray-200">{tech}</span>}
+                            </div>
+                          );
+                        });
+                      })()}
                     </div>
 
                     {/* Project Links */}
-                    <div className="flex gap-4">
-                      <motion.a
-                        href={project.github}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
-                      >
-                        <FaGithub size={18} />
-                        Code
-                      </motion.a>
-                      <motion.a
-                        href={project.live}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-2 px-6 py-3 backdrop-blur-md bg-white/10 text-white font-semibold rounded-xl border border-white/20 hover:border-cyan-400/50 transition-all duration-300"
-                      >
-                        <FaExternalLinkAlt size={16} />
-                        Live Demo
-                      </motion.a>
+                    <div className="flex gap-2 mt-1">
+                      {project.github && (
+                        <motion.a
+                          href={project.github}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="flex items-center gap-1 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 text-sm"
+                        >
+                          <FaGithub size={14} />
+                          Code
+                        </motion.a>
+                      )}
+                      {project.live && (
+                        <motion.a
+                          href={project.live}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="flex items-center gap-1 px-4 py-2 backdrop-blur-md bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:border-cyan-400/50 transition-all duration-300 text-sm"
+                        >
+                          <FaExternalLinkAlt size={12} />
+                          Live Demo
+                        </motion.a>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -176,87 +190,23 @@ const Projects = () => {
             </motion.div>
           ))}
         </motion.div>
+      </div>
 
-        {/* Other Projects Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {projects.filter(p => !p.featured).map((project, index) => (
-            <motion.div
-              key={project.title}
-              variants={itemVariants}
-              whileHover={{ 
-                scale: 1.02,
-                boxShadow: "0 0 30px rgba(0, 212, 255, 0.3)"
-              }}
-              className="group relative"
+      {/* Modal for Project Detail */}
+      {modalOpen && selectedProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+          <div className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 border border-cyan-400/20 rounded-2xl shadow-2xl max-w-2xl w-full mx-4 p-6 animate-fadeIn max-h-screen overflow-y-auto">
+            <button
+              onClick={closeModal}
+              className="absolute top-3 right-3 text-gray-400 hover:text-cyan-400 text-2xl font-bold focus:outline-none"
+              aria-label="Close"
             >
-              <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl overflow-hidden hover:border-cyan-400/50 transition-all duration-300 h-full">
-                {/* Project Image */}
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                </div>
-
-                {/* Project Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-3">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((Tech, techIndex) => (
-                      <div
-                        key={techIndex}
-                        className="p-1.5 rounded-md bg-white/10 border border-white/20 backdrop-blur-sm"
-                      >
-                        <Tech size={16} className="text-cyan-400" />
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Project Links */}
-                  <div className="flex gap-3">
-                    <motion.a
-                      href={project.github}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
-                    >
-                      <FaGithub size={14} />
-                      Code
-                    </motion.a>
-                    <motion.a
-                      href={project.live}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-1.5 px-4 py-2 backdrop-blur-md bg-white/10 text-white text-sm font-semibold rounded-lg border border-white/20 hover:border-cyan-400/50 transition-all duration-300"
-                    >
-                      <FaExternalLinkAlt size={12} />
-                      Demo
-                    </motion.a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Glow effect */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/20 to-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-            </motion.div>
-          ))}
-        </motion.div>
+              &times;
+            </button>
+            <ProjectDetail project={selectedProject} />
+          </div>
         </div>
+      )}
     </section>
   )
 }

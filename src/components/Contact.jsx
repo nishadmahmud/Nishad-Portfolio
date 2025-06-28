@@ -252,13 +252,6 @@ const Contact = () => {
           </motion.div>
         </div>
       </div>
-      {/* Contact Footer */}
-      <div className="mt-12 flex flex-col items-center justify-center">
-        <div className="flex items-center gap-3 px-6 py-3 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 shadow-md">
-          <img src="/logo.svg" alt="Nishad Logo" className="h-7 w-auto drop-shadow-lg" style={{ filter: 'drop-shadow(0 0 8px #22d3ee)' }} />
-          <span className="text-white font-medium text-base select-all">mahmudnishad253@gmail.com</span>
-        </div>
-      </div>
     </section>
   )
 }

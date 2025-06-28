@@ -1,0 +1,149 @@
+[
+  {
+    "title": "RelicVeil - Historical Artifacts Tracking Platform",
+    "live": "https://relicveil.netlify.app/",
+    "github": "https://github.com/nishadmahmud/RelicVeil-Client",
+    "image": "https://camo.githubusercontent.com/160baae8fb06ad283b775778e9b9b4dc28c42149e862c2167576c3e2dccbc092/68747470733a2f2f626f7a7435357a6269302e7566732e73682f662f697642547963756a6445774a3648556f5a6a386e52496d7a735066546c5932474a5379514e576874624f63466f433170",
+    "overview": "RelicVeil is a modern web application designed for history enthusiasts, collectors, and researchers to document, share, and discover historical artifacts.",
+    "features": [
+      "🔐 Secure Authentication: Firebase Authentication for secure user management",
+      "📝 Artifact Management: Add, update, and delete artifacts with detailed information",
+      "❤️ Like System: Interactive like/dislike functionality for artifacts",
+      "🔍 Advanced Search: Full-text search across artifact names, descriptions, and locations",
+      "📱 Responsive Design: Fully responsive layout for all devices",
+      "🌐 Real-time Updates: Dynamic content updates without page refresh"
+    ],
+    "userFeatures": [
+      "👤 User Profiles: Personalized user profiles with artifact collections",
+      "📋 My Artifacts: Manage your own artifact collection",
+      "❤️ Liked Artifacts: Track and access your liked artifacts",
+      "🔍 Browse Artifacts: Explore artifacts from other users",
+      "📊 Featured Artifacts: Discover trending and popular artifacts"
+    ],
+    "technologies": {
+      "frontend": [
+        "React.js",
+        "Vite",
+        "Tailwind CSS",
+        "Framer Motion",
+        "React Router DOM",
+        "React Hot Toast",
+        "React Icons",
+        "React Helmet Async"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Firebase Admin SDK",
+        "Firebase Authentication"
+      ],
+      "tools": [
+        "Git",
+        "VS Code",
+        "MongoDB Atlas",
+        "Netlify (Deployment)",
+        "Vercel (Backend Deployment)"
+      ]
+    }
+  },
+  {
+    "title": "TalentForge Freelance Marketplace",
+    "live": "https://talentforg.netlify.app/",
+    "github": "https://github.com/nishadmahmud/TalentForge-client",
+    "image": "https://camo.githubusercontent.com/8cb32c1ce25383de3cd881fe04c943a0231690e4efce7c630a38a145f74e955d/68747470733a2f2f74616a33676265796d722e7566732e73682f662f6c6431757a4169576649415077694e714f3544614c6257724e78423265764947556e3648377a71546d6b756c39665052",
+    "overview": "TalentForge is a modern freelance marketplace platform where users can post, browse, and bid on tasks.",
+    "features": [
+      "📝 Post, edit, and delete freelance tasks",
+      "🔍 Browse and filter tasks by category",
+      "💸 Bid on tasks and view all bids",
+      "👤 User authentication (register, login, Google sign-in)",
+      "🌓 Dark mode toggle (global, animated, accessible)",
+      "⚡ Animated slider and typewriter effects on homepage",
+      "🔔 Toast notifications for errors and success",
+      "🦾 Responsive, mobile-friendly design",
+      "🦾 Accessible forms and modals",
+      "👤 Profile management"
+    ],
+    "userFeatures": [
+      "👤 Register and manage your profile",
+      "📝 Post and manage your own tasks",
+      "💸 Place bids on available tasks",
+      "🔍 Browse and filter tasks by category",
+      "🌙 Toggle dark mode for a comfortable viewing experience"
+    ],
+    "technologies": {
+      "frontend": [
+        "React",
+        "React Router",
+        "React Icons",
+        "React Hot Toast",
+        "Framer Motion",
+        "React Simple Typewriter",
+        "SweetAlert2",
+        "Tailwind CSS",
+        "React Tooltip"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "MongoDB"
+      ],
+      "tools": [
+        "Git",
+        "VS Code",
+        "MongoDB Atlas",
+        "Netlify (Deployment)",
+        "Vercel (Backend Deployment)"
+      ]
+    }
+  },
+  {
+    "title": "Logic Gates Simulator",
+    "live": "https://github.com/nishadmahmud/Logic-Gates-Simulator/releases",
+    "github": "https://github.com/nishadmahmud/Logic-Gates-Simulator",
+    "image": "https://camo.githubusercontent.com/39c2ae7fc65bc4cf2eca6a517c25f207206aa820776cbbb82849c81b192b2d70/68747470733a2f2f6177346f7a71313462742e7566732e73682f662f566439454278574c706d6f5172416b716b6935745767433452366933544f5950484c68796e5a6f62514b324a4d4e6d77",
+    "overview": "A comprehensive Logic Gates Simulator built with Java 17, LWJGL, Slick2D, and JNA. Design, simulate, and analyze digital circuits visually with real-time feedback and advanced circuit analysis tools.",
+    "features": [
+      "🟩 Basic Logic Gates: AND, OR, NOT, NAND, NOR, XOR, XNOR, Buffer",
+      "➕ Arithmetic Components: Half/Full Adders & Subtractors",
+      "🔢 Data Processing: Encoders (4-to-2, 8-to-3), Decoders (2-to-4, 3-to-8)",
+      "⚖️ Comparators: 1-bit and 2-bit with full comparison outputs",
+      "🔀 Multiplexers/Demultiplexers: 2-to-1, 4-to-1, 1-to-2, 1-to-4",
+      "⏱️ Sequential Logic: D, JK, SR, T Flip-Flops, Clock Generator",
+      "📊 Circuit Analysis: Truth Table, Boolean Equation, Timing Diagram, Karnaugh Map (Quine-McCluskey)",
+      "💾 Save/Load: Custom .lgsworld format with versioning",
+      "📋 Clipboard: Multi-gate selection, copy, paste with connections",
+      "🖱️ Visual Design: Drag-and-drop, real-time simulation, wire connections",
+      "🔍 Zoom & Pan: Mouse wheel zoom, drag pan for large circuits",
+      "⌨️ Keyboard Shortcuts: Ctrl+C/Ctrl+V for copy/paste",
+      "🌐 Cross-platform: Windows, Linux, macOS"
+    ],
+    "userFeatures": [
+      "👤 Visual circuit design with drag-and-drop interface",
+      "⚡ Real-time simulation and feedback",
+      "🔗 Easy connection management between gates",
+      "🗂️ Save and load custom circuits",
+      "🧮 Automatic truth table and Boolean equation generation",
+      "🗺️ Karnaugh map simplification for logic optimization",
+      "🔎 Zoom and pan for large circuit navigation",
+      "🖱️ Multi-gate selection and clipboard operations"
+    ],
+    "technologies": {
+      "frontend": [
+        "Java 17",
+        "LWJGL",
+        "Slick2D",
+        "JNA"
+      ],
+      "backend": [
+        "Java 17"
+      ],
+      "tools": [
+        "IntelliJ IDEA",
+        "Git",
+        "Apache-2.0 License"
+      ]
+    }
+  }
+] 

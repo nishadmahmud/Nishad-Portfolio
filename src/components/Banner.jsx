@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FaArrowDown, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import { FaArrowDown, FaGithub, FaLinkedin, FaEnvelope, FaDownload } from 'react-icons/fa'
 
 const Banner = () => {
   const textVariants = {
@@ -25,7 +25,7 @@ const Banner = () => {
     { icon: FaEnvelope, href: '#', label: 'Email' }
   ]
 
-  return (
+    return (
     <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
       {/* Background glow effects */}
       <div className="absolute inset-0 overflow-hidden">
@@ -82,27 +82,30 @@ const Banner = () => {
               variants={letterVariants}
               className="flex flex-col sm:flex-row gap-3 items-start pt-2 mb-2"
             >
-              <motion.button
+              <motion.a
+                href="#projects"
                 whileHover={{ 
                   scale: 1.05,
                   boxShadow: "0 0 30px rgba(0, 212, 255, 0.5)"
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl backdrop-blur-sm border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 shadow-lg shadow-cyan-500/25"
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl backdrop-blur-sm border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 shadow-lg shadow-cyan-500/25 cursor-pointer"
               >
                 View My Work
-              </motion.button>
+              </motion.a>
               
-              <motion.button
+              <motion.a
+                href="/resume.pdf"
+                download
                 whileHover={{ 
                   scale: 1.05,
                   boxShadow: "0 0 30px rgba(139, 92, 246, 0.5)"
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 backdrop-blur-md bg-white/10 text-white font-semibold rounded-xl border border-white/20 hover:border-purple-400/60 transition-all duration-300"
+                className="px-8 py-4 backdrop-blur-md bg-white/10 text-white font-semibold rounded-xl border border-white/20 hover:border-purple-400/60 transition-all duration-300 flex items-center gap-2 cursor-pointer"
               >
-                Download CV
-              </motion.button>
+                <FaDownload size={18} /> Resume
+              </motion.a>
             </motion.div>
 
             {/* Social Links */}
@@ -137,30 +140,13 @@ const Banner = () => {
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-400/20 to-purple-500/20 blur-2xl opacity-80 pointer-events-none"></div>
               {/* Replace src below with your image */}
               <img
-                src="/me.jpg"
+                src="/img.jpg"
                 alt="Nishad Mahmud"
                 className="w-40 h-40 lg:w-56 lg:h-56 object-cover rounded-2xl z-10 shadow-xl"
               />
             </div>
           </div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center space-y-2 text-gray-400"
-          >
-            <span className="text-sm">Scroll Down</span>
-            <FaArrowDown size={20} />
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   )
