@@ -256,34 +256,6 @@ const Projects = () => {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Have a project in mind?
-            </h3>
-            <p className="text-gray-400 text-lg mb-6">
-              Let's work together to bring your ideas to life
-            </p>
-            <motion.button
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 0 30px rgba(0, 212, 255, 0.5)"
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
-            >
-              Get In Touch
-            </motion.button>
-          </div>
-        </motion.div>
         </div>
     </section>
   )

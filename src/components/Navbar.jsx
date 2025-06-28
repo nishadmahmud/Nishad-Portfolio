@@ -1,17 +1,6 @@
 import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
@@ -30,18 +19,13 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20 gap-4">
           {/* Left: Logo */}
-          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl px-4 flex items-center shadow-lg h-14 lg:h-16">
-            <span
-              className="text-xl lg:text-2xl font-black tracking-wider text-white drop-shadow-lg uppercase"
-              style={{ fontFamily: 'Orbitron, sans-serif', letterSpacing: '0.1em' }}
-            >
-              <span className="inline-block transform -rotate-2">N</span>
-              <span className="inline-block mx-0.5 scale-y-110">I</span>
-              <span className="inline-block transform rotate-1">S</span>
-              <span className="inline-block mx-0.5 -translate-y-1">H</span>
-              <span className="inline-block transform -rotate-1 scale-x-105">A</span>
-              <span className="inline-block mx-0.5 translate-y-1">D</span>
-            </span>
+          <div className="backdrop-blur-md px-4 bg-white/10 border border-white/20 rounded-xl flex items-center shadow-lg h-14 lg:h-16">
+            <img
+              src="/logo-cropped.svg"
+              alt="Nishad Logo"
+              className="h-6 w-auto lg:h-8 drop-shadow-lg"
+              style={{ filter: 'drop-shadow(0 0 12px #0ff6)' }}
+            />
           </div>
 
           {/* Center: Navigation Links */}

@@ -1,6 +1,8 @@
-import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { FaGithub, FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa'
+import { FaGithub, FaPhone, FaEnvelope, FaLinkedin, FaPaperPlane } from 'react-icons/fa'
+import { motion } from 'framer-motion'
+import emailjs from '@emailjs/browser'
+import { toast } from 'react-hot-toast'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -32,10 +34,10 @@ const Contact = () => {
       href: 'https://github.com/nishadmahmud'
     },
     {
-      icon: FaMapMarkerAlt,
-      label: 'Location',
-      value: 'Bangladesh',
-      href: '#'
+      icon: FaLinkedin,
+      label: 'LinkedIn',
+      value: 'www.linkedin.com/in/nishad-mahmud',
+      href: 'https://www.linkedin.com/in/nishadmahmud/'
     }
   ]
 
@@ -46,24 +48,37 @@ const Contact = () => {
     })
   }
 
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // Create mailto link with form data
-    const mailtoLink = `mailto:mahmudnishad253@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`
-
-    // Open default email client
-    window.open(mailtoLink)
-
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    })
-    setIsSubmitting(false)
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        },
+        publicKey
+      );
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+      toast.success('Message sent successfully!');
+    } catch (error) {
+      toast.error('Failed to send message. Please try again later.');
+    }
+    setIsSubmitting(false);
   }
 
   return (
@@ -90,94 +105,58 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
           {/* Contact Information */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-4 h-full"
           >
-            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">
+            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-6 h-full">
+              <h3 className="text-2xl font-bold text-white mb-4">
                 Let's Connect
               </h3>
-              <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. 
-                Feel free to reach out through any of the channels below.
+              <p className="text-gray-300 text-base leading-relaxed mb-4">
+                I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out below.
               </p>
 
-              <div className="space-y-4">
-                {contactInfo.map((info, index) => (
-                  <motion.a
+              <div className="space-y-2">
+                {contactInfo.map((info) => (
+                  <a
                     key={info.label}
                     href={info.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    whileHover={{ 
-                      scale: 1.02,
-                      x: 5,
-                      boxShadow: "0 0 20px rgba(0, 212, 255, 0.3)"
-                    }}
-                    className="flex items-center gap-4 p-4 backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl hover:border-cyan-400/50 transition-all duration-300 group"
+                    className="flex items-center w-full gap-4 p-3 bg-white/10 backdrop-blur-md border border-white/15 rounded-xl hover:border-cyan-400/60 transition-all duration-200"
+                    style={{ minHeight: '56px' }}
                   >
-                    <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center group-hover:shadow-lg group-hover:shadow-cyan-500/25 transition-all duration-300">
+                    <span className="flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 shadow-sm">
                       <info.icon size={20} className="text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-semibold">{info.label}</h4>
-                      <p className="text-gray-400">{info.value}</p>
-                    </div>
-                  </motion.a>
+                    </span>
+                    <span className="flex flex-col text-left">
+                      <span className="text-white font-semibold text-base leading-tight">{info.label}</span>
+                      <span className="text-gray-300 text-sm leading-tight break-all">{info.value}</span>
+                    </span>
+                  </a>
                 ))}
               </div>
             </div>
-
-            {/* Availability */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8"
-            >
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Current Status
-              </h3>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-gray-300">Available for freelance opportunities</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
-                  <span className="text-gray-300">Open to full-time positions</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
-                  <span className="text-gray-300">Interested in collaborative projects</span>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">
+            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-6 h-full">
+              <h3 className="text-2xl font-bold text-white mb-4">
                 Send Me a Message
               </h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -191,7 +170,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
+                      className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 text-sm"
                       placeholder="Your name"
                     />
                   </motion.div>
@@ -209,7 +188,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
+                      className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 text-sm"
                       placeholder="your.email@example.com"
                     />
                   </motion.div>
@@ -245,9 +224,9 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     required
-                    rows={6}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 resize-none"
-                    placeholder="Tell me about your project..."
+                    rows={4}
+                    className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 resize-none text-sm"
+                    placeholder="Feel free to talk about anything..."
                   />
                 </motion.div>
 
@@ -263,7 +242,7 @@ const Contact = () => {
                     boxShadow: "0 0 30px rgba(0, 212, 255, 0.5)"
                   }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-base"
                 >
                   <FaPaperPlane size={18} />
                   {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -271,6 +250,13 @@ const Contact = () => {
               </form>
             </div>
           </motion.div>
+        </div>
+      </div>
+      {/* Contact Footer */}
+      <div className="mt-12 flex flex-col items-center justify-center">
+        <div className="flex items-center gap-3 px-6 py-3 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 shadow-md">
+          <img src="/logo.svg" alt="Nishad Logo" className="h-7 w-auto drop-shadow-lg" style={{ filter: 'drop-shadow(0 0 8px #22d3ee)' }} />
+          <span className="text-white font-medium text-base select-all">mahmudnishad253@gmail.com</span>
         </div>
       </div>
     </section>

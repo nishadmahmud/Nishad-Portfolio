@@ -1,21 +1,26 @@
-import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaHeart } from 'react-icons/fa'
+import { motion } from "framer-motion";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaEnvelope,
+  FaHeart,
+} from "react-icons/fa";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: FaGithub, href: '#', label: 'GitHub' },
-    { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
-    { icon: FaTwitter, href: '#', label: 'Twitter' },
-    { icon: FaEnvelope, href: '#', label: 'Email' }
-  ]
+    { icon: FaGithub, href: "https://github.com/nishadmahmud", label: "GitHub" },
+    { icon: FaLinkedin, href: "https://www.linkedin.com/in/nishadmahmud/", label: "LinkedIn" },
+    { icon: FaEnvelope, href: "mailto:mahmudnishad253@gmail.com", label: "Email" },
+  ];
 
-    return (
+  return (
     <footer className="relative mt-20">
       {/* Background glow */}
       <div className="absolute inset-0 bg-gradient-to-t from-black via-gray-900/50 to-transparent"></div>
-      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Footer Content */}
         <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-12 mb-8">
@@ -29,17 +34,17 @@ const Footer = () => {
                 viewport={{ once: true }}
                 className="space-y-4"
               >
-                <div className="flex items-center space-x-2">
-                  <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center shadow-lg shadow-cyan-500/25">
-                    <span className="text-white font-bold text-xl">N</span>
-                  </div>
-                  <span className="text-white font-bold text-2xl bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                    Nishad
-                  </span>
+                <div className="flex items-center">
+                  <img
+                    src="/logo.svg"
+                    alt="Nishad Logo"
+                    className="h-auto w-40 -ml-5 -mb-4"
+                  />
                 </div>
                 <p className="text-gray-400 text-lg leading-relaxed max-w-md">
-                  Full-stack developer passionate about creating innovative digital experiences 
-                  and bringing ideas to life through modern web technologies.
+                  Full-stack developer passionate about creating innovative
+                  digital experiences and bringing ideas to life through modern
+                  web technologies.
                 </p>
               </motion.div>
             </div>
@@ -52,22 +57,26 @@ const Footer = () => {
               viewport={{ once: true }}
               className="space-y-4"
             >
-              <h3 className="text-white font-semibold text-lg mb-4">Quick Links</h3>
+              <h3 className="text-white font-semibold text-lg mb-4">
+                Quick Links
+              </h3>
               <ul className="space-y-2">
-                {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((link, index) => (
-                  <li key={link}>
-                    <motion.a
-                      href={`#${link.toLowerCase()}`}
-                      whileHover={{ 
-                        x: 5,
-                        color: '#00d4ff'
-                      }}
-                      className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
-                    >
-                      {link}
-                    </motion.a>
-                  </li>
-                ))}
+                {["Home", "About", "Skills", "Projects", "Contact"].map(
+                  (link, index) => (
+                    <li key={link}>
+                      <motion.a
+                        href={`#${link.toLowerCase()}`}
+                        whileHover={{
+                          x: 5,
+                          color: "#00d4ff",
+                        }}
+                        className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
+                      >
+                        {link}
+                      </motion.a>
+                    </li>
+                  )
+                )}
               </ul>
             </motion.div>
 
@@ -79,21 +88,38 @@ const Footer = () => {
               viewport={{ once: true }}
               className="space-y-4"
             >
-              <h3 className="text-white font-semibold text-lg mb-4">Get In Touch</h3>
+              <h3 className="text-white font-semibold text-lg mb-4">
+                Get In Touch
+              </h3>
               <div className="space-y-3">
-                <motion.a
-                  href="mailto:hello@nishad.dev"
-                  whileHover={{ 
-                    scale: 1.05,
-                    color: '#00d4ff'
-                  }}
-                  className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors duration-300"
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="flex items-center space-x-4"
                 >
-                  <FaEnvelope size={16} />
-                  <span>hello@nishad.dev</span>
-                </motion.a>
+                  {socialLinks.map((social, index) => (
+                    <motion.a
+                      key={index}
+                      href={social.href}
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                      viewport={{ once: true }}
+                      whileHover={{
+                        scale: 1.2,
+                        boxShadow: "0 0 20px rgba(0, 212, 255, 0.5)",
+                      }}
+                      className="p-3 rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 hover:border-cyan-400/50 text-gray-400 hover:text-cyan-400 transition-all duration-300"
+                      aria-label={social.label}
+                    >
+                      <social.icon size={20} />
+                    </motion.a>
+                  ))}
+                </motion.div>
                 <p className="text-gray-400 text-sm">
-                  Available for freelance opportunities and exciting projects.
+                  Available for full-time opportunities & freelance projects.
                 </p>
               </div>
             </motion.div>
@@ -101,34 +127,7 @@ const Footer = () => {
         </div>
 
         {/* Social Links & Copyright */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 py-8 border-t border-white/10">
-          {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="flex items-center space-x-4"
-          >
-            {socialLinks.map((social, index) => (
-              <motion.a
-                key={index}
-                href={social.href}
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ 
-                  scale: 1.2,
-                  boxShadow: "0 0 20px rgba(0, 212, 255, 0.5)"
-                }}
-                className="p-3 rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 hover:border-cyan-400/50 text-gray-400 hover:text-cyan-400 transition-all duration-300"
-                aria-label={social.label}
-              >
-                <social.icon size={20} />
-              </motion.a>
-            ))}
-          </motion.div>
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 py-8 border-t border-white/10">
 
           {/* Copyright */}
           <motion.div
@@ -153,7 +152,7 @@ const Footer = () => {
       {/* Bottom glow effect */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
