@@ -1,24 +1,25 @@
 import { motion } from 'framer-motion'
-import { 
-  FaReact, FaNodeJs, FaPython, FaDatabase, 
-  FaAws, FaDocker, FaGit, FaFigma
-} from 'react-icons/fa'
-import { SiJavascript, SiTypescript, SiTailwindcss, SiMongodb } from 'react-icons/si'
+import { FaReact, FaNodeJs, FaPython, FaJava, FaGit, FaGithub } from 'react-icons/fa'
+import { SiJavascript, SiTailwindcss, SiMongodb, SiFirebase, SiExpress, SiC, SiCplusplus, SiVercel, SiFramer } from 'react-icons/si'
 
 const Skills = () => {
   const skills = [
-    { name: 'React', icon: FaReact, level: 90, color: 'from-cyan-400 to-blue-500' },
-    { name: 'JavaScript', icon: SiJavascript, level: 85, color: 'from-yellow-400 to-orange-500' },
-    { name: 'TypeScript', icon: SiTypescript, level: 80, color: 'from-blue-400 to-blue-600' },
-    { name: 'Node.js', icon: FaNodeJs, level: 85, color: 'from-green-400 to-green-600' },
-    { name: 'Python', icon: FaPython, level: 75, color: 'from-blue-500 to-yellow-500' },
-    { name: 'MongoDB', icon: SiMongodb, level: 80, color: 'from-green-500 to-green-700' },
-    { name: 'Tailwind CSS', icon: SiTailwindcss, level: 90, color: 'from-cyan-400 to-blue-500' },
-    { name: 'AWS', icon: FaAws, level: 70, color: 'from-orange-400 to-orange-600' },
-    { name: 'Docker', icon: FaDocker, level: 75, color: 'from-blue-500 to-blue-700' },
-    { name: 'Git', icon: FaGit, level: 85, color: 'from-orange-500 to-red-500' },
-    { name: 'Figma', icon: FaFigma, level: 70, color: 'from-purple-400 to-pink-500' },
-    { name: 'SQL', icon: FaDatabase, level: 80, color: 'from-blue-400 to-indigo-500' }
+    { name: 'React', icon: FaReact, bg: 'bg-gradient-to-br from-cyan-400 to-blue-500' },
+    { name: 'JavaScript', icon: SiJavascript, bg: 'bg-gradient-to-br from-yellow-400 to-orange-500' },
+    { name: 'Node.js', icon: FaNodeJs, bg: 'bg-gradient-to-br from-green-400 to-green-600' },
+    { name: 'Express.js', icon: SiExpress, bg: 'bg-gradient-to-br from-gray-700 to-gray-900' },
+    { name: 'MongoDB', icon: SiMongodb, bg: 'bg-gradient-to-br from-green-500 to-green-700' },
+    { name: 'Firebase', icon: SiFirebase, bg: 'bg-gradient-to-br from-yellow-400 to-orange-500' },
+    { name: 'Tailwind CSS', icon: SiTailwindcss, bg: 'bg-gradient-to-br from-cyan-400 to-blue-500' },
+    { name: 'Python', icon: FaPython, bg: 'bg-gradient-to-br from-blue-500 to-yellow-400' },
+    { name: 'C', icon: SiC, bg: 'bg-gradient-to-br from-gray-400 to-gray-600' },
+    { name: 'C++', icon: SiCplusplus, bg: 'bg-gradient-to-br from-blue-400 to-blue-700' },
+    { name: 'Java', icon: FaJava, bg: 'bg-gradient-to-br from-red-500 to-yellow-500' },
+    { name: 'JavaFX', icon: FaJava, bg: 'bg-gradient-to-br from-purple-500 to-pink-500' },
+    { name: 'Framer Motion', icon: SiFramer, bg: 'bg-gradient-to-br from-black to-fuchsia-500' },
+    { name: 'Git', icon: FaGit, bg: 'bg-gradient-to-br from-orange-500 to-red-500' },
+    { name: 'GitHub', icon: FaGithub, bg: 'bg-gradient-to-br from-gray-700 to-black' },
+    { name: 'Vercel', icon: SiVercel, bg: 'bg-gradient-to-br from-gray-200 to-gray-800' },
   ]
 
   const containerVariants = {
@@ -73,42 +74,18 @@ const Skills = () => {
               key={skill.name}
               variants={itemVariants}
               whileHover={{ 
-                scale: 1.05,
+                scale: 1.08,
                 boxShadow: "0 0 30px rgba(0, 212, 255, 0.3)"
               }}
               className="group relative"
             >
               {/* Glass Card */}
-              <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-6 h-full hover:border-cyan-400/50 transition-all duration-300">
-                {/* Icon */}
-                <div className="flex justify-center mb-4">
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${skill.color} flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300`}>
-                    <skill.icon size={32} className="text-white" />
-                  </div>
+              <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-4 h-full flex flex-row items-center justify-center gap-4 hover:border-cyan-400/50 transition-all duration-300">
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 ${skill.bg}`}>
+                  <skill.icon size={28} className="text-white" />
                 </div>
-
-                {/* Skill Name */}
-                <h3 className="text-white font-semibold text-center mb-4 text-lg">
-                  {skill.name}
-                </h3>
-
-                {/* Progress Bar */}
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-400">Proficiency</span>
-                    <span className="text-cyan-400 font-medium">{skill.level}%</span>
-                  </div>
-                  <div className="w-full bg-gray-700/50 rounded-full h-2 overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      transition={{ duration: 1, delay: index * 0.1 }}
-                      className={`h-full bg-gradient-to-r ${skill.color} rounded-full shadow-lg`}
-                    />
-                  </div>
-                </div>
+                <span className="text-white font-semibold text-lg whitespace-nowrap">{skill.name}</span>
               </div>
-
               {/* Glow effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/20 to-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
             </motion.div>
