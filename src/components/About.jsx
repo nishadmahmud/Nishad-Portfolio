@@ -25,11 +25,6 @@ const About = () => {
     }
   ]
 
-  const skills = [
-    "Java", "JavaScript", "Python", "C++", "React", "Node.js", 
-    "Firebase", "MongoDB", "Express.js", "TailwindCSS", "Git"
-  ]
-
   return (
     <section id="about" className="py-20 relative">
       {/* Background glow */}
@@ -77,7 +72,7 @@ const About = () => {
         </motion.div>
 
         {/* Highlights + Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mb-8">
           {/* Highlights 2x2 Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:col-span-2">
             {highlights.map((highlight, index) => (
@@ -91,15 +86,15 @@ const About = () => {
                   scale: 1.02,
                   boxShadow: "0 0 20px rgba(0, 212, 255, 0.3)"
                 }}
-                className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-6 h-full flex flex-col justify-center hover:border-cyan-400/50 transition-all duration-300"
+                className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-4 sm:p-6 h-full flex flex-col justify-center hover:border-cyan-400/50 transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-                    <highlight.icon size={20} className="text-white" />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
+                    <highlight.icon size={16} className="sm:w-5 sm:h-5 text-white" />
                   </div>
-                  <h4 className="text-white font-semibold">{highlight.title}</h4>
+                  <h4 className="text-white font-semibold text-sm sm:text-base">{highlight.title}</h4>
                 </div>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
                   {highlight.description}
                 </p>
               </motion.div>
@@ -112,12 +107,12 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 h-full flex flex-col justify-center"
+            className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-6 sm:p-8 h-full flex flex-col justify-center"
           >
-            <h3 className="text-2xl font-bold text-white mb-6">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">
               Projects I'm Proud Of
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {[
                 {
                   name: "Logic Gates Simulator",
@@ -142,8 +137,8 @@ const About = () => {
                 >
                   <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <h4 className="text-white font-semibold">{project.name}</h4>
-                    <p className="text-gray-400 text-sm">{project.description}</p>
+                    <h4 className="text-white font-semibold text-sm sm:text-base">{project.name}</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm">{project.description}</p>
                   </div>
                 </motion.div>
               ))}

@@ -23,8 +23,8 @@ const Footer = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Footer Content */}
-        <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-12 mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-8 lg:p-12 mb-6 sm:mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {/* Brand Section */}
             <div className="lg:col-span-2">
               <motion.div
@@ -38,10 +38,10 @@ const Footer = () => {
                   <img
                     src="/logo.svg"
                     alt="Nishad Logo"
-                    className="h-auto w-40 -ml-5 -mb-4"
+                    className="h-auto w-32 sm:w-40 -ml-3 sm:-ml-5 -mb-3 sm:-mb-4"
                   />
                 </div>
-                <p className="text-gray-400 text-lg leading-relaxed max-w-md">
+                <p className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-md">
                   Full-stack developer passionate about creating innovative
                   digital experiences and bringing ideas to life through modern
                   web technologies.
@@ -55,9 +55,9 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="space-y-4"
+              className="space-y-3 sm:space-y-4"
             >
-              <h3 className="text-white font-semibold text-lg mb-4">
+              <h3 className="text-white font-semibold text-base sm:text-lg mb-3 sm:mb-4">
                 Quick Links
               </h3>
               <ul className="space-y-2">
@@ -70,7 +70,7 @@ const Footer = () => {
                           x: 5,
                           color: "#00d4ff",
                         }}
-                        className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
+                        className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 text-sm sm:text-base"
                       >
                         {link}
                       </motion.a>
@@ -86,9 +86,9 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="space-y-4"
+              className="space-y-3 sm:space-y-4"
             >
-              <h3 className="text-white font-semibold text-lg mb-4">
+              <h3 className="text-white font-semibold text-base sm:text-lg mb-3 sm:mb-4">
                 Get In Touch
               </h3>
               <div className="space-y-3">
@@ -97,11 +97,11 @@ const Footer = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                   viewport={{ once: true }}
-                  className="flex items-center space-x-4"
+                  className="flex items-center space-x-3 sm:space-x-4"
                 >
                   {socialLinks.map((social, index) => (
                     <motion.a
-                      key={index}
+                      key={social.label}
                       href={social.href}
                       initial={{ opacity: 0, scale: 0 }}
                       whileInView={{ opacity: 1, scale: 1 }}
@@ -111,14 +111,14 @@ const Footer = () => {
                         scale: 1.2,
                         boxShadow: "0 0 20px rgba(0, 212, 255, 0.5)",
                       }}
-                      className="p-3 rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 hover:border-cyan-400/50 text-gray-400 hover:text-cyan-400 transition-all duration-300"
+                      className="p-2 sm:p-3 rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 hover:border-cyan-400/50 text-gray-400 hover:text-cyan-400 transition-all duration-300"
                       aria-label={social.label}
                     >
-                      <social.icon size={20} />
+                      <social.icon size={18} className="sm:w-5 sm:h-5" />
                     </motion.a>
                   ))}
                 </motion.div>
-                <p className="text-gray-400 text-sm">
+                <p className="text-gray-400 text-xs sm:text-sm">
                   Available for full-time opportunities & freelance projects.
                 </p>
               </div>
@@ -127,7 +127,7 @@ const Footer = () => {
         </div>
 
         {/* Social Links & Copyright */}
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 py-8 border-t border-white/10">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 py-6 sm:py-8 border-t border-white/10">
 
           {/* Copyright */}
           <motion.div
@@ -135,14 +135,14 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="flex items-center gap-2 text-gray-400 text-sm"
+            className="flex items-center gap-2 text-gray-400 text-xs sm:text-sm"
           >
             <span>© {currentYear} Nishad. Made with</span>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
             >
-              <FaHeart className="text-blue-500" size={14} />
+              <FaHeart className="text-blue-500 sm:w-4 sm:h-4" size={12} />
             </motion.div>
             <span>and lots of caffeine</span>
           </motion.div>

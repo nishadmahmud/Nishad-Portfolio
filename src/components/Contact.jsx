@@ -75,7 +75,7 @@ const Contact = () => {
         message: ''
       });
       toast.success('Message sent successfully!');
-    } catch (error) {
+    } catch (_error) {
       toast.error('Failed to send message. Please try again later.');
     }
     setIsSubmitting(false);
@@ -105,7 +105,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -114,11 +114,11 @@ const Contact = () => {
             viewport={{ once: true }}
             className="space-y-4 h-full"
           >
-            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-6 h-full">
-              <h3 className="text-2xl font-bold text-white mb-4">
+            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-4 sm:p-6 h-full">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
                 Let's Connect
               </h3>
-              <p className="text-gray-300 text-base leading-relaxed mb-4">
+              <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4">
                 I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out below.
               </p>
 
@@ -127,15 +127,15 @@ const Contact = () => {
                   <a
                     key={info.label}
                     href={info.href}
-                    className="flex items-center w-full gap-4 p-3 bg-white/10 backdrop-blur-md border border-white/15 rounded-xl hover:border-cyan-400/60 transition-all duration-200"
+                    className="flex items-center w-full gap-3 sm:gap-4 p-3 bg-white/10 backdrop-blur-md border border-white/15 rounded-xl hover:border-cyan-400/60 transition-all duration-200"
                     style={{ minHeight: '56px' }}
                   >
-                    <span className="flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 shadow-sm">
-                      <info.icon size={20} className="text-white" />
+                    <span className="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 shadow-sm">
+                      <info.icon size={18} className="sm:w-5 sm:h-5 text-white" />
                     </span>
                     <span className="flex flex-col text-left">
-                      <span className="text-white font-semibold text-base leading-tight">{info.label}</span>
-                      <span className="text-gray-300 text-sm leading-tight break-all">{info.value}</span>
+                      <span className="text-white font-semibold text-sm sm:text-base leading-tight">{info.label}</span>
+                      <span className="text-gray-300 text-xs sm:text-sm leading-tight break-all">{info.value}</span>
                     </span>
                   </a>
                 ))}
@@ -150,20 +150,20 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-6 h-full">
-              <h3 className="text-2xl font-bold text-white mb-4">
+            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-4 sm:p-6 h-full">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
                 Send Me a Message
               </h3>
               
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <label className="block text-white font-medium mb-2">Name</label>
+                    <label className="block text-white font-medium mb-1 sm:mb-2 text-sm sm:text-base">Name</label>
                     <input
                       type="text"
                       name="name"
@@ -181,7 +181,7 @@ const Contact = () => {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     viewport={{ once: true }}
                   >
-                    <label className="block text-white font-medium mb-2">Email</label>
+                    <label className="block text-white font-medium mb-1 sm:mb-2 text-sm sm:text-base">Email</label>
                     <input
                       type="email"
                       name="email"
@@ -200,14 +200,14 @@ const Contact = () => {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   viewport={{ once: true }}
                 >
-                  <label className="block text-white font-medium mb-2">Subject</label>
+                  <label className="block text-white font-medium mb-1 sm:mb-2 text-sm sm:text-base">Subject</label>
                   <input
                     type="text"
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 text-sm"
                     placeholder="What's this about?"
                   />
                 </motion.div>
@@ -218,7 +218,7 @@ const Contact = () => {
                   transition={{ duration: 0.5, delay: 0.4 }}
                   viewport={{ once: true }}
                 >
-                  <label className="block text-white font-medium mb-2">Message</label>
+                  <label className="block text-white font-medium mb-1 sm:mb-2 text-sm sm:text-base">Message</label>
                   <textarea
                     name="message"
                     value={formData.message}
@@ -242,9 +242,9 @@ const Contact = () => {
                     boxShadow: "0 0 30px rgba(0, 212, 255, 0.5)"
                   }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-base"
+                  className="w-full px-4 sm:px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                 >
-                  <FaPaperPlane size={18} />
+                  <FaPaperPlane size={16} className="sm:w-5 sm:h-5" />
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </motion.button>
               </form>
