@@ -39,11 +39,9 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-20 relative">
-      {/* Background glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-transparent"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,17 +49,16 @@ const Skills = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-100 mb-6">
+            <span className="bg-gradient-to-r from-slate-400 to-slate-600 bg-clip-text text-transparent">
               Skills
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
             Technologies and tools I use to bring ideas to life
           </p>
         </motion.div>
 
-        {/* Skills Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -75,24 +72,21 @@ const Skills = () => {
               variants={itemVariants}
               whileHover={{ 
                 scale: 1.08,
-                boxShadow: "0 0 30px rgba(0, 212, 255, 0.3)"
+                boxShadow: "0 0 20px #64748b55"
               }}
               className="group relative"
             >
-              {/* Glass Card */}
-              <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-3 sm:p-4 h-full flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 hover:border-cyan-400/50 transition-all duration-300">
+              <div className="backdrop-blur-md bg-slate-800/80 border border-slate-700 rounded-2xl p-3 sm:p-4 h-full flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 hover:border-slate-400 transition-all duration-300">
                 <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 ${skill.bg}`}>
                   <skill.icon size={20} className="sm:w-7 sm:h-7 text-white" />
                 </div>
-                <span className="text-white font-semibold text-sm sm:text-lg text-center sm:text-left whitespace-nowrap">{skill.name}</span>
+                <span className="text-slate-100 font-semibold text-sm sm:text-lg text-center sm:text-left whitespace-nowrap">{skill.name}</span>
               </div>
-              {/* Glow effect */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/20 to-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-slate-400/20 to-slate-600/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Additional Info */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -100,11 +94,11 @@ const Skills = () => {
           viewport={{ once: true }}
           className="mt-12 sm:mt-16 text-center"
         >
-          <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto">
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
+          <div className="backdrop-blur-md bg-slate-800/60 border border-slate-700 rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4">
               Always Learning
             </h3>
-            <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
+            <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
               I'm constantly exploring new technologies and frameworks to stay current with industry trends. 
               Currently diving deep into cloud architecture, machine learning, and advanced React patterns.
             </p>

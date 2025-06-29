@@ -54,7 +54,7 @@ const Projects = () => {
   const openModal = (project) => {
     setSelectedProject(project);
     setModalOpen(true);
-    document.body.style.overflow = 'hidden'; // Prevent background scroll
+    document.body.style.overflow = 'hidden';
   };
   const closeModal = () => {
     setModalOpen(false);
@@ -67,11 +67,9 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-20 relative">
-      {/* Background glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-transparent"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -79,17 +77,16 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-100 mb-6">
+            <span className="bg-gradient-to-r from-slate-400 to-slate-600 bg-clip-text text-transparent">
               Projects
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
             A showcase of my recent work and creative solutions
           </p>
         </motion.div>
 
-        {/* All Projects as Wide Cards */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -107,9 +104,8 @@ const Projects = () => {
               role="button"
               onKeyDown={e => { if (e.key === 'Enter') openModal(project); }}
             >
-              <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl sm:rounded-3xl overflow-hidden hover:border-cyan-400/50 transition-all duration-300">
+              <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl sm:rounded-3xl overflow-hidden hover:border-slate-400 transition-all duration-300">
                 <div className="grid lg:grid-cols-2 gap-0 h-full min-h-[8rem] sm:min-h-[10rem] lg:min-h-[14rem]">
-                  {/* Project Image */}
                   <div
                     className="relative h-full min-h-[8rem] sm:min-h-[10rem] lg:min-h-[14rem] overflow-hidden w-full"
                     style={{
@@ -119,11 +115,8 @@ const Projects = () => {
                       transition: 'transform 0.5s',
                     }}
                   >
-                    {/* Optionally, add a gradient overlay for readability */}
-                    {/* <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div> */}
                   </div>
 
-                  {/* Project Content */}
                   <div className="p-4 sm:p-5 lg:p-8 flex flex-col justify-center h-full">
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2">
                       {project.title}
@@ -134,7 +127,6 @@ const Projects = () => {
                       </p>
                     )}
 
-                    {/* Technologies */}
                     <div className="flex flex-wrap gap-2 mb-4">
                       {(() => {
                         const techList = [
@@ -156,7 +148,6 @@ const Projects = () => {
                       })()}
                     </div>
 
-                    {/* Project Links */}
                     <div className="flex flex-col sm:flex-row gap-2 mt-1">
                       {project.github && (
                         <motion.a
@@ -185,14 +176,12 @@ const Projects = () => {
                 </div>
               </div>
 
-              {/* Glow effect */}
-              <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-cyan-400/20 to-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-slate-400/20 to-slate-600/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
             </motion.div>
           ))}
         </motion.div>
       </div>
 
-      {/* Modal for Project Detail */}
       {modalOpen && selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
           <div className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 border border-cyan-400/20 rounded-2xl shadow-2xl max-w-2xl w-full mx-auto p-4 sm:p-6 animate-fadeIn max-h-[90vh] overflow-y-auto">

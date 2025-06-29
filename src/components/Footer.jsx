@@ -18,14 +18,11 @@ const Footer = () => {
 
     return (
     <footer className="relative mt-20">
-      {/* Background glow */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-gray-900/50 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-800/50 to-transparent"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Main Footer Content */}
-        <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-8 lg:p-12 mb-6 sm:mb-8">
+        <div className="backdrop-blur-md bg-slate-800/80 border border-slate-700 rounded-3xl p-6 sm:p-8 lg:p-12 mb-6 sm:mb-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {/* Brand Section */}
             <div className="lg:col-span-2">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -41,7 +38,7 @@ const Footer = () => {
                     className="h-auto w-32 sm:w-40 -ml-3 sm:-ml-5 -mb-3 sm:-mb-4"
                   />
                 </div>
-                <p className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-md">
+                <p className="text-slate-400 text-base sm:text-lg leading-relaxed max-w-md">
                   Full-stack developer passionate about creating innovative
                   digital experiences and bringing ideas to life through modern
                   web technologies.
@@ -49,7 +46,6 @@ const Footer = () => {
               </motion.div>
             </div>
 
-            {/* Quick Links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -57,7 +53,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="space-y-3 sm:space-y-4"
             >
-              <h3 className="text-white font-semibold text-base sm:text-lg mb-3 sm:mb-4">
+              <h3 className="text-slate-100 font-semibold text-base sm:text-lg mb-3 sm:mb-4">
                 Quick Links
               </h3>
               <ul className="space-y-2">
@@ -68,9 +64,9 @@ const Footer = () => {
                         href={`#${link.toLowerCase()}`}
                         whileHover={{
                           x: 5,
-                          color: "#00d4ff",
+                          color: "#f0f2f5",
                         }}
-                        className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 text-sm sm:text-base"
+                        className="text-slate-400 hover:text-white transition-colors duration-300 text-sm sm:text-base"
                       >
                         {link}
                       </motion.a>
@@ -80,7 +76,6 @@ const Footer = () => {
               </ul>
             </motion.div>
 
-            {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -88,7 +83,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="space-y-3 sm:space-y-4"
             >
-              <h3 className="text-white font-semibold text-base sm:text-lg mb-3 sm:mb-4">
+              <h3 className="text-slate-100 font-semibold text-base sm:text-lg mb-3 sm:mb-4">
                 Get In Touch
               </h3>
               <div className="space-y-3">
@@ -109,16 +104,16 @@ const Footer = () => {
                       viewport={{ once: true }}
                       whileHover={{
                         scale: 1.2,
-                        boxShadow: "0 0 20px rgba(0, 212, 255, 0.5)",
+                        boxShadow: "0 0 10px #64748b55",
                       }}
-                      className="p-2 sm:p-3 rounded-xl backdrop-blur-sm bg-white/5 border border-white/10 hover:border-cyan-400/50 text-gray-400 hover:text-cyan-400 transition-all duration-300"
+                      className="p-2 sm:p-3 rounded-xl backdrop-blur-sm bg-slate-900/60 border border-slate-700 hover:border-slate-400 text-slate-400 hover:text-slate-100 transition-all duration-300"
                       aria-label={social.label}
                     >
                       <social.icon size={18} className="sm:w-5 sm:h-5" />
                     </motion.a>
                   ))}
                 </motion.div>
-                <p className="text-gray-400 text-xs sm:text-sm">
+                <p className="text-slate-400 text-xs sm:text-sm">
                   Available for full-time opportunities & freelance projects.
                 </p>
               </div>
@@ -126,31 +121,28 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Social Links & Copyright */}
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 py-6 sm:py-8 border-t border-white/10">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 py-6 sm:py-8 border-t border-slate-700">
 
-          {/* Copyright */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="flex items-center gap-2 text-gray-400 text-xs sm:text-sm"
+            className="flex items-center gap-2 text-slate-400 text-xs sm:text-sm"
           >
             <span>© {currentYear} Nishad. Made with</span>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
             >
-              <FaHeart className="text-blue-500 sm:w-4 sm:h-4" size={12} />
+              <FaHeart className="text-slate-500 sm:w-4 sm:h-4" size={12} />
             </motion.div>
             <span>and lots of caffeine</span>
           </motion.div>
         </div>
       </div>
 
-      {/* Bottom glow effect */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-400 to-transparent"></div>
     </footer>
     );
 };
