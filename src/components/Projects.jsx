@@ -1,17 +1,7 @@
 import { useEffect, useState } from 'react';
-import { FaGithub, FaExternalLinkAlt, FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa'
-import { SiTypescript, SiTailwindcss, SiMongodb } from 'react-icons/si'
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import ProjectDetail from './ProjectDetail';
 import { motion } from 'framer-motion';
-
-const techIconMap = {
-  react: FaReact,
-  typescript: SiTypescript,
-  nodejs: FaNodeJs,
-  mongodb: SiMongodb,
-  tailwindcss: SiTailwindcss,
-  database: FaDatabase,
-};
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -127,25 +117,16 @@ const Projects = () => {
                       </p>
                     )}
 
+                    {/* Technologies */}
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {(() => {
-                        const techList = [
-                          ...(project.technologies?.frontend || []),
-                          ...(project.technologies?.backend || []),
-                          ...(project.technologies?.tools || [])
-                        ];
-                        return techList.slice(0, 4).map((tech, techIndex) => {
-                          const TechIcon = techIconMap[tech.toLowerCase()] || null;
-                          return (
-                            <div
-                              key={techIndex}
-                              className="p-1 rounded-md bg-white/10 border border-white/20 backdrop-blur-sm text-xs"
-                            >
-                              {TechIcon ? <TechIcon size={12} className="sm:w-4 sm:h-4 text-cyan-400" /> : <span className="text-xs text-gray-200">{tech}</span>}
-                            </div>
-                          );
-                        });
-                      })()}
+                      {project.card_techs && project.card_techs.map((tech, techIndex) => (
+                        <div
+                          key={techIndex}
+                          className="p-1 rounded-md bg-white/10 border border-white/20 backdrop-blur-sm text-xs text-gray-200"
+                        >
+                          {tech}
+                        </div>
+                      ))}
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-2 mt-1">
@@ -184,7 +165,7 @@ const Projects = () => {
 
       {modalOpen && selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-          <div className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 border border-cyan-400/20 rounded-2xl shadow-2xl max-w-2xl w-full mx-auto p-4 sm:p-6 animate-fadeIn max-h-[90vh] overflow-y-auto">
+          <div className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 border border-cyan-400/20 rounded-2xl shadow-2xl max-w-2xl w-full mx-auto p-4 sm:p-6 animate-fadeIn max-h-[90vh] overflow-y-auto modal-scrollbar">
             <button
               onClick={closeModal}
               className="absolute top-2 right-2 sm:top-3 sm:right-3 text-gray-400 hover:text-cyan-400 text-2xl font-bold focus:outline-none z-10"
