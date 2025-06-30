@@ -38,23 +38,28 @@ const Banner = () => {
             variants={textVariants}
             initial="hidden"
             animate="visible"
-            className="flex-1 w-full space-y-4 lg:space-y-4 text-center lg:text-left"
+            className="flex-1 w-full space-y-4 lg:space-y-4 text-center lg:text-left order-2 lg:order-1"
           >
-            <motion.p
+            <motion.div
               variants={letterVariants}
-              className="text-slate-400 text-base sm:text-lg font-medium tracking-wider mb-1"
+              className="flex flex-row lg:flex-col items-center justify-center lg:items-start lg:justify-start gap-2 lg:gap-0 mb-1 lg:mb-0"
             >
-              Hello, I'm
-            </motion.p>
+              <motion.p
+                variants={letterVariants}
+                className="text-slate-400 text-base sm:text-lg font-medium tracking-wider lg:mb-1"
+              >
+                Hello, I'm
+              </motion.p>
 
-            <motion.h1
-              variants={letterVariants}
-              className="text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold text-slate-100 leading-tight mb-2"
-            >
-              <span className="bg-gradient-to-r from-slate-400 via-slate-500 to-slate-700 bg-clip-text text-transparent">
-                Nishad
-              </span>
-            </motion.h1>
+              <motion.h1
+                variants={letterVariants}
+                className="text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold text-slate-100 leading-tight lg:mb-2"
+              >
+                <span className="bg-gradient-to-r from-slate-400 via-slate-500 to-slate-700 bg-clip-text text-transparent">
+                  Nishad
+                </span>
+              </motion.h1>
+            </motion.div>
 
             <motion.h2
               variants={letterVariants}
@@ -125,7 +130,7 @@ const Banner = () => {
             </motion.div>
           </motion.div>
 
-          <div className="flex-1 w-full flex items-center justify-center lg:justify-end">
+          <div className="flex-1 w-full flex items-center justify-center lg:justify-end order-1 lg:order-2">
             <div className="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-3xl backdrop-blur-lg bg-slate-800 border border-slate-700 shadow-2xl flex items-center justify-center relative overflow-hidden">
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-slate-700/20 to-slate-900/20 blur-2xl opacity-80 pointer-events-none"></div>
               <img
