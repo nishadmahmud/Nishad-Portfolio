@@ -56,7 +56,6 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Check if environment variables are available
     if (!serviceId || !templateId || !publicKey) {
       console.error('Missing EmailJS environment variables:', {
         serviceId: !!serviceId,

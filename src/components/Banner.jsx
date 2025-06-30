@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FaArrowDown, FaGithub, FaLinkedin, FaEnvelope, FaDownload } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from 'react-icons/fa'
 
 const Banner = () => {
   const textVariants = {
@@ -88,7 +88,7 @@ const Banner = () => {
               </motion.a>
               
               <motion.a
-                href="/resume.pdf"
+                href="/Nishad-Mahmud_Resume.pdf"
                 download
                 whileHover={{ 
                   scale: 1.05,

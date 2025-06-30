@@ -87,7 +87,7 @@ const Navbar = () => {
 
           <div className="hidden sm:flex backdrop-blur-md bg-slate-900/80 border border-slate-700 rounded-xl px-4 flex items-center shadow-lg h-12 sm:h-14 lg:h-16">
             <a
-              href="/resume.pdf"
+              href="/Nishad-Mahmud_Resume.pdf"
               download
               className="text-slate-100 font-semibold rounded-lg transition-all duration-300 h-full flex items-center justify-center px-4 hover:text-slate-300"
             >
@@ -136,7 +136,7 @@ const Navbar = () => {
               ))}
               <div className="border-t border-slate-700 pt-3 mt-3">
                 <a
-                  href="/resume.pdf"
+                  href="/Nishad-Mahmud_Resume.pdf"
                   download
                   onClick={closeMobileMenu}
                   className="flex items-center justify-center px-4 py-3 bg-slate-700 text-slate-100 font-semibold rounded-lg transition-all duration-300 hover:bg-slate-600 hover:text-white"
