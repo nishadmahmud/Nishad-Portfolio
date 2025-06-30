@@ -55,8 +55,21 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
+    // Check if environment variables are available
+    if (!serviceId || !templateId || !publicKey) {
+      console.error('Missing EmailJS environment variables:', {
+        serviceId: !!serviceId,
+        templateId: !!templateId,
+        publicKey: !!publicKey
+      });
+      toast.error('Email service configuration error. Please contact the administrator.');
+      setIsSubmitting(false);
+      return;
+    }
+    
     try {
-      await emailjs.send(
+      const result = await emailjs.send(
         serviceId,
         templateId,
         {
@@ -67,6 +80,8 @@ const Contact = () => {
         },
         publicKey
       );
+      
+      console.log('Email sent successfully:', result);
       setFormData({
         name: '',
         email: '',
@@ -74,7 +89,8 @@ const Contact = () => {
         message: ''
       });
       toast.success('Message sent successfully!');
-    } catch (_error) {
+    } catch (error) {
+      console.error('EmailJS error:', error);
       toast.error('Failed to send message. Please try again later.');
     }
     setIsSubmitting(false);
