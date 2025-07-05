@@ -11,9 +11,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: FaGithub, href: "https://github.com/nishadmahmud", label: "GitHub" },
-    { icon: FaLinkedin, href: "https://www.linkedin.com/in/nishadmahmud/", label: "LinkedIn" },
-    { icon: FaEnvelope, href: "mailto:mahmudnishad253@gmail.com", label: "Email" },
+    { icon: FaGithub, href: "https://github.com/nishadmahmud", label: "GitHub", external: true },
+    { icon: FaLinkedin, href: "https://www.linkedin.com/in/nishadmahmud/", label: "LinkedIn", external: true },
+    { icon: FaEnvelope, href: "#contact", label: "Email", external: false },
   ];
 
     return (
@@ -94,13 +94,15 @@ const Footer = () => {
                   viewport={{ once: true }}
                   className="flex items-center space-x-3 sm:space-x-4"
                 >
-                  {socialLinks.map((social, index) => (
+                  {socialLinks.map((social) => (
                     <motion.a
                       key={social.label}
                       href={social.href}
+                      target={social.external ? "_blank" : undefined}
+                      rel={social.external ? "noopener noreferrer" : undefined}
                       initial={{ opacity: 0, scale: 0 }}
                       whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
                       viewport={{ once: true }}
                       whileHover={{
                         scale: 1.2,

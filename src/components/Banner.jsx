@@ -20,9 +20,9 @@ const Banner = () => {
   }
 
   const socialLinks = [
-    { icon: FaGithub, href: '#', label: 'GitHub' },
-    { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
-    { icon: FaEnvelope, href: '#', label: 'Email' }
+    { icon: FaGithub, href: 'https://github.com/nishadmahmud', label: 'GitHub' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/nishadmahmud/', label: 'LinkedIn' },
+    { icon: FaEnvelope, href: '#contact', label: 'Email' }
   ]
 
     return (
@@ -114,6 +114,8 @@ const Banner = () => {
                 <motion.a
                   key={index}
                   href={social.href}
+                  target={social.href.startsWith('http') ? "_blank" : undefined}
+                  rel={social.href.startsWith('http') ? "noopener noreferrer" : undefined}
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 1 + index * 0.1 }}

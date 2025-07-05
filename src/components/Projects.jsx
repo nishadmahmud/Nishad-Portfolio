@@ -52,6 +52,14 @@ const Projects = () => {
     document.body.style.overflow = '';
   };
 
+  const handleBackdropScroll = (e) => {
+    const modalContent = e.currentTarget.querySelector('.modal-scrollbar');
+    if (modalContent) {
+      const scrollAmount = e.deltaY;
+      modalContent.scrollTop += scrollAmount;
+    }
+  };
+
   if (loading) return <div className="text-center text-gray-400 py-20">Loading projects...</div>;
   if (error) return <div className="text-center text-red-400 py-20">{error}</div>;
 
@@ -133,6 +141,9 @@ const Projects = () => {
                       {project.github && (
                         <motion.a
                           href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                           className="flex items-center justify-center gap-1 px-3 sm:px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 text-xs sm:text-sm"
@@ -144,6 +155,9 @@ const Projects = () => {
                       {project.live && (
                         <motion.a
                           href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                           className="flex items-center justify-center gap-1 px-3 sm:px-4 py-2 backdrop-blur-md bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:border-cyan-400/50 transition-all duration-300 text-xs sm:text-sm"
@@ -164,16 +178,25 @@ const Projects = () => {
       </div>
 
       {modalOpen && selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-          <div className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 border border-cyan-400/20 rounded-2xl shadow-2xl max-w-2xl w-full mx-auto p-4 sm:p-6 animate-fadeIn max-h-[90vh] overflow-y-auto modal-scrollbar">
-            <button
-              onClick={closeModal}
-              className="absolute top-2 right-2 sm:top-3 sm:right-3 text-gray-400 hover:text-cyan-400 text-2xl font-bold focus:outline-none z-10"
-              aria-label="Close"
-            >
-              &times;
-            </button>
-            <ProjectDetail project={selectedProject} />
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+          onClick={closeModal}
+          onWheel={handleBackdropScroll}
+        >
+          <button
+            onClick={closeModal}
+            className="fixed top-4 right-4 text-slate-300 hover:text-cyan-400 text-xl font-bold focus:outline-none z-20 bg-slate-800/90 backdrop-blur-md rounded-full w-12 h-12 flex items-center justify-center border border-slate-600 hover:border-cyan-400/50 hover:bg-slate-700/90 transition-all duration-300 shadow-lg hover:shadow-cyan-400/20"
+            aria-label="Close"
+          >
+            ✕
+          </button>
+          <div 
+            className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 border border-cyan-400/20 rounded-2xl shadow-2xl max-w-2xl w-full mx-auto max-h-[90vh] overflow-y-auto modal-scrollbar"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-4 sm:p-6">
+              <ProjectDetail project={selectedProject} />
+            </div>
           </div>
         </div>
       )}
