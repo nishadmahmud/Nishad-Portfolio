@@ -1,5 +1,119 @@
 [
   {
+    "title": "Earnzy - Micro-Task Marketplace Platform",
+    "live": "https://earnzyy.netlify.app/",
+    "github": "https://github.com/nishadmahmud/Earnzy-Client",
+    "image": "https://camo.githubusercontent.com/110a89224eb11a76a13629ab1ef9d50c47bae23739af069641ad3e688beb036d/68747470733a2f2f62337274706275716c652e7566732e73682f662f556d446c4b6844774831546a703163784d6d42303634326c4e4c434a56653846453063446a6b33486e4f68535957714d",
+    "overview": "Earnzy is a modern, full-stack web application for connecting buyers and workers for micro-tasks, featuring real-time dashboards, role-based access, and a beautiful, responsive UI.",
+    "adminCredentials": {
+      "email": "admin@earnzy.com",
+      "password": "Earnzy01"
+    },
+    "card_techs": ["React", "Node.js", "Express.js", "MongoDB", "Firebase", "Cloudinary", "Framer Motion", "Vite"],
+    "features": [
+      "🎨 Modern UI/UX: Glassmorphism Design, Responsive Layout, Smooth Animations, Dark/Light Theme Support",
+      "🔐 Authentication & Security: Firebase Authentication, Role-Based Access Control, Protected Routes, Secure API Communication",
+      "📊 Dashboard System: Worker, Buyer, and Admin Dashboards, Real-Time Updates",
+      "💰 Task & Payment System: Micro-Task Marketplace, Coin-Based Rewards, Submission Management, Payment Processing",
+      "🖼️ Media Management: Cloudinary Integration, Image Preview, File Validation, CDN Delivery",
+      "📱 Mobile Experience: Mobile-First Design, Collapsible Navigation, Bottom Navigation, Responsive Tables",
+      "🔔 Notification System: Real-Time Notifications, Portal-Based Rendering, Smart Positioning, Action Integration",
+      "📄 Content Management: Dynamic Page Titles, SEO Optimization, Breadcrumb Navigation, 404 Error Handling",
+      "⚡ Performance & UX: React Query, Lazy Loading, Pagination, Loading States",
+      "🛠️ Developer Experience: TypeScript Ready, ESLint Configuration, Vite Build System, Modular Architecture"
+    ],
+    "userFeatures": [
+      "👤 Admin Login: Use provided credentials for admin access",
+      "👤 Role-Based Dashboards: Separate experiences for Workers, Buyers, and Admins",
+      "📝 Task Management: Create, browse, and submit micro-tasks",
+      "💸 Payment & Rewards: Coin-based system for task payments and withdrawals",
+      "🔔 Real-Time Notifications: Stay updated on assignments, approvals, and payments",
+      "📱 Mobile-Optimized: Touch-friendly navigation and responsive layouts"
+    ],
+    "technologies": {
+      "frontend": [
+        "React.js",
+        "Vite",
+        "Tailwind CSS",
+        "Framer Motion",
+        "React Router DOM",
+        "React Hot Toast",
+        "React Icons",
+        "React Helmet Async"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Firebase Admin SDK",
+        "Firebase Authentication"
+      ],
+      "tools": [
+        "Git",
+        "VS Code",
+        "MongoDB Atlas",
+        "Netlify (Deployment)",
+        "Vercel (Backend Deployment)",
+        "Cloudinary"
+      ]
+    }
+  },
+  {
+    "title": "Plantopia - Plant E-Commerce Platform",
+    "live": "https://plantopia-store.netlify.app/",
+    "github": "https://github.com/nishadmahmud/Plantopia-Client/",
+    "image": "https://camo.githubusercontent.com/c25a86372b706ba8b8a8fcda0de922ff744563c6ccded3fba97a555bfb4813f7/68747470733a2f2f35667071323073646e6a2e7566732e73682f662f78714c6c76596870564b68614c363458594b6770714b31527a78443764393632494d54456f33566d4a426c7768667438",
+    "overview": "A modern, full-stack e-commerce platform for plant enthusiasts built with React, Node.js, and MongoDB.",
+    "adminCredentials": {
+      "email": "admin.plantopia@gmail.com",
+      "password": "Plantopia"
+    },
+    "card_techs": ["React", "Node.js", "Express.js", "MongoDB", "Firebase", "Stripe", "Cloudinary", "Vite"],
+    "features": [
+      "🛒 E-Commerce Core: Product Catalog, Shopping Cart, Checkout System, Order Management, Wishlist",
+      "👤 User Management: Authentication, User Profiles, Role-Based Access, Order History",
+      "🔧 Admin Dashboard: Product, Order, User, Blog Management, Analytics",
+      "📱 User Experience: Responsive Design, Search & Filter, Product Reviews, Blog System, Image Upload",
+      "🚀 Technical Features: Real-time Updates, Image Optimization, PWA Ready, SEO Optimized, Error Handling"
+    ],
+    "userFeatures": [
+      "🛒 Browse and purchase plants and gardening supplies",
+      "🛍️ Manage shopping cart and wishlist",
+      "💳 Secure checkout with Stripe integration",
+      "👤 Customizable user profiles and order history",
+      "🔧 Admin dashboard for managing products, orders, users, and blogs",
+      "📱 Fully responsive and mobile-optimized experience"
+    ],
+    "technologies": {
+      "frontend": [
+        "React 18",
+        "Vite",
+        "Tailwind CSS",
+        "Framer Motion",
+        "React Router",
+        "React Icons",
+        "Axios"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "JWT",
+        "Multer",
+        "Cloudinary"
+      ],
+      "tools": [
+        "Git",
+        "VS Code",
+        "MongoDB Atlas",
+        "Netlify (Frontend Deployment)",
+        "Vercel/Railway (Backend Deployment)",
+        "Cloudinary"
+      ]
+    }
+  },
+  {
     "title": "RelicVeil - Historical Artifacts Tracking Platform",
     "live": "https://relicveil.netlify.app/",
     "github": "https://github.com/nishadmahmud/RelicVeil-Client",
