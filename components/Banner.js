@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from 'react-icons/fa'
+import Image from 'next/image'
 
 const Banner = () => {
     const textVariants = {
@@ -137,9 +138,12 @@ const Banner = () => {
                     <div className="flex-1 w-full flex items-center justify-center lg:justify-end order-1 lg:order-2">
                         <div className="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-3xl backdrop-blur-lg bg-slate-800 border border-slate-700 shadow-2xl flex items-center justify-center relative overflow-hidden">
                             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-slate-700/20 to-slate-900/20 blur-2xl opacity-80 pointer-events-none"></div>
-                            <img
+                            <Image
                                 src="/img.jpg"
                                 alt="Nishad Mahmud"
+                                width={300}
+                                height={300}
+                                unoptimized
                                 className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 object-cover rounded-2xl z-10 shadow-xl"
                             />
                         </div>

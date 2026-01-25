@@ -1,102 +1,150 @@
 "use client";
 
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaTools, FaCheckCircle, FaLayerGroup } from 'react-icons/fa';
+import Image from 'next/image';
 
 const ProjectDetail = ({ project }) => {
     if (!project) return null;
+
     return (
-        <div className="flex flex-col gap-3 sm:gap-4">
-            {project.image && (
-                <img
+        <div className="flex flex-col">
+            {/* Hero Image Section */}
+            <div className="relative w-full h-64 sm:h-80 lg:h-96">
+                <div className="absolute inset-0 bg-slate-900/20 z-10"></div>
+                <Image
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-40 sm:h-56 object-cover rounded-xl mb-3 sm:mb-4 border border-white/10 shadow"
+                    width={1200}
+                    height={600}
+                    unoptimized
+                    className="w-full h-full object-cover"
                 />
-            )}
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-100 mb-2">{project.title}</h2>
-            {project.live && (
-                <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block mb-2 text-slate-400 hover:underline text-sm sm:text-base font-medium"
-                >
-                    Live Website ↗
-                </a>
-            )}
-            {project.overview && (
-                <div className="mb-2 sm:mb-3">
-                    <h3 className="text-base sm:text-lg font-semibold text-slate-300 mb-1">Overview</h3>
-                    <p className="text-slate-300 text-sm sm:text-base">{project.overview}</p>
-                </div>
-            )}
-            {project.features && project.features.length > 0 && (
-                <div>
-                    <h3 className="text-base sm:text-lg font-semibold text-slate-300 mb-1">Core Features</h3>
-                    <ul className="list-disc list-inside text-slate-200 text-sm sm:text-base space-y-1">
-                        {project.features.map((f, i) => (
-                            <li key={i}>{f}</li>
-                        ))}
-                    </ul>
-                </div>
-            )}
-            {project.userFeatures && project.userFeatures.length > 0 && (
-                <div>
-                    <h3 className="text-base sm:text-lg font-semibold text-slate-300 mb-1">User Features</h3>
-                    <ul className="list-disc list-inside text-slate-200 text-sm sm:text-base space-y-1">
-                        {project.userFeatures.map((f, i) => (
-                            <li key={i}>{f}</li>
-                        ))}
-                    </ul>
-                </div>
-            )}
-            {project.technologies && (
-                <div>
-                    <h3 className="text-base sm:text-lg font-semibold text-slate-300 mb-1">Technologies Used</h3>
-                    <div className="flex flex-col gap-2">
-                        {project.technologies.frontend && (
-                            <div>
-                                <span className="font-medium text-slate-200 text-sm sm:text-base">Frontend: </span>
-                                <span className="text-slate-300 text-sm sm:text-base">{project.technologies.frontend.join(', ')}</span>
-                            </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent z-20 flex flex-col justify-end p-6 sm:p-10">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+                        {project.title}
+                    </h2>
+                    <div className="flex flex-wrap gap-4">
+                        {project.live && (
+                            <a
+                                href={project.live}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 px-6 py-2.5 bg-cyan-600 hover:bg-cyan-500 text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-cyan-500/25"
+                            >
+                                <FaExternalLinkAlt size={14} /> Live Demo
+                            </a>
                         )}
-                        {project.technologies.backend && (
-                            <div>
-                                <span className="font-medium text-slate-200 text-sm sm:text-base">Backend: </span>
-                                <span className="text-slate-300 text-sm sm:text-base">{project.technologies.backend.join(', ')}</span>
-                            </div>
-                        )}
-                        {project.technologies.tools && (
-                            <div>
-                                <span className="font-medium text-slate-200 text-sm sm:text-base">Tools: </span>
-                                <span className="text-slate-300 text-sm sm:text-base">{project.technologies.tools.join(', ')}</span>
-                            </div>
+                        {project.github && (
+                            <a
+                                href={project.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 px-6 py-2.5 bg-slate-800/80 hover:bg-slate-700 text-white font-semibold rounded-lg backdrop-blur-md border border-slate-600 transition-all"
+                            >
+                                <FaGithub size={16} /> View Code
+                            </a>
                         )}
                     </div>
                 </div>
-            )}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2">
-                {project.github && project.github !== "" && (
-                    <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-slate-700 text-slate-100 font-semibold rounded-lg hover:shadow-lg hover:bg-slate-600 transition-all duration-300 text-sm sm:text-base"
-                    >
-                        <FaGithub size={14} className="sm:w-4 sm:h-4" /> Code
-                    </a>
-                )}
-                {project.live && (
-                    <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 backdrop-blur-md bg-slate-800 text-slate-100 font-semibold rounded-lg border border-slate-600 hover:border-slate-400 transition-all duration-300 text-sm sm:text-base"
-                    >
-                        <FaExternalLinkAlt size={12} className="sm:w-3 sm:h-3" /> Live Demo
-                    </a>
-                )}
             </div>
+
+            {/* Content Section */}
+            <div className="p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-3 gap-10">
+                {/* Main Content - Left Column */}
+                <div className="lg:col-span-2 space-y-8">
+                    {/* Overview */}
+                    <div>
+                        <h3 className="text-2xl font-bold text-slate-100 mb-4 flex items-center gap-2">
+                            Overview
+                        </h3>
+                        <p className="text-slate-300 text-lg leading-relaxed">
+                            {project.overview}
+                        </p>
+                    </div>
+
+                    {/* Features Grid */}
+                    {(project.features || project.userFeatures) && (
+                        <div>
+                            <h3 className="text-2xl font-bold text-slate-100 mb-6 flex items-center gap-2">
+                                <FaCheckCircle className="text-cyan-400" size={20} /> Key Features
+                            </h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {(project.features || []).concat(project.userFeatures || []).slice(0, 8).map((feature, i) => (
+                                    <div key={i} className="flex items-start gap-3 p-4 bg-slate-800/50 rounded-xl border border-slate-700/50">
+                                        <div className="mt-1.5 w-2 h-2 rounded-full bg-cyan-400 flex-shrink-0 shadow-[0_0_8px_rgba(34,211,238,0.5)]"></div>
+                                        <p className="text-slate-300 text-sm leading-relaxed">{feature}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </div>
+
+                {/* Sidebar - Right Column */}
+                <div className="lg:col-span-1 space-y-8">
+                    {/* Tech Stack */}
+                    <div className="bg-slate-800/30 p-6 rounded-2xl border border-slate-700/50">
+                        <h3 className="text-xl font-bold text-slate-100 mb-6 flex items-center gap-2">
+                            <FaLayerGroup className="text-purple-400" size={18} /> Tech Stack
+                        </h3>
+
+                        <div className="space-y-6">
+                            {project.technologies?.frontend && (
+                                <div>
+                                    <h4 className="text-sm uppercase tracking-wider text-slate-500 font-bold mb-3">Frontend</h4>
+                                    <div className="flex flex-wrap gap-2">
+                                        {project.technologies.frontend.map((tech, i) => (
+                                            <span key={i} className="px-3 py-1 bg-slate-700/50 text-slate-200 text-sm rounded-lg border border-slate-600/50">
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            {project.technologies?.backend && (
+                                <div>
+                                    <h4 className="text-sm uppercase tracking-wider text-slate-500 font-bold mb-3">Backend</h4>
+                                    <div className="flex flex-wrap gap-2">
+                                        {project.technologies.backend.map((tech, i) => (
+                                            <span key={i} className="px-3 py-1 bg-slate-700/50 text-slate-200 text-sm rounded-lg border border-slate-600/50">
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            {project.technologies?.tools && (
+                                <div>
+                                    <h4 className="text-sm uppercase tracking-wider text-slate-500 font-bold mb-3">Tools</h4>
+                                    <div className="flex flex-wrap gap-2">
+                                        {project.technologies.tools.map((tech, i) => (
+                                            <span key={i} className="px-3 py-1 bg-slate-700/50 text-slate-200 text-sm rounded-lg border border-slate-600/50">
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Footer Admin Credentials (if any) */}
+            {project.adminCredentials && (
+                <div className="mx-6 sm:mx-10 mb-10 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-xl flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
+                    <div>
+                        <h4 className="text-yellow-400 font-bold mb-1">Demo Admin Access</h4>
+                        <p className="text-slate-400 text-sm">Use these credentials to test admin features</p>
+                    </div>
+                    <div className="flex gap-4 text-sm font-mono text-slate-300 bg-black/20 px-4 py-2 rounded-lg border border-white/5">
+                        <span><span className="text-slate-500">Email:</span> {project.adminCredentials.email}</span>
+                        <span><span className="text-slate-500">Pass:</span> {project.adminCredentials.password}</span>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

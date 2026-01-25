@@ -2,13 +2,18 @@
 
 import { motion } from 'framer-motion'
 import { FaReact, FaNodeJs, FaPython, FaJava, FaGit, FaGithub } from 'react-icons/fa'
-import { SiJavascript, SiTailwindcss, SiMongodb, SiFirebase, SiExpress, SiC, SiCplusplus, SiVercel, SiFramer } from 'react-icons/si'
+import { FaBrain } from 'react-icons/fa6'
+import { SiJavascript, SiTailwindcss, SiMongodb, SiFirebase, SiExpress, SiC, SiCplusplus, SiVercel, SiFramer, SiTensorflow } from 'react-icons/si'
+import { TbBrandNextjs } from 'react-icons/tb'
 
 const Skills = () => {
     const skills = [
         { name: 'React', icon: FaReact, bg: 'bg-gradient-to-br from-cyan-400 to-blue-500' },
+        { name: 'Next.js', icon: TbBrandNextjs, bg: 'bg-gradient-to-br from-slate-800 to-black' },
         { name: 'JavaScript', icon: SiJavascript, bg: 'bg-gradient-to-br from-yellow-400 to-orange-500' },
         { name: 'Node.js', icon: FaNodeJs, bg: 'bg-gradient-to-br from-green-400 to-green-600' },
+        { name: 'Machine Learning', icon: SiTensorflow, bg: 'bg-gradient-to-br from-orange-500 to-red-600' },
+        { name: 'AI', icon: FaBrain, bg: 'bg-gradient-to-br from-pink-500 to-rose-600' },
         { name: 'Express.js', icon: SiExpress, bg: 'bg-gradient-to-br from-gray-700 to-gray-900' },
         { name: 'MongoDB', icon: SiMongodb, bg: 'bg-gradient-to-br from-green-500 to-green-700' },
         { name: 'Firebase', icon: SiFirebase, bg: 'bg-gradient-to-br from-yellow-400 to-orange-500' },

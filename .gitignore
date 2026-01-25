@@ -18,6 +18,7 @@ dist-ssr
 .vercel
 /.next
 /.vercel
+/out
 
 # Editor directories and files
 .vscode/*

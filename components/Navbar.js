@@ -3,12 +3,15 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import Image from 'next/image'
 
 const Navbar = () => {
     const navItems = [
         { name: 'Home', href: '#home', id: 'home' },
         { name: 'About', href: '#about', id: 'about' },
         { name: 'Skills', href: '#skills', id: 'skills' },
+        { name: 'Experience', href: '#experience', id: 'experience' },
+        { name: 'Publications', href: '#publications', id: 'publications' },
         { name: 'Projects', href: '#projects', id: 'projects' },
         { name: 'Contact', href: '#contact', id: 'contact' }
     ]
@@ -55,9 +58,12 @@ const Navbar = () => {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16 lg:h-20 gap-4">
                     <div className="backdrop-blur-md px-3 sm:px-4 bg-slate-900/80 border border-slate-700 rounded-xl flex items-center shadow-lg h-12 sm:h-14 lg:h-16">
-                        <img
+                        <Image
                             src="/logo-cropped.svg"
                             alt="Nishad Logo"
+                            width={32}
+                            height={32}
+                            unoptimized
                             className="h-5 w-auto sm:h-6 lg:h-8 drop-shadow-lg"
                             style={{ filter: 'drop-shadow(0 0 12px #888)' }}
                         />
