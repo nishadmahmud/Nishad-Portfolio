@@ -1,5 +1,3 @@
-"use client";
-
 import Navbar from "@/components/Navbar";
 import Banner from "@/components/Banner";
 import About from "@/components/About";
@@ -9,8 +7,25 @@ import Publications from "@/components/Publications";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { createClient } from "@/utils/supabase/server";
 
-export default function Home() {
+export const dynamic = 'force-dynamic';
+
+export default async function Home() {
+    const supabase = await createClient();
+
+    // Check for active session
+    const { data: { user } } = await supabase.auth.getUser();
+    const isAdmin = !!user;
+
+    const { data: profile } = await supabase.from('profile').select('*').single();
+    const { data: skills } = await supabase.from('skills').select('*').order('created_at');
+    const { data: experience } = await supabase.from('experience').select('*').order('start_date', { ascending: false });
+    const { data: publications } = await supabase.from('publications').select('*').order('created_at', { ascending: false });
+    const { data: projects } = await supabase.from('projects').select('*').order('created_at', { ascending: false });
+    const { data: highlights } = await supabase.from('about_highlights').select('*').order('display_order', { ascending: true });
+    const { data: featured } = await supabase.from('about_featured').select('*').order('display_order', { ascending: true });
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black relative overflow-x-hidden">
             <div className="fixed inset-0 overflow-hidden pointer-events-none">
@@ -22,12 +37,12 @@ export default function Home() {
             <div className="relative z-10">
                 <Navbar />
                 <main className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <Banner />
-                    <About />
-                    <Skills />
-                    <Experience />
-                    <Publications />
-                    <Projects />
+                    <Banner profile={profile} isAdmin={isAdmin} />
+                    <About profile={profile} highlights={highlights || []} featured={featured || []} isAdmin={isAdmin} />
+                    <Skills skills={skills || []} isAdmin={isAdmin} />
+                    <Experience experiences={experience || []} isAdmin={isAdmin} />
+                    <Publications publications={publications || []} isAdmin={isAdmin} />
+                    <Projects projects={projects || []} isAdmin={isAdmin} />
                     <Contact />
                 </main>
                 <Footer />

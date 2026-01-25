@@ -1,64 +1,55 @@
 "use client";
 
-import { motion } from 'framer-motion';
-import { FaBook, FaExternalLinkAlt, FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaBook, FaExternalLinkAlt, FaCalendarAlt, FaMapMarkerAlt, FaPlus, FaEdit, FaTrash } from 'react-icons/fa';
+import PublicationsForm from './admin/PublicationsForm';
+import AdminModal from './admin/AdminModal';
+import { createClient } from '@/utils/supabase/client';
+import { useRouter } from 'next/navigation';
+import { toast } from 'react-hot-toast';
 
-const Publications = () => {
-    const publications = [
-        {
-            title: "Deep Learning-Driven Leaf Disease Classification in Indoor Plants with YOLOv11: Stable Diffusion Augmentation Approach",
-            authors: ["Nishad Mahmud Opu", "Md Saiful Islam", "Sayed Hanzala Abdullah", "Ruma Akter"],
-            conference: "2025 28th International Conference on Computer and Information Technology (ICCIT)",
-            shortConference: "ICCIT 2025",
-            location: "Cox’s Bazar, Bangladesh",
-            year: "December 2025",
-            status: "Accepted",
-            doi: null // No DOI provided
-        },
-        {
-            title: "Deep Learning-Based Leaf Diseases Detection in Indoor Ornamental Plants: A Comparative Study of YOLOv8, YOLOv9, and YOLOv11",
-            authors: ["Nishad Mahmud Opu", "Md Saiful Islam", "Ruma Akter", "Kazi Maisha Jannath", "Shahriar Ahmed", "Rakibul Islam Rafi"],
-            conference: "2025 IEEE International Women in Engineering (WIE) Conference on Electrical and Computer Engineering (WIECON-ECE)",
-            shortConference: "WIECON-ECE 2025",
-            location: "Cox’s Bazar, Bangladesh",
-            year: "December 2025",
-            status: "Accepted",
-            doi: null // No DOI provided
-        },
-        {
-            title: "Machine Learning Approaches to Classify and Predict Water Quality Status in the Surma River, Sylhet, Bangladesh",
-            authors: ["Md. Anamul Hossain Chowdhury", "Nishad Mahmud Opu", "Md Fazla Rabbi", "Nabil Mahmud Sakib", "MD Shofiur Rahman", "Pujan Dey Anik", "Rayhan Mahmud Rakib"],
-            conference: "2025 28th International Conference on Computer and Information Technology (ICCIT)",
-            shortConference: "ICCIT 2025",
-            location: "Cox’s Bazar, Bangladesh",
-            year: "December 2025",
-            status: "Accepted",
-            doi: "10.13140/RG.2.2.11578.86721",
-            link: "https://doi.org/10.13140/RG.2.2.11578.86721"
-        },
-        {
-            title: "Assessment of Industrial Impacts on Surface Water Quality in Dhaka and Sylhet Rivers, Bangladesh: Using WQI and Machine Learning Models",
-            authors: ["Md. Anamul Hossain Chowdhury", "Rayhan Mahmud Rakib", "Pujan Dey Anik", "Nishad Mahmud Opu", "Nabil Mahmud Sakib", "Md Fazla Rabbi", "MD Shofiur Rahman"],
-            conference: "2025 28th International Conference on Computer and Information Technology (ICCIT)",
-            shortConference: "ICCIT 2025",
-            location: "Cox’s Bazar, Bangladesh",
-            year: "December 2025",
-            status: "Accepted",
-            doi: "10.13140/RG.2.2.29194.94404",
-            link: "https://doi.org/10.13140/RG.2.2.29194.94404"
-        },
-        {
-            title: "Flood Hazard Classification Using Machine Learning and a Proposed Early-Warning System for Risk Management in Sylhet City, Bangladesh",
-            authors: ["Md. Anamul Hossain Chowdhury", "Pujan Dey Anik", "Rayhan Mahmud Rakib", "Nishad Mahmud Opu", "Biplob Deb Nath", "Fardous Kabir Noyon", "Rumi Chowdhury"],
-            conference: "2025 28th International Conference on Computer and Information Technology (ICCIT)",
-            shortConference: "ICCIT 2025",
-            location: "Cox’s Bazar, Bangladesh",
-            year: "December 2025",
-            status: "Accepted",
-            doi: "10.13140/RG.2.2.35066.96966",
-            link: "https://doi.org/10.13140/RG.2.2.35066.96966"
+const Publications = ({ publications = [], isAdmin }) => {
+    const [editingPublication, setEditingPublication] = useState(null);
+    const [isAdding, setIsAdding] = useState(false);
+    const [adminModalOpen, setAdminModalOpen] = useState(false);
+
+    const router = useRouter();
+    const supabase = createClient();
+
+    // Admin Handlers
+    const handleEdit = (e, pub) => {
+        e.stopPropagation();
+        setEditingPublication(pub);
+        setIsAdding(false);
+        setAdminModalOpen(true);
+    };
+
+    const handleAdd = () => {
+        setEditingPublication(null);
+        setIsAdding(true);
+        setAdminModalOpen(true);
+    };
+
+    const handleDelete = async (e, id) => {
+        e.stopPropagation();
+        if (!confirm('Are you sure you want to delete this publication?')) return;
+
+        try {
+            const { error } = await supabase.from('publications').delete().eq('id', id);
+            if (error) throw error;
+            toast.success('Publication deleted');
+            router.refresh();
+        } catch (error) {
+            toast.error('Delete failed: ' + error.message);
         }
-    ];
+    };
+
+    const closeAdminModal = () => {
+        setAdminModalOpen(false);
+        setEditingPublication(null);
+        setIsAdding(false);
+    };
 
     return (
         <section id="publications" className="py-20 relative">
@@ -70,7 +61,7 @@ const Publications = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-16 relative"
                 >
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-100 mb-6">
                         <span className="bg-gradient-to-r from-slate-400 to-slate-600 bg-clip-text text-transparent">
@@ -80,12 +71,23 @@ const Publications = () => {
                     <p className="text-xl text-slate-400 max-w-2xl mx-auto">
                         Accepted Research Papers
                     </p>
+
+                    {isAdmin && (
+                        <div className="absolute top-0 right-0 md:right-20">
+                            <button
+                                onClick={handleAdd}
+                                className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-500 transition-colors shadow-lg"
+                            >
+                                <FaPlus /> Add Publication
+                            </button>
+                        </div>
+                    )}
                 </motion.div>
 
                 <div className="max-w-4xl mx-auto space-y-6">
                     {publications.map((pub, index) => (
                         <motion.div
-                            key={index}
+                            key={pub.id || index}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -94,8 +96,28 @@ const Publications = () => {
                                 scale: 1.01,
                                 boxShadow: "0 0 20px #64748b55"
                             }}
-                            className="backdrop-blur-md bg-slate-800/80 border border-slate-700 rounded-2xl p-6 sm:p-8 hover:border-slate-400 transition-all duration-300"
+                            className="group relative backdrop-blur-md bg-slate-800/80 border border-slate-700 rounded-2xl p-6 sm:p-8 hover:border-slate-400 transition-all duration-300"
                         >
+                            {/* Admin Actions Overlay */}
+                            {isAdmin && (
+                                <div className="absolute top-2 right-2 z-20 flex gap-2">
+                                    <button
+                                        onClick={(e) => handleEdit(e, pub)}
+                                        className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 shadow-md transition-colors"
+                                        title="Edit Publication"
+                                    >
+                                        <FaEdit size={16} />
+                                    </button>
+                                    <button
+                                        onClick={(e) => handleDelete(e, pub.id)}
+                                        className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-500 shadow-md transition-colors"
+                                        title="Delete Publication"
+                                    >
+                                        <FaTrash size={16} />
+                                    </button>
+                                </div>
+                            )}
+
                             <div className="flex flex-col gap-4">
                                 <div className="flex items-start justify-between gap-4">
                                     <div className="flex items-start gap-3">
@@ -125,7 +147,7 @@ const Publications = () => {
                                         {pub.year}
                                     </span>
                                     <div className="flex flex-wrap items-center gap-2">
-                                        <span className="font-medium text-slate-300">{pub.shortConference}</span>
+                                        <span className="font-medium text-slate-300">{pub.short_conference}</span>
                                         <span className="hidden sm:inline text-slate-500">-</span>
                                         <div className="flex items-center gap-1.5">
                                             <FaMapMarkerAlt className="text-slate-400 flex-shrink-0" />
@@ -143,7 +165,7 @@ const Publications = () => {
                                             className="inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 hover:underline transition-all"
                                         >
                                             <FaExternalLinkAlt size={12} />
-                                            DOI: {pub.doi}
+                                            DOI: {pub.doi_link}
                                         </a>
                                     </div>
                                 )}
@@ -152,6 +174,21 @@ const Publications = () => {
                     ))}
                 </div>
             </div>
+
+            {/* Admin Edit Modal */}
+            <AdminModal
+                isOpen={adminModalOpen}
+                onClose={closeAdminModal}
+                title={isAdding ? "Add Publication" : "Edit Publication"}
+            >
+                <PublicationsForm
+                    publication={editingPublication}
+                    onSuccess={() => {
+                        closeAdminModal();
+                        router.refresh();
+                    }}
+                />
+            </AdminModal>
         </section>
     );
 };
