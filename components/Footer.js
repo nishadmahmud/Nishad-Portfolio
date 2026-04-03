@@ -19,10 +19,9 @@ const Footer = () => {
 
     return (
         <footer className="relative mt-20">
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-800/50 to-transparent"></div>
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="backdrop-blur-md bg-slate-800/80 border border-slate-700 rounded-3xl p-6 sm:p-8 lg:p-12 mb-6 sm:mb-8">
+                <div className="bg-[var(--bg2)] border border-[var(--line)] rounded-none p-6 sm:p-8 lg:p-12 mb-6 sm:mb-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                         <div className="lg:col-span-2">
                             <motion.div
@@ -33,13 +32,11 @@ const Footer = () => {
                                 className="space-y-4"
                             >
                                 <div className="flex items-center">
-                                    <img
-                                        src="/logo.svg"
-                                        alt="Nishad Logo"
-                                        className="h-auto w-32 sm:w-40 -ml-3 sm:-ml-5 -mb-3 sm:-mb-4"
-                                    />
+                                    <h2 className="font-serif text-3xl text-[var(--white)] font-light italic tracking-widest pl-2">
+                                        Nishad.
+                                    </h2>
                                 </div>
-                                <p className="text-slate-400 text-base sm:text-lg leading-relaxed max-w-md">
+                                <p className="text-[var(--text-muted)] text-sm tracking-[0.04em] leading-[2] max-w-md pt-2">
                                     Full-stack developer passionate about creating innovative
                                     digital experiences and bringing ideas to life through modern
                                     web technologies.
@@ -52,12 +49,12 @@ const Footer = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             viewport={{ once: true }}
-                            className="space-y-3 sm:space-y-4"
+                            className="space-y-6"
                         >
-                            <h3 className="text-slate-100 font-semibold text-base sm:text-lg mb-3 sm:mb-4">
+                            <h3 className="text-[var(--white)] font-serif font-light text-xl mb-4">
                                 Quick Links
                             </h3>
-                            <ul className="space-y-2">
+                            <ul className="space-y-4">
                                 {["Home", "About", "Skills", "Projects", "Contact"].map(
                                     (link, index) => (
                                         <li key={link}>
@@ -65,9 +62,9 @@ const Footer = () => {
                                                 href={`#${link.toLowerCase()}`}
                                                 whileHover={{
                                                     x: 5,
-                                                    color: "#f0f2f5",
+                                                    color: "var(--white)",
                                                 }}
-                                                className="text-slate-400 hover:text-white transition-colors duration-300 text-sm sm:text-base"
+                                                className="text-sm tracking-[0.04em] text-[var(--text-dim)] hover:text-[var(--white)] transition-colors duration-300 uppercase"
                                             >
                                                 {link}
                                             </motion.a>
@@ -82,18 +79,18 @@ const Footer = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="space-y-3 sm:space-y-4"
+                            className="space-y-6"
                         >
-                            <h3 className="text-slate-100 font-semibold text-base sm:text-lg mb-3 sm:mb-4">
+                            <h3 className="text-[var(--white)] font-serif font-light text-xl mb-4">
                                 Get In Touch
                             </h3>
-                            <div className="space-y-3">
+                            <div className="space-y-6">
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.6, delay: 0.3 }}
                                     viewport={{ once: true }}
-                                    className="flex items-center space-x-3 sm:space-x-4"
+                                    className="flex items-center space-x-4"
                                 >
                                     {socialLinks.map((social) => (
                                         <motion.a
@@ -105,18 +102,14 @@ const Footer = () => {
                                             whileInView={{ opacity: 1, scale: 1 }}
                                             transition={{ duration: 0.5, delay: 0.4 }}
                                             viewport={{ once: true }}
-                                            whileHover={{
-                                                scale: 1.2,
-                                                boxShadow: "0 0 10px #64748b55",
-                                            }}
-                                            className="p-2 sm:p-3 rounded-xl backdrop-blur-sm bg-slate-900/60 border border-slate-700 hover:border-slate-400 text-slate-400 hover:text-slate-100 transition-all duration-300"
+                                            className="text-[var(--text-dim)] hover:text-[var(--accent)] transition-all duration-300"
                                             aria-label={social.label}
                                         >
-                                            <social.icon size={18} className="sm:w-5 sm:h-5" />
+                                            <social.icon size={20} className="sm:w-6 sm:h-6" />
                                         </motion.a>
                                     ))}
                                 </motion.div>
-                                <p className="text-slate-400 text-xs sm:text-sm">
+                                <p className="text-[var(--text-muted)] text-sm tracking-[0.04em] leading-[2]">
                                     Available for full-time opportunities & freelance projects.
                                 </p>
                             </div>
@@ -124,28 +117,26 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 py-6 sm:py-8 border-t border-slate-700">
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 py-8 border-t border-[var(--line)]">
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                         viewport={{ once: true }}
-                        className="flex items-center gap-2 text-slate-400 text-xs sm:text-sm"
+                        className="flex items-center gap-2 text-[var(--text-dim)] text-xs uppercase tracking-[0.2em]"
                     >
                         <span>© {currentYear} Nishad. Made with</span>
                         <motion.div
                             animate={{ scale: [1, 1.2, 1] }}
                             transition={{ duration: 1, repeat: Infinity }}
                         >
-                            <FaHeart className="text-slate-500 sm:w-4 sm:h-4" size={12} />
+                            <FaHeart className="text-[var(--accent)] sm:w-4 sm:h-4" size={12} />
                         </motion.div>
-                        <span>and lots of caffeine</span>
+                        <span>and caffeine</span>
                     </motion.div>
                 </div>
             </div>
-
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-400 to-transparent"></div>
         </footer>
     );
 };

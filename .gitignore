@@ -19,7 +19,7 @@ dist-ssr
 /.next
 /.vercel
 /out
-
+eurus-landing.html
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

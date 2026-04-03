@@ -1,5 +1,36 @@
 @import "tailwindcss";
 
+:root {
+  --bg: #0d0d0d;
+  --bg2: #141414;
+  --bg3: #1a1a1a;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-bright: rgba(255, 255, 255, 0.18);
+  --text: #e8e6e0;
+  --text-muted: #a19f96;
+  --text-dim: #737069;
+  --accent: #c8bfa8;
+  --white: #f0ede8;
+}
+
+@theme {
+  --font-mono: 'DM Mono', monospace;
+  --font-serif: 'Cormorant Garamond', serif;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;

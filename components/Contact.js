@@ -99,7 +99,6 @@ const Contact = () => {
 
     return (
         <section id="contact" className="py-20 relative">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-transparent"></div>
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
@@ -109,12 +108,13 @@ const Contact = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-100 mb-6">
-                        <span className="bg-gradient-to-r from-slate-400 to-slate-600 bg-clip-text text-transparent">
-                            Get In Touch
-                        </span>
+                    <p className="text-xs tracking-[0.3em] text-[var(--text-dim)] uppercase mb-6 flex items-center justify-center gap-4">
+                        Connect
+                    </p>
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light text-[var(--white)] mb-6">
+                        Get In  <em>Touch.</em>
                     </h2>
-                    <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+                    <p className="text-sm tracking-[0.04em] text-[var(--text-muted)] max-w-2xl mx-auto leading-[2]">
                         Let's work together to bring your ideas to life
                     </p>
                 </motion.div>
@@ -127,11 +127,11 @@ const Contact = () => {
                         viewport={{ once: true }}
                         className="space-y-4 h-full"
                     >
-                        <div className="backdrop-blur-md bg-slate-800/80 border border-slate-700 rounded-2xl p-4 sm:p-6 h-full">
-                            <h3 className="text-xl sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4">
+                        <div className="bg-[var(--bg2)] border border-[var(--line)] rounded-none p-6 sm:p-10 h-full">
+                            <h3 className="text-3xl font-serif font-light text-[var(--white)] mb-4">
                                 Let's Connect
                             </h3>
-                            <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
+                            <p className="text-sm tracking-[0.04em] text-[var(--text-muted)] leading-[2] mb-8">
                                 I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out below.
                             </p>
 
@@ -140,15 +140,15 @@ const Contact = () => {
                                     <a
                                         key={info.label}
                                         href={info.href}
-                                        className="flex items-center w-full gap-3 sm:gap-4 p-3 bg-slate-900/60 backdrop-blur-md border border-slate-700 rounded-xl hover:border-slate-400 transition-all duration-200"
-                                        style={{ minHeight: '56px' }}
+                                        className="flex items-center w-full gap-4 sm:gap-6 p-4 sm:p-6 bg-transparent border border-[var(--line)] rounded-none hover:bg-[var(--bg3)] hover:border-[var(--line-bright)] transition-colors duration-300"
+                                        style={{ minHeight: '80px' }}
                                     >
-                                        <span className="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-br from-slate-500 to-slate-700 shadow-sm">
-                                            <info.icon size={18} className="sm:w-5 sm:h-5 text-slate-100" />
+                                        <span className="flex items-center justify-center text-[var(--text-dim)] group-hover:text-[var(--accent)] transition-colors">
+                                            <info.icon size={24} className="sm:w-6 sm:h-6" />
                                         </span>
                                         <span className="flex flex-col text-left">
-                                            <span className="text-slate-100 font-semibold text-sm sm:text-base leading-tight">{info.label}</span>
-                                            <span className="text-slate-300 text-xs sm:text-sm leading-tight break-all">{info.value}</span>
+                                            <span className="text-xs uppercase tracking-[0.25em] text-[var(--text-muted)] mb-1">{info.label}</span>
+                                            <span className="text-sm tracking-[0.04em] text-[var(--white)] leading-tight break-all font-mono">{info.value}</span>
                                         </span>
                                     </a>
                                 ))}
@@ -162,8 +162,8 @@ const Contact = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         viewport={{ once: true }}
                     >
-                        <div className="backdrop-blur-md bg-slate-800/80 border border-slate-700 rounded-2xl p-4 sm:p-6 h-full">
-                            <h3 className="text-xl sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4">
+                        <div className="bg-[var(--bg2)] border border-[var(--line)] rounded-none p-6 sm:p-10 h-full">
+                            <h3 className="text-3xl font-serif font-light text-[var(--white)] mb-8">
                                 Send Me a Message
                             </h3>
 
@@ -175,14 +175,14 @@ const Contact = () => {
                                         transition={{ duration: 0.5, delay: 0.1 }}
                                         viewport={{ once: true }}
                                     >
-                                        <label className="block text-slate-100 font-medium mb-1 sm:mb-2 text-sm sm:text-base">Name</label>
+                                        <label className="block text-xs uppercase tracking-[0.2em] text-[var(--text-muted)] mb-3">Name</label>
                                         <input
                                             type="text"
                                             name="name"
                                             value={formData.name}
                                             onChange={handleInputChange}
                                             required
-                                            className="w-full px-3 py-2 bg-slate-900/60 border border-slate-700 rounded-xl text-slate-100 placeholder-slate-400 focus:outline-none focus:border-slate-400 focus:ring-2 focus:ring-slate-400/20 transition-all duration-300 text-sm"
+                                            className="w-full px-4 py-3 bg-[var(--bg)] border border-[var(--line)] rounded-none text-[var(--text)] placeholder-[var(--text-dim)] focus:outline-none focus:border-[var(--line-bright)] transition-colors duration-300 text-sm tracking-[0.04em]"
                                             placeholder="Your name"
                                         />
                                     </motion.div>
@@ -193,14 +193,14 @@ const Contact = () => {
                                         transition={{ duration: 0.5, delay: 0.2 }}
                                         viewport={{ once: true }}
                                     >
-                                        <label className="block text-slate-100 font-medium mb-1 sm:mb-2 text-sm sm:text-base">Email</label>
+                                        <label className="block text-xs uppercase tracking-[0.2em] text-[var(--text-muted)] mb-3">Email</label>
                                         <input
                                             type="email"
                                             name="email"
                                             value={formData.email}
                                             onChange={handleInputChange}
                                             required
-                                            className="w-full px-3 py-2 bg-slate-900/60 border border-slate-700 rounded-xl text-slate-100 placeholder-slate-400 focus:outline-none focus:border-slate-400 focus:ring-2 focus:ring-slate-400/20 transition-all duration-300 text-sm"
+                                            className="w-full px-4 py-3 bg-[var(--bg)] border border-[var(--line)] rounded-none text-[var(--text)] placeholder-[var(--text-dim)] focus:outline-none focus:border-[var(--line-bright)] transition-colors duration-300 text-sm tracking-[0.04em]"
                                             placeholder="your.email@example.com"
                                         />
                                     </motion.div>
@@ -212,14 +212,14 @@ const Contact = () => {
                                     transition={{ duration: 0.5, delay: 0.3 }}
                                     viewport={{ once: true }}
                                 >
-                                    <label className="block text-slate-100 font-medium mb-1 sm:mb-2 text-sm sm:text-base">Subject</label>
+                                    <label className="block text-xs uppercase tracking-[0.2em] text-[var(--text-muted)] mb-3">Subject</label>
                                     <input
                                         type="text"
                                         name="subject"
                                         value={formData.subject}
                                         onChange={handleInputChange}
                                         required
-                                        className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-slate-900/60 border border-slate-700 rounded-xl text-slate-100 placeholder-slate-400 focus:outline-none focus:border-slate-400 focus:ring-2 focus:ring-slate-400/20 transition-all duration-300 text-sm"
+                                        className="w-full px-4 py-3 bg-[var(--bg)] border border-[var(--line)] rounded-none text-[var(--text)] placeholder-[var(--text-dim)] focus:outline-none focus:border-[var(--line-bright)] transition-colors duration-300 text-sm tracking-[0.04em]"
                                         placeholder="What's this about?"
                                     />
                                 </motion.div>
@@ -230,14 +230,14 @@ const Contact = () => {
                                     transition={{ duration: 0.5, delay: 0.4 }}
                                     viewport={{ once: true }}
                                 >
-                                    <label className="block text-slate-100 font-medium mb-1 sm:mb-2 text-sm sm:text-base">Message</label>
+                                    <label className="block text-xs uppercase tracking-[0.2em] text-[var(--text-muted)] mb-3">Message</label>
                                     <textarea
                                         name="message"
                                         value={formData.message}
                                         onChange={handleInputChange}
                                         required
                                         rows={4}
-                                        className="w-full px-3 py-2 bg-slate-900/60 border border-slate-700 rounded-xl text-slate-100 placeholder-slate-400 focus:outline-none focus:border-slate-400 focus:ring-2 focus:ring-slate-400/20 transition-all duration-300 resize-none text-sm"
+                                        className="w-full px-4 py-3 bg-[var(--bg)] border border-[var(--line)] rounded-none text-[var(--text)] placeholder-[var(--text-dim)] focus:outline-none focus:border-[var(--line-bright)] transition-colors duration-300 resize-none text-sm tracking-[0.04em]"
                                         placeholder="Feel free to talk about anything..."
                                     />
                                 </motion.div>
@@ -249,12 +249,9 @@ const Contact = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.5 }}
                                     viewport={{ once: true }}
-                                    whileHover={{
-                                        scale: 1.02,
-                                        boxShadow: "0 0 20px #64748b55"
-                                    }}
+                                    whileHover={{ backgroundColor: "var(--white)" }}
                                     whileTap={{ scale: 0.98 }}
-                                    className="w-full px-4 sm:px-6 py-3 bg-slate-700 text-slate-100 font-semibold rounded-xl hover:shadow-lg hover:bg-slate-600 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
+                                    className="w-full px-6 py-4 bg-[var(--accent)] text-[var(--bg)] font-mono text-xs uppercase tracking-[0.2em] font-semibold rounded-none transition-colors duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed mt-4"
                                 >
                                     <FaPaperPlane size={16} className="sm:w-5 sm:h-5" />
                                     {isSubmitting ? 'Sending...' : 'Send Message'}

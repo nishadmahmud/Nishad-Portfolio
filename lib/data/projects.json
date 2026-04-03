@@ -1,0 +1,318 @@
+[
+  {
+    "id": "6a29ac94-246d-4e5e-96d6-ddeef03d9ed2",
+    "title": "Earnzy - Micro-Task Marketplace Platform",
+    "overview": "Earnzy is a modern, full-stack web application for connecting buyers and workers for micro-tasks, featuring real-time dashboards, role-based access, and a beautiful, responsive UI.",
+    "image_url": "https://camo.githubusercontent.com/110a89224eb11a76a13629ab1ef9d50c47bae23739af069641ad3e688beb036d/68747470733a2f2f62337274706275716c652e7566732e73682f662f556d446c4b6844774831546a703163784d6d42303634326c4e4c434a56653846453063446a6b33486e4f68535957714d",
+    "live_url": "https://earnzyy.netlify.app/",
+    "github_url": "https://github.com/nishadmahmud/Earnzy-Client",
+    "tech_stack": {
+      "tools": [
+        "Git",
+        "VS Code",
+        "MongoDB Atlas",
+        "Netlify (Deployment)",
+        "Vercel (Backend Deployment)",
+        "Cloudinary"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Firebase Admin SDK",
+        "Firebase Authentication"
+      ],
+      "frontend": [
+        "React.js",
+        "Vite",
+        "Tailwind CSS",
+        "Framer Motion",
+        "React Router DOM",
+        "React Hot Toast",
+        "React Icons",
+        "React Helmet Async"
+      ],
+      "card_techs": [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Firebase",
+        "Cloudinary",
+        "Framer Motion",
+        "Vite"
+      ]
+    },
+    "features": [
+      "🎨 Modern UI/UX: Glassmorphism Design, Responsive Layout, Smooth Animations, Dark/Light Theme Support",
+      "🔐 Authentication & Security: Firebase Authentication, Role-Based Access Control, Protected Routes, Secure API Communication",
+      "📊 Dashboard System: Worker, Buyer, and Admin Dashboards, Real-Time Updates",
+      "💰 Task & Payment System: Micro-Task Marketplace, Coin-Based Rewards, Submission Management, Payment Processing",
+      "🖼️ Media Management: Cloudinary Integration, Image Preview, File Validation, CDN Delivery",
+      "📱 Mobile Experience: Mobile-First Design, Collapsible Navigation, Bottom Navigation, Responsive Tables",
+      "🔔 Notification System: Real-Time Notifications, Portal-Based Rendering, Smart Positioning, Action Integration",
+      "📄 Content Management: Dynamic Page Titles, SEO Optimization, Breadcrumb Navigation, 404 Error Handling",
+      "⚡ Performance & UX: React Query, Lazy Loading, Pagination, Loading States",
+      "🛠️ Developer Experience: TypeScript Ready, ESLint Configuration, Vite Build System, Modular Architecture"
+    ],
+    "featured": false,
+    "created_at": "2026-01-25T15:26:20.914224+00:00",
+    "user_features": [
+      "👤 Admin Login: Use provided credentials for admin access",
+      "👤 Role-Based Dashboards: Separate experiences for Workers, Buyers, and Admins",
+      "📝 Task Management: Create, browse, and submit micro-tasks",
+      "💸 Payment & Rewards: Coin-based system for task payments and withdrawals",
+      "🔔 Real-Time Notifications: Stay updated on assignments, approvals, and payments",
+      "📱 Mobile-Optimized: Touch-friendly navigation and responsive layouts"
+    ],
+    "admin_credentials": {
+      "email": "admin@earnzy.com",
+      "password": "Earnzy01"
+    }
+  },
+  {
+    "id": "ba6764d2-fb6d-4e76-9d6c-e421ef39c664",
+    "title": "Plantopia - Plant E-Commerce Platform",
+    "overview": "A modern, full-stack e-commerce platform for plant enthusiasts built with React, Node.js, and MongoDB.",
+    "image_url": "https://camo.githubusercontent.com/c25a86372b706ba8b8a8fcda0de922ff744563c6ccded3fba97a555bfb4813f7/68747470733a2f2f35667071323073646e6a2e7566732e73682f662f78714c6c76596870564b68614c363458594b6770714b31527a78443764393632494d54456f33566d4a426c7768667438",
+    "live_url": "https://plantopia-store.netlify.app/",
+    "github_url": "https://github.com/nishadmahmud/Plantopia-Client/",
+    "tech_stack": {
+      "tools": [
+        "Git",
+        "VS Code",
+        "MongoDB Atlas",
+        "Netlify (Frontend Deployment)",
+        "Vercel/Railway (Backend Deployment)",
+        "Cloudinary"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "JWT",
+        "Multer",
+        "Cloudinary"
+      ],
+      "frontend": [
+        "React 18",
+        "Vite",
+        "Tailwind CSS",
+        "Framer Motion",
+        "React Router",
+        "React Icons",
+        "Axios"
+      ],
+      "card_techs": [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Firebase",
+        "Stripe",
+        "Cloudinary",
+        "Vite"
+      ]
+    },
+    "features": [
+      "🛒 E-Commerce Core: Product Catalog, Shopping Cart, Checkout System, Order Management, Wishlist",
+      "👤 User Management: Authentication, User Profiles, Role-Based Access, Order History",
+      "🔧 Admin Dashboard: Product, Order, User, Blog Management, Analytics",
+      "📱 User Experience: Responsive Design, Search & Filter, Product Reviews, Blog System, Image Upload",
+      "🚀 Technical Features: Real-time Updates, Image Optimization, PWA Ready, SEO Optimized, Error Handling"
+    ],
+    "featured": false,
+    "created_at": "2026-01-25T15:26:20.914224+00:00",
+    "user_features": [
+      "🛒 Browse and purchase plants and gardening supplies",
+      "🛍️ Manage shopping cart and wishlist",
+      "💳 Secure checkout with Stripe integration",
+      "👤 Customizable user profiles and order history",
+      "🔧 Admin dashboard for managing products, orders, users, and blogs",
+      "📱 Fully responsive and mobile-optimized experience"
+    ],
+    "admin_credentials": {
+      "email": "admin.plantopia@gmail.com",
+      "password": "Plantopia"
+    }
+  },
+  {
+    "id": "71820bce-802f-4489-89ee-a47eb3b0ffc0",
+    "title": "RelicVeil - Historical Artifacts Tracking Platform",
+    "overview": "RelicVeil is a modern web application designed for history enthusiasts, collectors, and researchers to document, share, and discover historical artifacts.",
+    "image_url": "https://camo.githubusercontent.com/160baae8fb06ad283b775778e9b9b4dc28c42149e862c2167576c3e2dccbc092/68747470733a2f2f626f7a7435357a6269302e7566732e73682f662f697642547963756a6445774a3648556f5a6a386e52496d7a735066546c5932474a5379514e576874624f63466f433170",
+    "live_url": "https://relicveil.netlify.app/",
+    "github_url": "https://github.com/nishadmahmud/RelicVeil-Client",
+    "tech_stack": {
+      "tools": [
+        "Git",
+        "VS Code",
+        "MongoDB Atlas",
+        "Netlify (Deployment)",
+        "Vercel (Backend Deployment)"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Firebase Admin SDK",
+        "Firebase Authentication"
+      ],
+      "frontend": [
+        "React.js",
+        "Vite",
+        "Tailwind CSS",
+        "Framer Motion",
+        "React Router DOM",
+        "React Hot Toast",
+        "React Icons",
+        "React Helmet Async"
+      ],
+      "card_techs": [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "JWT"
+      ]
+    },
+    "features": [
+      "🔐 Secure Authentication: Firebase Authentication for secure user management",
+      "📝 Artifact Management: Add, update, and delete artifacts with detailed information",
+      "❤️ Like System: Interactive like/dislike functionality for artifacts",
+      "🔍 Advanced Search: Full-text search across artifact names, descriptions, and locations",
+      "📱 Responsive Design: Fully responsive layout for all devices",
+      "🌐 Real-time Updates: Dynamic content updates without page refresh"
+    ],
+    "featured": false,
+    "created_at": "2026-01-25T15:26:20.914224+00:00",
+    "user_features": [
+      "👤 User Profiles: Personalized user profiles with artifact collections",
+      "📋 My Artifacts: Manage your own artifact collection",
+      "❤️ Liked Artifacts: Track and access your liked artifacts",
+      "🔍 Browse Artifacts: Explore artifacts from other users",
+      "📊 Featured Artifacts: Discover trending and popular artifacts"
+    ],
+    "admin_credentials": null
+  },
+  {
+    "id": "3ff78656-203f-4d36-9e64-72e5584af1da",
+    "title": "TalentForge Freelance Marketplace",
+    "overview": "TalentForge is a modern freelance marketplace platform where users can post, browse, and bid on tasks.",
+    "image_url": "https://camo.githubusercontent.com/8cb32c1ce25383de3cd881fe04c943a0231690e4efce7c630a38a145f74e955d/68747470733a2f2f74616a33676265796d722e7566732e73682f662f6c6431757a4169576649415077694e714f3544614c6257724e78423265764947556e3648377a71546d6b756c39665052",
+    "live_url": "https://talentforg.netlify.app/",
+    "github_url": "https://github.com/nishadmahmud/TalentForge-client",
+    "tech_stack": {
+      "tools": [
+        "Git",
+        "VS Code",
+        "MongoDB Atlas",
+        "Netlify (Deployment)",
+        "Vercel (Backend Deployment)"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "MongoDB"
+      ],
+      "frontend": [
+        "React",
+        "React Router",
+        "React Icons",
+        "React Hot Toast",
+        "Framer Motion",
+        "React Simple Typewriter",
+        "SweetAlert2",
+        "Tailwind CSS",
+        "React Tooltip"
+      ],
+      "card_techs": [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB"
+      ]
+    },
+    "features": [
+      "📝 Post, edit, and delete freelance tasks",
+      "🔍 Browse and filter tasks by category",
+      "💸 Bid on tasks and view all bids",
+      "👤 User authentication (register, login, Google sign-in)",
+      "🌓 Dark mode toggle (global, animated, accessible)",
+      "⚡ Animated slider and typewriter effects on homepage",
+      "🔔 Toast notifications for errors and success",
+      "🦾 Responsive, mobile-friendly design",
+      "🦾 Accessible forms and modals",
+      "👤 Profile management"
+    ],
+    "featured": false,
+    "created_at": "2026-01-25T15:26:20.914224+00:00",
+    "user_features": [
+      "👤 Register and manage your profile",
+      "📝 Post and manage your own tasks",
+      "💸 Place bids on available tasks",
+      "🔍 Browse and filter tasks by category",
+      "🌙 Toggle dark mode for a comfortable viewing experience"
+    ],
+    "admin_credentials": null
+  },
+  {
+    "id": "c7f72ba2-b315-43ca-aa60-8325b8242060",
+    "title": "Logic Gates Simulator",
+    "overview": "A comprehensive Logic Gates Simulator built with Java 17, LWJGL, Slick2D, and JNA. Design, simulate, and analyze digital circuits visually with real-time feedback and advanced circuit analysis tools.",
+    "image_url": "https://camo.githubusercontent.com/39c2ae7fc65bc4cf2eca6a517c25f207206aa820776cbbb82849c81b192b2d70/68747470733a2f2f6177346f7a71313462742e7566732e73682f662f566439454278574c706d6f5172416b716b6935745767433452366933544f5950484c68796e5a6f62514b324a4d4e6d77",
+    "live_url": null,
+    "github_url": "https://github.com/nishadmahmud/Logic-Gates-Simulator",
+    "tech_stack": {
+      "tools": [
+        "IntelliJ IDEA",
+        "Git",
+        "Apache-2.0 License"
+      ],
+      "backend": [
+        "Java 17"
+      ],
+      "frontend": [
+        "Java 17",
+        "LWJGL",
+        "Slick2D",
+        "JNA"
+      ],
+      "card_techs": [
+        "Java",
+        "LWJGL",
+        "Slick2D",
+        "JNA"
+      ]
+    },
+    "features": [
+      "🟩 Basic Logic Gates: AND, OR, NOT, NAND, NOR, XOR, XNOR, Buffer",
+      "➕ Arithmetic Components: Half/Full Adders & Subtractors",
+      "🔢 Data Processing: Encoders (4-to-2, 8-to-3), Decoders (2-to-4, 3-to-8)",
+      "⚖️ Comparators: 1-bit and 2-bit with full comparison outputs",
+      "🔀 Multiplexers/Demultiplexers: 2-to-1, 4-to-1, 1-to-2, 1-to-4",
+      "⏱️ Sequential Logic: D, JK, SR, T Flip-Flops, Clock Generator",
+      "📊 Circuit Analysis: Truth Table, Boolean Equation, Timing Diagram, Karnaugh Map (Quine-McCluskey)",
+      "💾 Save/Load: Custom .lgsworld format with versioning",
+      "📋 Clipboard: Multi-gate selection, copy, paste with connections",
+      "🖱️ Visual Design: Drag-and-drop, real-time simulation, wire connections",
+      "🔍 Zoom & Pan: Mouse wheel zoom, drag pan for large circuits",
+      "⌨️ Keyboard Shortcuts: Ctrl+C/Ctrl+V for copy/paste",
+      "🌐 Cross-platform: Windows, Linux, macOS"
+    ],
+    "featured": false,
+    "created_at": "2026-01-25T15:26:20.914224+00:00",
+    "user_features": [
+      "👤 Visual circuit design with drag-and-drop interface",
+      "⚡ Real-time simulation and feedback",
+      "🔗 Easy connection management between gates",
+      "🗂️ Save and load custom circuits",
+      "🧮 Automatic truth table and Boolean equation generation",
+      "🗺️ Karnaugh map simplification for logic optimization",
+      "🔎 Zoom and pan for large circuit navigation",
+      "🖱️ Multi-gate selection and clipboard operations"
+    ],
+    "admin_credentials": null
+  }
+]

@@ -16,49 +16,49 @@ export default function RootLayout({ children }) {
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                 <link
-                    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap"
+                    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@300;400;500&display=swap"
                     rel="stylesheet"
                 />
             </head>
-            <body>
+            <body className="font-mono text-[var(--text)] bg-[var(--bg)] antialiased cursor-crosshair tracking-wide">
                 <Toaster
                     position="top-right"
                     toastOptions={{
                         style: {
-                            background: "rgba(24,31,42,0.85)",
-                            color: "#f3f6fa",
-                            border: "1.5px solid #22d3ee",
-                            boxShadow: "0 0 16px 0 #22d3ee55",
-                            backdropFilter: "blur(8px)",
-                            fontWeight: 500,
-                            fontFamily: "inherit",
-                            borderRadius: "1rem",
+                            background: "var(--bg2)",
+                            color: "var(--text)",
+                            border: "1px solid var(--line)",
+                            boxShadow: "none",
+                            backdropFilter: "none",
+                            fontWeight: 300,
+                            fontFamily: "'DM Mono', monospace",
+                            borderRadius: "0",
                             padding: "1rem 1.5rem",
-                            fontSize: "1rem",
-                            letterSpacing: "0.01em",
+                            fontSize: "12px",
+                            letterSpacing: "0.05em",
                         },
                         iconTheme: {
-                            primary: "#22d3ee",
-                            secondary: "#181f2a",
+                            primary: "var(--accent)",
+                            secondary: "var(--bg)",
                         },
                         success: {
                             style: {
-                                border: "1.5px solid #22d3ee",
-                                boxShadow: "0 0 16px 0 #22d3ee55",
+                                border: "1px solid var(--accent)",
+                                boxShadow: "none",
                             },
                             iconTheme: {
-                                primary: "#22d3ee",
-                                secondary: "#181f2a",
+                                primary: "var(--accent)",
+                                secondary: "var(--bg)",
                             },
                         },
                         error: {
                             style: {
-                                border: "1.5px solid #f43f5e",
-                                boxShadow: "0 0 16px 0 #f43f5e55",
+                                border: "1px solid #ff4a4a",
+                                boxShadow: "none",
                             },
                             iconTheme: {
-                                primary: "#f43f5e",
-                                secondary: "#181f2a",
+                                primary: "#ff4a4a",
+                                secondary: "var(--bg)",
                             },
                         },
                     }}

@@ -1,0 +1,154 @@
+[
+  {
+    "id": "d17d5fd1-4b69-4b9c-bf8b-7278f9f8bbb5",
+    "name": "React",
+    "icon": "FaReact",
+    "bg_color": "bg-gradient-to-br from-cyan-400 to-blue-500",
+    "category": "Frontend",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "9f5f9b91-07d4-41db-a7da-156d7bedb52d",
+    "name": "Next.js",
+    "icon": "TbBrandNextjs",
+    "bg_color": "bg-gradient-to-br from-slate-800 to-black",
+    "category": "Frontend",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "ff533347-faa8-44aa-808d-5637fde642db",
+    "name": "JavaScript",
+    "icon": "SiJavascript",
+    "bg_color": "bg-gradient-to-br from-yellow-400 to-orange-500",
+    "category": "Language",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "66ae6396-6b4b-4c46-90da-5b959fc8ee0e",
+    "name": "Node.js",
+    "icon": "FaNodeJs",
+    "bg_color": "bg-gradient-to-br from-green-400 to-green-600",
+    "category": "Backend",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "7432d729-d0c7-41dd-a612-99714ccd6e20",
+    "name": "Machine Learning",
+    "icon": "SiTensorflow",
+    "bg_color": "bg-gradient-to-br from-orange-500 to-red-600",
+    "category": "AI",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "71226a24-0b75-4317-965a-ffe7f0c68af2",
+    "name": "AI",
+    "icon": "FaBrain",
+    "bg_color": "bg-gradient-to-br from-pink-500 to-rose-600",
+    "category": "AI",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "f179fe2a-3e75-44c3-9b34-cebd94039adb",
+    "name": "Express.js",
+    "icon": "SiExpress",
+    "bg_color": "bg-gradient-to-br from-gray-700 to-gray-900",
+    "category": "Backend",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "c16e4179-3c23-4832-9615-1354d13a454e",
+    "name": "MongoDB",
+    "icon": "SiMongodb",
+    "bg_color": "bg-gradient-to-br from-green-500 to-green-700",
+    "category": "Database",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "67b7a5ac-6c02-4f9a-b02a-4ed5a564e5c5",
+    "name": "Firebase",
+    "icon": "SiFirebase",
+    "bg_color": "bg-gradient-to-br from-yellow-400 to-orange-500",
+    "category": "Backend",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "f0a4ffd4-bb7b-4569-8120-3803dc76bc63",
+    "name": "Tailwind CSS",
+    "icon": "SiTailwindcss",
+    "bg_color": "bg-gradient-to-br from-cyan-400 to-blue-500",
+    "category": "Frontend",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "6d96e329-d7ca-4375-ac99-b32e33e2d8ea",
+    "name": "Python",
+    "icon": "FaPython",
+    "bg_color": "bg-gradient-to-br from-blue-500 to-yellow-400",
+    "category": "Language",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "4ac9492c-4287-40a0-a2e1-d0cbce0caa0a",
+    "name": "C",
+    "icon": "SiC",
+    "bg_color": "bg-gradient-to-br from-gray-400 to-gray-600",
+    "category": "Language",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "30bfc635-7b0e-483a-a116-d3c455cd265d",
+    "name": "C++",
+    "icon": "SiCplusplus",
+    "bg_color": "bg-gradient-to-br from-blue-400 to-blue-700",
+    "category": "Language",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "60e94fac-1574-4f95-b272-39f20806bfa9",
+    "name": "Java",
+    "icon": "FaJava",
+    "bg_color": "bg-gradient-to-br from-red-500 to-yellow-500",
+    "category": "Language",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "648ca955-3030-462f-a639-4861ac92831e",
+    "name": "JavaFX",
+    "icon": "FaJava",
+    "bg_color": "bg-gradient-to-br from-purple-500 to-pink-500",
+    "category": "Frontend",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "46eb6d20-a3ff-4523-b6f8-d82f23cbad03",
+    "name": "Framer Motion",
+    "icon": "SiFramer",
+    "bg_color": "bg-gradient-to-br from-black to-fuchsia-500",
+    "category": "Frontend",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "bfafe54a-c21d-4678-b7a1-063838f8ec22",
+    "name": "Git",
+    "icon": "FaGit",
+    "bg_color": "bg-gradient-to-br from-orange-500 to-red-500",
+    "category": "Tools",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "b008f7c1-b742-4201-9fb8-93f875f38530",
+    "name": "GitHub",
+    "icon": "FaGithub",
+    "bg_color": "bg-gradient-to-br from-gray-700 to-black",
+    "category": "Tools",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "72f2d3f5-a50e-4a56-b094-79e5d3a99826",
+    "name": "Vercel",
+    "icon": "SiVercel",
+    "bg_color": "bg-gradient-to-br from-gray-200 to-gray-800",
+    "category": "Tools",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  }
+]

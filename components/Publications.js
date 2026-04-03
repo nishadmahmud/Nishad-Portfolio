@@ -63,14 +63,12 @@ const Publications = ({ publications = [], isAdmin }) => {
                     viewport={{ once: true }}
                     className="text-center mb-16 relative"
                 >
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-100 mb-6">
-                        <span className="bg-gradient-to-r from-slate-400 to-slate-600 bg-clip-text text-transparent">
-                            Publications
-                        </span>
-                    </h2>
-                    <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-                        Accepted Research Papers
+                    <p className="text-xs tracking-[0.3em] text-[var(--text-dim)] uppercase mb-6 flex items-center justify-center gap-4">
+                        Publications
                     </p>
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light text-[var(--white)] mb-6">
+                        Accepted Research <em>Papers.</em>
+                    </h2>
 
                     {isAdmin && (
                         <div className="absolute top-0 right-0 md:right-20">
@@ -92,11 +90,7 @@ const Publications = ({ publications = [], isAdmin }) => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            whileHover={{
-                                scale: 1.01,
-                                boxShadow: "0 0 20px #64748b55"
-                            }}
-                            className="group relative backdrop-blur-md bg-slate-800/80 border border-slate-700 rounded-2xl p-6 sm:p-8 hover:border-slate-400 transition-all duration-300"
+                            className="group relative bg-[var(--bg2)] border border-[var(--line)] rounded-none p-10 hover:bg-[var(--bg3)] hover:border-[var(--line-bright)] transition-colors duration-300"
                         >
                             {/* Admin Actions Overlay */}
                             {isAdmin && (
@@ -118,55 +112,46 @@ const Publications = ({ publications = [], isAdmin }) => {
                                 </div>
                             )}
 
-                            <div className="flex flex-col gap-4">
-                                <div className="flex items-start justify-between gap-4">
-                                    <div className="flex items-start gap-3">
-                                        <div className="mt-1 min-w-[24px] text-cyan-400">
-                                            <FaBook size={20} />
-                                        </div>
-                                        <h3 className="text-lg sm:text-xl font-bold text-slate-100 leading-tight">
-                                            {pub.title}
-                                        </h3>
-                                    </div>
-                                    <span className="px-3 py-1 bg-cyan-500/10 text-cyan-400 text-xs font-semibold rounded-full border border-cyan-500/20 whitespace-nowrap shadow-[0_0_10px_rgba(34,211,238,0.1)]">
+                            <div className="flex flex-col gap-6">
+                                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                                    <h3 className="text-3xl font-serif font-light text-[var(--white)] leading-tight group-hover:text-[var(--accent)] transition-colors max-w-2xl">
+                                        {pub.title}
+                                    </h3>
+                                    <span className="text-xs uppercase tracking-[0.25em] text-[var(--text-muted)] whitespace-nowrap mt-2 sm:mt-0">
                                         {pub.status}
                                     </span>
                                 </div>
 
-                                <div className="text-slate-400 text-sm leading-relaxed pl-9">
+                                <div className="text-sm tracking-[0.04em] text-[var(--text-muted)] leading-[2]">
                                     {pub.authors.map((author, i) => (
-                                        <span key={i} className={author.includes("Nishad") ? "text-cyan-400 font-semibold" : ""}>
+                                        <span key={i} className={author.includes("Nishad") ? "text-[var(--white)] font-normal" : ""}>
                                             {author}{i < pub.authors.length - 1 ? ", " : ""}
                                         </span>
                                     ))}
                                 </div>
 
-                                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-500 pl-9 border-t border-slate-700/50 pt-4 mt-2">
-                                    <span className="flex items-center gap-2">
-                                        <FaCalendarAlt className="text-slate-400" />
-                                        {pub.year}
-                                    </span>
+                                <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm tracking-[0.04em] text-[var(--text-dim)] border-t border-[var(--line)] pt-6 mt-2 relative">
+                                    <span>{pub.year}</span>
                                     <div className="flex flex-wrap items-center gap-2">
-                                        <span className="font-medium text-slate-300">{pub.short_conference}</span>
-                                        <span className="hidden sm:inline text-slate-500">-</span>
-                                        <div className="flex items-center gap-1.5">
-                                            <FaMapMarkerAlt className="text-slate-400 flex-shrink-0" />
-                                            <span>{pub.location}</span>
-                                        </div>
+                                        <span className="text-[var(--text-muted)]">{pub.short_conference}</span>
+                                        <span className="hidden sm:inline text-[var(--line-bright)]">-</span>
+                                        <span>{pub.location}</span>
                                     </div>
                                 </div>
 
                                 {pub.link && (
-                                    <div className="pl-9 mt-1">
+                                    <div className="mt-1 flex items-center justify-between">
                                         <a
                                             href={pub.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 hover:underline transition-all"
+                                            className="inline-flex items-center gap-2 text-sm tracking-[0.04em] text-[var(--text-muted)] hover:text-[var(--white)] transition-colors"
                                         >
-                                            <FaExternalLinkAlt size={12} />
                                             DOI: {pub.doi_link}
                                         </a>
+                                        <span className="absolute bottom-10 right-10 text-xl text-[var(--text-dim)] group-hover:text-[var(--accent)] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 hidden sm:block">
+                                            ↗
+                                        </span>
                                     </div>
                                 )}
                             </div>

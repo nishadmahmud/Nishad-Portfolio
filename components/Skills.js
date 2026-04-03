@@ -98,7 +98,6 @@ const Skills = ({ skills = [], isAdmin }) => {
 
     return (
         <section id="skills" className="py-20 relative">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-transparent"></div>
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
@@ -108,13 +107,14 @@ const Skills = ({ skills = [], isAdmin }) => {
                     viewport={{ once: true }}
                     className="text-center mb-16 relative"
                 >
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-100 mb-6">
-                        <span className="bg-gradient-to-r from-slate-400 to-slate-600 bg-clip-text text-transparent">
-                            Skills
-                        </span>
+                    <p className="text-xs tracking-[0.3em] text-[var(--text-dim)] uppercase mb-6 flex items-center justify-center gap-4">
+                        Capabilities
+                    </p>
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light text-[var(--white)] mb-6">
+                        Tools &amp;  <em>Technologies.</em>
                     </h2>
-                    <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-                        Technologies and tools I use to bring ideas to life
+                    <p className="text-sm tracking-[0.04em] text-[var(--text-muted)] max-w-2xl mx-auto leading-[2]">
+                        Software, frameworks, and languages I use to bring ideas to life
                     </p>
 
                     {isAdmin && (
@@ -144,10 +144,10 @@ const Skills = ({ skills = [], isAdmin }) => {
                                 key={skill.id || skill.name}
                                 variants={itemVariants}
                                 whileHover={{
-                                    scale: 1.08,
-                                    boxShadow: "0 0 20px #64748b55"
+                                    backgroundColor: "var(--bg3)",
+                                    borderColor: "var(--line-bright)"
                                 }}
-                                className="group relative"
+                                className="group relative bg-[var(--bg2)] border border-[var(--line)] rounded-none p-3 sm:p-4 h-full flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 transition-all duration-300"
                             >
                                 {/* Admin Actions Overlay */}
                                 {isAdmin && (
@@ -169,13 +169,10 @@ const Skills = ({ skills = [], isAdmin }) => {
                                     </div>
                                 )}
 
-                                <div className="backdrop-blur-md bg-slate-800/80 border border-slate-700 rounded-2xl p-3 sm:p-4 h-full flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 hover:border-slate-400 transition-all duration-300">
-                                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 ${skill.bg_color || skill.bg}`}>
-                                        <IconComponent size={20} className="sm:w-7 sm:h-7 text-white" />
-                                    </div>
-                                    <span className="text-slate-100 font-semibold text-sm sm:text-lg text-center sm:text-left whitespace-nowrap">{skill.name}</span>
+                                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-none flex items-center justify-center transition-all duration-300 ${skill.bg_color || skill.bg}`}>
+                                    <IconComponent size={20} className="sm:w-7 sm:h-7 text-[var(--bg)]" />
                                 </div>
-                                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-slate-400/20 to-slate-600/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                                <span className="text-[var(--white)] font-serif font-light text-sm sm:text-lg text-center sm:text-left whitespace-nowrap">{skill.name}</span>
                             </motion.div>
                         );
                     })}
@@ -188,11 +185,11 @@ const Skills = ({ skills = [], isAdmin }) => {
                     viewport={{ once: true }}
                     className="mt-12 sm:mt-16 text-center"
                 >
-                    <div className="backdrop-blur-md bg-slate-800/60 border border-slate-700 rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto">
-                        <h3 className="text-xl sm:text-2xl font-bold text-slate-100 mb-3 sm:mb-4">
+                    <div className="bg-[var(--bg2)] border border-[var(--line)] rounded-none p-6 sm:p-8 max-w-4xl mx-auto">
+                        <h3 className="text-2xl font-serif font-light text-[var(--white)] mb-4">
                             Always Learning
                         </h3>
-                        <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
+                        <p className="text-sm tracking-[0.04em] text-[var(--text-muted)] leading-[2]">
                             I'm constantly exploring new technologies and frameworks to stay current with industry trends.
                             Currently diving deep into cloud architecture, machine learning, and advanced React patterns.
                         </p>

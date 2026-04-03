@@ -1,0 +1,26 @@
+[
+  {
+    "id": "38e718f1-d8ac-4f9b-b6b8-8b864374e3ef",
+    "title": "Frontend Developer",
+    "company": "Squad Innovators",
+    "company_url": "https://www.squadinnovators.com/",
+    "period": "January 2026 - Present",
+    "start_date": "2026-01-01",
+    "end_date": null,
+    "is_current": true,
+    "description": "Building modern web applications and user interfaces with React and Next.js. Contributing to client projects with a focus on performance and user experience.",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  },
+  {
+    "id": "65fc0582-2d3a-4008-8eb4-4a4ecb0adb77",
+    "title": "Frontend Developer Intern",
+    "company": "Squad Innovators",
+    "company_url": "https://www.squadinnovators.com/",
+    "period": "October 2025 - December 2025",
+    "start_date": "2025-10-01",
+    "end_date": "2025-12-31",
+    "is_current": false,
+    "description": "Started my professional journey learning industry best practices and contributing to real-world projects alongside senior developers.",
+    "created_at": "2026-01-25T15:26:20.914224+00:00"
+  }
+]

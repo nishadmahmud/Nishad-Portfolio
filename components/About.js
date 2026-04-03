@@ -30,18 +30,11 @@ const About = ({ profile, highlights = [], featured = [], isAdmin }) => {
     const router = useRouter();
     const supabase = createClient();
 
-    // Use passed highlights or fallback
-    const displayHighlights = highlights.length > 0 ? highlights : [
-        { title: "Computer Science Student", description: "Currently pursuing Computer Science...", icon: "FaGraduationCap" },
-        { title: "Full-Stack Developer", description: "Experienced in building web applications...", icon: "FaCode" },
-    ];
+    // Use passed highlights directly since app/page.js guarantees fallback arrays
+    const displayHighlights = highlights;
 
-    // Use passed featured or fallback
-    const displayFeatured = featured.length > 0 ? featured : [
-        { name: "Logic Gates Simulator", description: "Java-based tool to design and simulate digital circuits" },
-        { name: "Plantopia", description: "Full-stack e-commerce platform for gardening and plant care" },
-        { name: "Algorithm Visualizer", description: "Interactive tool for visualizing data structures and algorithms" }
-    ];
+    // Use passed featured directly since app/page.js guarantees fallback arrays
+    const displayFeatured = featured;
 
     const handleEditProfile = () => {
         setModalMode('profile');
@@ -117,7 +110,6 @@ const About = ({ profile, highlights = [], featured = [], isAdmin }) => {
 
     return (
         <section id="about" className="py-20 relative">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-transparent"></div>
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
@@ -127,12 +119,13 @@ const About = ({ profile, highlights = [], featured = [], isAdmin }) => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-100 mb-6">
-                        <span className="bg-gradient-to-r from-slate-400 to-slate-600 bg-clip-text text-transparent">
-                            About Me
-                        </span>
+                    <p className="text-xs tracking-[0.3em] text-[var(--text-dim)] uppercase mb-6 flex items-center justify-center gap-4">
+                        Discover
+                    </p>
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light text-[var(--white)] mb-6">
+                        About <em>Me.</em>
                     </h2>
-                    <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+                    <p className="text-sm tracking-[0.04em] text-[var(--text-muted)] max-w-2xl mx-auto leading-[2]">
                         Passionate about building intuitive, efficient, and user-friendly software
                     </p>
                 </motion.div>
@@ -142,7 +135,8 @@ const About = ({ profile, highlights = [], featured = [], isAdmin }) => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="backdrop-blur-md bg-slate-800/80 border border-slate-700 rounded-2xl p-8 mb-8 max-w-4xl mx-auto relative group"
+                    viewport={{ once: true }}
+                    className="bg-[var(--bg2)] border border-[var(--line)] rounded-none p-8 mb-8 max-w-4xl mx-auto relative group"
                 >
                     {isAdmin && (
                         <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -155,13 +149,13 @@ const About = ({ profile, highlights = [], featured = [], isAdmin }) => {
                         </div>
                     )}
 
-                    <h3 className="text-2xl font-bold text-slate-100 mb-4">
-                        Hi, I'm {profile?.full_name || "Nishad Mahmud"} <span className="inline-block">👋</span>
+                    <h3 className="text-3xl font-serif font-light text-[var(--white)] mb-6">
+                        Hi, I'm {profile?.full_name}
                     </h3>
-                    <p className="text-slate-300 text-lg leading-relaxed mb-4">
-                        {profile?.bio || "I'm a Computer Science student passionate about building intuitive, efficient, and user-friendly software. I love exploring the intersection of design and logic, whether it's through full-stack web development, Java-based desktop applications, or solving complex problems with clean code."}
+                    <p className="text-sm tracking-[0.04em] text-[var(--text-muted)] leading-[2] mb-4">
+                        {profile?.bio}
                     </p>
-                    <p className="text-slate-300 text-lg leading-relaxed">
+                    <p className="text-sm tracking-[0.04em] text-[var(--text-muted)] leading-[2]">
                         Currently learning and building with React, Node.js, and Firebase, while also experienced in Java,
                         JavaScript, Python, and C++. I enjoy developing visual tools, automation scripts, and educational software.
                     </p>
@@ -190,10 +184,10 @@ const About = ({ profile, highlights = [], featured = [], isAdmin }) => {
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
                                     viewport={{ once: true }}
                                     whileHover={{
-                                        scale: 1.02,
-                                        boxShadow: "0 0 20px #64748b55"
+                                        backgroundColor: "var(--bg3)",
+                                        borderColor: "var(--line-bright)"
                                     }}
-                                    className="group/card relative backdrop-blur-md bg-slate-800/80 border border-slate-700 rounded-xl p-4 sm:p-6 h-full flex flex-col justify-center hover:border-slate-400 transition-all duration-300"
+                                    className="group/card relative bg-[var(--bg2)] border border-[var(--line)] rounded-none p-6 h-full flex flex-col justify-center transition-all duration-300"
                                 >
                                     {/* Admin Actions Overlay for Card */}
                                     {isAdmin && (
@@ -215,13 +209,13 @@ const About = ({ profile, highlights = [], featured = [], isAdmin }) => {
                                         </div>
                                     )}
 
-                                    <div className="flex items-center gap-3 mb-3">
-                                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-slate-500 to-slate-700 rounded-lg flex items-center justify-center">
-                                            <Icon size={16} className="sm:w-5 sm:h-5 text-slate-100" />
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <div className="text-[var(--accent)]">
+                                            <Icon size={20} className="sm:w-6 sm:h-6" />
                                         </div>
-                                        <h4 className="text-slate-100 font-semibold text-sm sm:text-base">{highlight.title}</h4>
+                                        <h4 className="text-[var(--white)] font-serif font-light text-xl sm:text-2xl leading-none">{highlight.title}</h4>
                                     </div>
-                                    <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                                    <p className="text-sm tracking-[0.04em] text-[var(--text-muted)] leading-[2]">
                                         {highlight.description}
                                     </p>
                                 </motion.div>
@@ -235,7 +229,7 @@ const About = ({ profile, highlights = [], featured = [], isAdmin }) => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         viewport={{ once: true }}
                         viewport={{ once: true }}
-                        className="backdrop-blur-md bg-slate-800/80 border border-slate-700 rounded-2xl p-6 sm:p-8 h-full flex flex-col justify-center relative group"
+                        className="bg-[var(--bg2)] border border-[var(--line)] rounded-none p-8 h-full flex flex-col relative group"
                     >
                         {isAdmin && (
                             <div className="absolute top-4 right-4 z-20">
@@ -247,7 +241,7 @@ const About = ({ profile, highlights = [], featured = [], isAdmin }) => {
                                 </button>
                             </div>
                         )}
-                        <h3 className="text-xl sm:text-2xl font-bold text-slate-100 mb-4 sm:mb-6">
+                        <h3 className="text-3xl font-serif font-light text-[var(--white)] mb-6">
                             Projects I'm Proud Of
                         </h3>
                         <div className="space-y-3 sm:space-y-4">
@@ -279,10 +273,12 @@ const About = ({ profile, highlights = [], featured = [], isAdmin }) => {
                                         </div>
                                     )}
 
-                                    <div className="w-2 h-2 bg-slate-400 rounded-full mt-2 flex-shrink-0"></div>
+                                    <div className="text-[var(--accent)] mt-1 flex-shrink-0">
+                                        <FaStar size={12} />
+                                    </div>
                                     <div>
-                                        <h4 className="text-slate-100 font-semibold text-sm sm:text-base">{project.name}</h4>
-                                        <p className="text-slate-400 text-xs sm:text-sm">{project.description}</p>
+                                        <h4 className="text-[var(--white)] font-serif font-light text-xl">{project.name}</h4>
+                                        <p className="text-sm tracking-[0.04em] text-[var(--text-muted)] mt-1 leading-[2]">{project.description}</p>
                                     </div>
                                 </motion.div>
                             ))}

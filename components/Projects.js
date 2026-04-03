@@ -96,14 +96,12 @@ const Projects = ({ projects = [], isAdmin }) => {
                     viewport={{ once: true }}
                     className="text-center mb-16 relative"
                 >
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-100 mb-6">
-                        <span className="bg-gradient-to-r from-slate-400 to-slate-600 bg-clip-text text-transparent">
-                            Projects
-                        </span>
-                    </h2>
-                    <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-                        Creative solutions and recent work
+                    <p className="text-xs tracking-[0.3em] text-[var(--text-dim)] uppercase mb-6 flex items-center justify-center gap-4">
+                        Projects
                     </p>
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light text-[var(--white)] mb-6">
+                        Creative solutions and <em>recent work.</em>
+                    </h2>
 
                     {isAdmin && (
                         <div className="absolute top-0 right-0 md:right-20">
@@ -133,7 +131,7 @@ const Projects = ({ projects = [], isAdmin }) => {
                             <motion.div
                                 key={project.id}
                                 variants={itemVariants}
-                                className="group relative bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-cyan-500/10 flex flex-col h-full"
+                                className="group relative bg-[var(--bg2)] border border-[var(--line)] rounded-none overflow-hidden hover:bg-[var(--bg3)] hover:border-[var(--line-bright)] transition-colors duration-300 flex flex-col h-full"
                             >
                                 {/* Admin Actions Overlay */}
                                 {isAdmin && (
@@ -176,43 +174,43 @@ const Projects = ({ projects = [], isAdmin }) => {
                                 </div>
 
                                 {/* Content */}
-                                <div className="p-6 flex flex-col flex-grow">
-                                    <h3 className="text-xl font-bold text-slate-100 mb-2 leading-tight group-hover:text-cyan-400 transition-colors">
+                                <div className="p-10 flex flex-col flex-grow relative">
+                                    <h3 className="text-3xl font-serif font-light text-[var(--white)] mb-4 leading-tight group-hover:text-[var(--accent)] transition-colors">
                                         {project.title}
                                     </h3>
 
-                                    <p className="text-slate-400 text-sm mb-4 line-clamp-3">
+                                    <p className="text-sm tracking-[0.04em] text-[var(--text-muted)] mb-8 line-clamp-3 leading-[2]">
                                         {project.overview}
                                     </p>
 
-                                    <div className="mt-auto pt-4 border-t border-slate-700/50 flex flex-col gap-4">
+                                    <div className="mt-auto pt-6 border-t border-[var(--line)] flex flex-col gap-6">
                                         {/* Tech Stack */}
                                         <div className="flex flex-wrap gap-2">
                                             {project.tech_stack?.card_techs?.slice(0, 4).map((tech, index) => (
                                                 <span
                                                     key={index}
-                                                    className="text-xs font-medium px-2.5 py-1 bg-slate-700/50 text-slate-300 rounded-md border border-slate-600/50"
+                                                    className="text-xs uppercase tracking-[0.25em] px-3 py-1 bg-transparent text-[var(--text-muted)] rounded-none border border-[var(--line)]"
                                                 >
                                                     {tech}
                                                 </span>
                                             ))}
                                             {project.tech_stack?.card_techs?.length > 4 && (
-                                                <span className="text-xs font-medium px-2.5 py-1 text-slate-500">+{project.tech_stack.card_techs.length - 4}</span>
+                                                <span className="text-xs uppercase tracking-[0.25em] px-3 py-1 text-[var(--text-dim)]">+{project.tech_stack.card_techs.length - 4}</span>
                                             )}
                                         </div>
 
                                         {/* Action Buttons */}
                                         <div className="flex items-center justify-between gap-3 mt-2">
-                                            <div className="flex gap-3">
+                                            <div className="flex gap-4">
                                                 {project.github_url && (
                                                     <a
                                                         href={project.github_url}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="text-slate-400 hover:text-white transition-colors p-2 hover:bg-slate-700 rounded-lg"
+                                                        className="text-[var(--text-dim)] hover:text-[var(--text)] transition-colors"
                                                         title="View Code"
                                                     >
-                                                        <FaGithub size={20} />
+                                                        <FaGithub size={18} />
                                                     </a>
                                                 )}
                                                 {project.live_url && (
@@ -220,13 +218,16 @@ const Projects = ({ projects = [], isAdmin }) => {
                                                         href={project.live_url}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="text-slate-400 hover:text-white transition-colors p-2 hover:bg-slate-700 rounded-lg"
+                                                        className="text-[var(--text-dim)] hover:text-[var(--text)] transition-colors"
                                                         title="Live Demo"
                                                     >
-                                                        <FaExternalLinkAlt size={18} />
+                                                        <FaExternalLinkAlt size={16} />
                                                     </a>
                                                 )}
                                             </div>
+                                            <span className="text-xl text-[var(--text-dim)] group-hover:text-[var(--accent)] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">
+                                                ↗
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
