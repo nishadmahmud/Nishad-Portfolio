@@ -1,4 +1,5 @@
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 export const metadata = {
@@ -89,6 +90,7 @@ export default function RootLayout({ children }) {
                     }}
                 />
                 {children}
+                <Analytics />
             </body>
         </html>
     );
