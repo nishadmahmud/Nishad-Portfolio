@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaEdit, FaCamera, FaFileAlt } from 'react-icons/fa'
+import { FaResearchgate } from 'react-icons/fa6'
 import Image from 'next/image'
 import ProfileForm from './admin/ProfileForm';
 import AdminModal from './admin/AdminModal';
@@ -33,6 +34,7 @@ const Banner = ({ profile, isAdmin }) => {
     const socialLinks = [
         { icon: FaGithub, href: 'https://github.com/nishadmahmud', label: 'GitHub' },
         { icon: FaLinkedin, href: 'https://www.linkedin.com/in/nishadmahmud/', label: 'LinkedIn' },
+        { icon: FaResearchgate, href: 'https://www.researchgate.net/profile/Nishad-Mahmud-Opu/', label: 'ResearchGate' },
         { icon: FaEnvelope, href: '#contact', label: 'Email' }
     ]
 
@@ -46,7 +48,7 @@ const Banner = ({ profile, isAdmin }) => {
             {/* Minimalist background without blur globs */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none"></div>
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="container mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-6 relative group">
 
                     <motion.div
@@ -80,7 +82,7 @@ const Banner = ({ profile, isAdmin }) => {
 
                             <motion.h1
                                 variants={letterVariants}
-                                className="font-serif font-light text-6xl sm:text-8xl lg:text-[100px] xl:text-[130px] leading-[0.92] tracking-[-0.02em] text-[var(--white)] whitespace-nowrap mb-4 sm:mb-8"
+                                className="font-serif font-light text-5xl sm:text-8xl lg:text-[100px] xl:text-[130px] leading-[0.92] tracking-[-0.02em] text-[var(--white)] sm:whitespace-nowrap mb-4 sm:mb-8"
                             >
                                 {profile?.full_name?.split(' ')[0]} <em className="not-italic text-[var(--accent)]">{profile?.full_name?.split(' ').slice(1).join(' ')}</em>
                             </motion.h1>

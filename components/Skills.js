@@ -99,7 +99,7 @@ const Skills = ({ skills = [], isAdmin }) => {
     return (
         <section id="skills" className="py-20 relative">
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="container mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -134,7 +134,7 @@ const Skills = ({ skills = [], isAdmin }) => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6"
+                    className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6"
                 >
                     {skills.map((skill) => {
                         const IconComponent = iconMap[skill.icon] || FaReact; // Fallback to React icon if missing
@@ -169,8 +169,8 @@ const Skills = ({ skills = [], isAdmin }) => {
                                     </div>
                                 )}
 
-                                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-none flex items-center justify-center transition-all duration-300 ${skill.bg_color || skill.bg}`}>
-                                    <IconComponent size={20} className="sm:w-7 sm:h-7 text-[var(--bg)]" />
+                                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[var(--bg)] border border-[var(--line)] rounded-none flex items-center justify-center transition-all duration-300 group-hover:border-[var(--line-bright)]">
+                                    <IconComponent size={20} className="sm:w-6 sm:h-6 text-[var(--text-muted)] group-hover:text-[var(--accent)] transition-colors duration-300" />
                                 </div>
                                 <span className="text-[var(--white)] font-serif font-light text-sm sm:text-lg text-center sm:text-left whitespace-nowrap">{skill.name}</span>
                             </motion.div>

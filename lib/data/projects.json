@@ -1,7 +1,11 @@
 [
   {
     "id": "6a29ac94-246d-4e5e-96d6-ddeef03d9ed2",
-    "title": "Earnzy - Micro-Task Marketplace Platform",
+    "category": "personal",
+    "title": "Earnzy",
+    "short_description": "Micro-task marketplace connecting buyers and workers with real-time dashboards.",
+    "year": "2026",
+    "screenshots_folder": "earnzy",
     "overview": "Earnzy is a modern, full-stack web application for connecting buyers and workers for micro-tasks, featuring real-time dashboards, role-based access, and a beautiful, responsive UI.",
     "image_url": "https://camo.githubusercontent.com/110a89224eb11a76a13629ab1ef9d50c47bae23739af069641ad3e688beb036d/68747470733a2f2f62337274706275716c652e7566732e73682f662f556d446c4b6844774831546a703163784d6d42303634326c4e4c434a56653846453063446a6b33486e4f68535957714d",
     "live_url": "https://earnzyy.netlify.app/",
@@ -11,8 +15,8 @@
         "Git",
         "VS Code",
         "MongoDB Atlas",
-        "Netlify (Deployment)",
-        "Vercel (Backend Deployment)",
+        "Netlify",
+        "Vercel",
         "Cloudinary"
       ],
       "backend": [
@@ -28,9 +32,7 @@
         "Tailwind CSS",
         "Framer Motion",
         "React Router DOM",
-        "React Hot Toast",
-        "React Icons",
-        "React Helmet Async"
+        "React Hot Toast"
       ],
       "card_techs": [
         "React",
@@ -38,33 +40,21 @@
         "Express.js",
         "MongoDB",
         "Firebase",
-        "Cloudinary",
-        "Framer Motion",
-        "Vite"
+        "Cloudinary"
       ]
     },
     "features": [
-      "🎨 Modern UI/UX: Glassmorphism Design, Responsive Layout, Smooth Animations, Dark/Light Theme Support",
-      "🔐 Authentication & Security: Firebase Authentication, Role-Based Access Control, Protected Routes, Secure API Communication",
-      "📊 Dashboard System: Worker, Buyer, and Admin Dashboards, Real-Time Updates",
-      "💰 Task & Payment System: Micro-Task Marketplace, Coin-Based Rewards, Submission Management, Payment Processing",
-      "🖼️ Media Management: Cloudinary Integration, Image Preview, File Validation, CDN Delivery",
-      "📱 Mobile Experience: Mobile-First Design, Collapsible Navigation, Bottom Navigation, Responsive Tables",
-      "🔔 Notification System: Real-Time Notifications, Portal-Based Rendering, Smart Positioning, Action Integration",
-      "📄 Content Management: Dynamic Page Titles, SEO Optimization, Breadcrumb Navigation, 404 Error Handling",
-      "⚡ Performance & UX: React Query, Lazy Loading, Pagination, Loading States",
-      "🛠️ Developer Experience: TypeScript Ready, ESLint Configuration, Vite Build System, Modular Architecture"
+      "Modern UI/UX with glassmorphism design and smooth animations",
+      "Firebase Authentication with role-based access control",
+      "Worker, Buyer, and Admin dashboards with real-time updates",
+      "Coin-based micro-task reward and payment system",
+      "Cloudinary integration for media management",
+      "Mobile-first responsive design",
+      "Real-time notification system",
+      "React Query for optimized data fetching"
     ],
     "featured": false,
     "created_at": "2026-01-25T15:26:20.914224+00:00",
-    "user_features": [
-      "👤 Admin Login: Use provided credentials for admin access",
-      "👤 Role-Based Dashboards: Separate experiences for Workers, Buyers, and Admins",
-      "📝 Task Management: Create, browse, and submit micro-tasks",
-      "💸 Payment & Rewards: Coin-based system for task payments and withdrawals",
-      "🔔 Real-Time Notifications: Stay updated on assignments, approvals, and payments",
-      "📱 Mobile-Optimized: Touch-friendly navigation and responsive layouts"
-    ],
     "admin_credentials": {
       "email": "admin@earnzy.com",
       "password": "Earnzy01"
@@ -72,7 +62,11 @@
   },
   {
     "id": "ba6764d2-fb6d-4e76-9d6c-e421ef39c664",
-    "title": "Plantopia - Plant E-Commerce Platform",
+    "category": "personal",
+    "title": "Plantopia",
+    "short_description": "Full-stack plant e-commerce platform with admin dashboard and Stripe payments.",
+    "year": "2026",
+    "screenshots_folder": "plantopia",
     "overview": "A modern, full-stack e-commerce platform for plant enthusiasts built with React, Node.js, and MongoDB.",
     "image_url": "https://camo.githubusercontent.com/c25a86372b706ba8b8a8fcda0de922ff744563c6ccded3fba97a555bfb4813f7/68747470733a2f2f35667071323073646e6a2e7566732e73682f662f78714c6c76596870564b68614c363458594b6770714b31527a78443764393632494d54456f33566d4a426c7768667438",
     "live_url": "https://plantopia-store.netlify.app/",
@@ -82,8 +76,8 @@
         "Git",
         "VS Code",
         "MongoDB Atlas",
-        "Netlify (Frontend Deployment)",
-        "Vercel/Railway (Backend Deployment)",
+        "Netlify",
+        "Vercel",
         "Cloudinary"
       ],
       "backend": [
@@ -101,7 +95,6 @@
         "Tailwind CSS",
         "Framer Motion",
         "React Router",
-        "React Icons",
         "Axios"
       ],
       "card_techs": [
@@ -110,28 +103,19 @@
         "Express.js",
         "MongoDB",
         "Firebase",
-        "Stripe",
-        "Cloudinary",
-        "Vite"
+        "Stripe"
       ]
     },
     "features": [
-      "🛒 E-Commerce Core: Product Catalog, Shopping Cart, Checkout System, Order Management, Wishlist",
-      "👤 User Management: Authentication, User Profiles, Role-Based Access, Order History",
-      "🔧 Admin Dashboard: Product, Order, User, Blog Management, Analytics",
-      "📱 User Experience: Responsive Design, Search & Filter, Product Reviews, Blog System, Image Upload",
-      "🚀 Technical Features: Real-time Updates, Image Optimization, PWA Ready, SEO Optimized, Error Handling"
+      "Product catalog with shopping cart and checkout",
+      "User profiles with order history and wishlist",
+      "Admin dashboard for product and order management",
+      "Stripe payment integration",
+      "Responsive design with search and filter",
+      "Product reviews and blog system"
     ],
     "featured": false,
     "created_at": "2026-01-25T15:26:20.914224+00:00",
-    "user_features": [
-      "🛒 Browse and purchase plants and gardening supplies",
-      "🛍️ Manage shopping cart and wishlist",
-      "💳 Secure checkout with Stripe integration",
-      "👤 Customizable user profiles and order history",
-      "🔧 Admin dashboard for managing products, orders, users, and blogs",
-      "📱 Fully responsive and mobile-optimized experience"
-    ],
     "admin_credentials": {
       "email": "admin.plantopia@gmail.com",
       "password": "Plantopia"
@@ -139,7 +123,11 @@
   },
   {
     "id": "71820bce-802f-4489-89ee-a47eb3b0ffc0",
-    "title": "RelicVeil - Historical Artifacts Tracking Platform",
+    "category": "personal",
+    "title": "RelicVeil",
+    "short_description": "Historical artifacts tracking platform for collectors and researchers.",
+    "year": "2026",
+    "screenshots_folder": "relicveil",
     "overview": "RelicVeil is a modern web application designed for history enthusiasts, collectors, and researchers to document, share, and discover historical artifacts.",
     "image_url": "https://camo.githubusercontent.com/160baae8fb06ad283b775778e9b9b4dc28c42149e862c2167576c3e2dccbc092/68747470733a2f2f626f7a7435357a6269302e7566732e73682f662f697642547963756a6445774a3648556f5a6a386e52496d7a735066546c5932474a5379514e576874624f63466f433170",
     "live_url": "https://relicveil.netlify.app/",
@@ -149,25 +137,21 @@
         "Git",
         "VS Code",
         "MongoDB Atlas",
-        "Netlify (Deployment)",
-        "Vercel (Backend Deployment)"
+        "Netlify",
+        "Vercel"
       ],
       "backend": [
         "Node.js",
         "Express.js",
         "MongoDB",
-        "Firebase Admin SDK",
-        "Firebase Authentication"
+        "Firebase Admin SDK"
       ],
       "frontend": [
         "React.js",
         "Vite",
         "Tailwind CSS",
         "Framer Motion",
-        "React Router DOM",
-        "React Hot Toast",
-        "React Icons",
-        "React Helmet Async"
+        "React Router DOM"
       ],
       "card_techs": [
         "React",
@@ -178,27 +162,24 @@
       ]
     },
     "features": [
-      "🔐 Secure Authentication: Firebase Authentication for secure user management",
-      "📝 Artifact Management: Add, update, and delete artifacts with detailed information",
-      "❤️ Like System: Interactive like/dislike functionality for artifacts",
-      "🔍 Advanced Search: Full-text search across artifact names, descriptions, and locations",
-      "📱 Responsive Design: Fully responsive layout for all devices",
-      "🌐 Real-time Updates: Dynamic content updates without page refresh"
+      "Firebase authentication for secure user management",
+      "Full CRUD artifact management with detailed information",
+      "Interactive like/dislike functionality",
+      "Full-text search across artifacts",
+      "Responsive layout for all devices",
+      "Real-time dynamic content updates"
     ],
     "featured": false,
     "created_at": "2026-01-25T15:26:20.914224+00:00",
-    "user_features": [
-      "👤 User Profiles: Personalized user profiles with artifact collections",
-      "📋 My Artifacts: Manage your own artifact collection",
-      "❤️ Liked Artifacts: Track and access your liked artifacts",
-      "🔍 Browse Artifacts: Explore artifacts from other users",
-      "📊 Featured Artifacts: Discover trending and popular artifacts"
-    ],
     "admin_credentials": null
   },
   {
     "id": "3ff78656-203f-4d36-9e64-72e5584af1da",
-    "title": "TalentForge Freelance Marketplace",
+    "category": "personal",
+    "title": "TalentForge",
+    "short_description": "Freelance marketplace for posting, browsing, and bidding on tasks.",
+    "year": "2026",
+    "screenshots_folder": "talentforge",
     "overview": "TalentForge is a modern freelance marketplace platform where users can post, browse, and bid on tasks.",
     "image_url": "https://camo.githubusercontent.com/8cb32c1ce25383de3cd881fe04c943a0231690e4efce7c630a38a145f74e955d/68747470733a2f2f74616a33676265796d722e7566732e73682f662f6c6431757a4169576649415077694e714f3544614c6257724e78423265764947556e3648377a71546d6b756c39665052",
     "live_url": "https://talentforg.netlify.app/",
@@ -208,8 +189,8 @@
         "Git",
         "VS Code",
         "MongoDB Atlas",
-        "Netlify (Deployment)",
-        "Vercel (Backend Deployment)"
+        "Netlify",
+        "Vercel"
       ],
       "backend": [
         "Node.js",
@@ -218,14 +199,9 @@
       ],
       "frontend": [
         "React",
-        "React Router",
-        "React Icons",
-        "React Hot Toast",
-        "Framer Motion",
-        "React Simple Typewriter",
-        "SweetAlert2",
         "Tailwind CSS",
-        "React Tooltip"
+        "Framer Motion",
+        "SweetAlert2"
       ],
       "card_techs": [
         "React",
@@ -235,31 +211,25 @@
       ]
     },
     "features": [
-      "📝 Post, edit, and delete freelance tasks",
-      "🔍 Browse and filter tasks by category",
-      "💸 Bid on tasks and view all bids",
-      "👤 User authentication (register, login, Google sign-in)",
-      "🌓 Dark mode toggle (global, animated, accessible)",
-      "⚡ Animated slider and typewriter effects on homepage",
-      "🔔 Toast notifications for errors and success",
-      "🦾 Responsive, mobile-friendly design",
-      "🦾 Accessible forms and modals",
-      "👤 Profile management"
+      "Post, edit, and delete freelance tasks",
+      "Browse and filter tasks by category",
+      "Bid system with full bid management",
+      "User authentication with Google sign-in",
+      "Dark mode toggle",
+      "Animated homepage with typewriter effects",
+      "Mobile-friendly responsive design"
     ],
     "featured": false,
     "created_at": "2026-01-25T15:26:20.914224+00:00",
-    "user_features": [
-      "👤 Register and manage your profile",
-      "📝 Post and manage your own tasks",
-      "💸 Place bids on available tasks",
-      "🔍 Browse and filter tasks by category",
-      "🌙 Toggle dark mode for a comfortable viewing experience"
-    ],
     "admin_credentials": null
   },
   {
     "id": "c7f72ba2-b315-43ca-aa60-8325b8242060",
+    "category": "personal",
     "title": "Logic Gates Simulator",
+    "short_description": "Visual digital circuit designer with real-time simulation and analysis tools.",
+    "year": "2026",
+    "screenshots_folder": "logic-gates",
     "overview": "A comprehensive Logic Gates Simulator built with Java 17, LWJGL, Slick2D, and JNA. Design, simulate, and analyze digital circuits visually with real-time feedback and advanced circuit analysis tools.",
     "image_url": "https://camo.githubusercontent.com/39c2ae7fc65bc4cf2eca6a517c25f207206aa820776cbbb82849c81b192b2d70/68747470733a2f2f6177346f7a71313462742e7566732e73682f662f566439454278574c706d6f5172416b716b6935745767433452366933544f5950484c68796e5a6f62514b324a4d4e6d77",
     "live_url": null,
@@ -267,8 +237,7 @@
     "tech_stack": {
       "tools": [
         "IntelliJ IDEA",
-        "Git",
-        "Apache-2.0 License"
+        "Git"
       ],
       "backend": [
         "Java 17"
@@ -287,32 +256,204 @@
       ]
     },
     "features": [
-      "🟩 Basic Logic Gates: AND, OR, NOT, NAND, NOR, XOR, XNOR, Buffer",
-      "➕ Arithmetic Components: Half/Full Adders & Subtractors",
-      "🔢 Data Processing: Encoders (4-to-2, 8-to-3), Decoders (2-to-4, 3-to-8)",
-      "⚖️ Comparators: 1-bit and 2-bit with full comparison outputs",
-      "🔀 Multiplexers/Demultiplexers: 2-to-1, 4-to-1, 1-to-2, 1-to-4",
-      "⏱️ Sequential Logic: D, JK, SR, T Flip-Flops, Clock Generator",
-      "📊 Circuit Analysis: Truth Table, Boolean Equation, Timing Diagram, Karnaugh Map (Quine-McCluskey)",
-      "💾 Save/Load: Custom .lgsworld format with versioning",
-      "📋 Clipboard: Multi-gate selection, copy, paste with connections",
-      "🖱️ Visual Design: Drag-and-drop, real-time simulation, wire connections",
-      "🔍 Zoom & Pan: Mouse wheel zoom, drag pan for large circuits",
-      "⌨️ Keyboard Shortcuts: Ctrl+C/Ctrl+V for copy/paste",
-      "🌐 Cross-platform: Windows, Linux, macOS"
+      "Basic logic gates: AND, OR, NOT, NAND, NOR, XOR, XNOR, Buffer",
+      "Half/Full adders and subtractors",
+      "Encoders, decoders, and comparators",
+      "Multiplexers and demultiplexers",
+      "Sequential logic: D, JK, SR, T flip-flops",
+      "Circuit analysis: truth tables, Boolean equations, timing diagrams, K-maps",
+      "Save/Load with custom file format",
+      "Drag-and-drop visual design with zoom and pan"
     ],
     "featured": false,
     "created_at": "2026-01-25T15:26:20.914224+00:00",
-    "user_features": [
-      "👤 Visual circuit design with drag-and-drop interface",
-      "⚡ Real-time simulation and feedback",
-      "🔗 Easy connection management between gates",
-      "🗂️ Save and load custom circuits",
-      "🧮 Automatic truth table and Boolean equation generation",
-      "🗺️ Karnaugh map simplification for logic optimization",
-      "🔎 Zoom and pan for large circuit navigation",
-      "🖱️ Multi-gate selection and clipboard operations"
+    "admin_credentials": null
+  },
+  {
+    "id": "a2f4c6e8-1b3d-4e5a-9f7c-2d4e6f8a0b1c",
+    "category": "work",
+    "title": "Dizmo",
+    "short_description": "Premium Apple & tech products e-commerce platform for Bangladesh's leading gadget retailer.",
+    "year": "2025",
+    "role": "Frontend Developer",
+    "company": "Dizmo",
+    "screenshots_folder": "dizmo",
+    "overview": "Dizmo is a full-featured e-commerce platform for one of Bangladesh's most trusted premium tech retailers, specializing in Apple products, smartphones, laptops, tablets, smartwatches, audio gear, and accessories. The storefront handles a wide product catalog across multiple categories with flash sales, offer pages, order tracking, and multi-location store support. Built to serve a large daily customer base with a mobile-first shopping experience.",
+    "image_url": null,
+    "live_url": "https://www.dizmo.com.bd",
+    "github_url": null,
+    "tech_stack": {
+      "frontend": [
+        "Next.js",
+        "Tailwind CSS",
+        "Redux Toolkit",
+        "React Query",
+        "Axios",
+        "Framer Motion"
+      ],
+      "tools": [
+        "Git",
+        "Figma",
+        "Vercel",
+        "Postman"
+      ],
+      "card_techs": [
+        "Next.js",
+        "Tailwind CSS",
+        "Redux",
+        "React Query"
+      ]
+    },
+    "contributions": [
+      "Built the entire storefront UI from scratch including homepage, product listing, product detail, and category pages",
+      "Implemented multi-category navigation with dynamic routing for Phones, Laptops, Tablets, Watches, Audio, Accessories, Gadgets, and Cameras",
+      "Developed flash sale and offers pages with countdown timers and real-time product availability",
+      "Integrated SSLCommerz payment gateway and WhatsApp-based customer support chat widget",
+      "Built order tracking system allowing customers to track orders by invoice number",
+      "Implemented store locations page and responsive mobile-first layout optimized for Bangladeshi users",
+      "Created reusable component system for product cards, banners, category grids, and promotional sections"
     ],
+    "features": [
+      "Multi-category product catalog with dynamic filtering",
+      "Flash sale section with countdown timer",
+      "Special offers and deals page",
+      "Order tracking by invoice number",
+      "Multiple store location finder",
+      "SSLCommerz payment integration",
+      "WhatsApp live chat support",
+      "Responsive mobile-first design",
+      "Product comparison feature",
+      "Newsletter subscription"
+    ],
+    "featured": true,
+    "created_at": "2025-01-01T10:00:00.000000+00:00",
+    "admin_credentials": null
+  },
+  {
+    "id": "b3e5d7f9-2c4e-5f6b-8a0d-3e5f7c9b1d2e",
+    "category": "work",
+    "title": "Brand Empire",
+    "short_description": "Premium fashion e-commerce destination with a curated clothing catalog for the Bangladeshi market.",
+    "year": "2025",
+    "role": "Frontend Developer",
+    "company": "Brand Empire",
+    "screenshots_folder": "brandempire",
+    "overview": "Brand Empire is a premium fashion e-commerce platform operating out of Jamuna Future Park, Dhaka. The site offers a curated catalog of men's and women's clothing — jackets, jeans, trousers, and more — with a focus on editorial aesthetics, seasonal collections, and a seamless shopping experience. Features include wishlist management, a shopping bag, user authentication, order tracking, a studio section, and mobile app download integration.",
+    "image_url": null,
+    "live_url": "https://www.brandempirebd.com",
+    "github_url": null,
+    "tech_stack": {
+      "frontend": [
+        "Next.js",
+        "Tailwind CSS",
+        "Redux Toolkit",
+        "React Query",
+        "Axios",
+        "Framer Motion"
+      ],
+      "tools": [
+        "Git",
+        "Figma",
+        "Vercel",
+        "Postman"
+      ],
+      "card_techs": [
+        "Next.js",
+        "Tailwind CSS",
+        "Redux",
+        "Framer Motion"
+      ]
+    },
+    "contributions": [
+      "Designed and built the full storefront UI including homepage hero sliders, featured collections, and new arrivals sections",
+      "Implemented product listing with size selectors, color variants, discount badges, and add-to-cart functionality",
+      "Built wishlist and shopping bag features with persistent state management using Redux Toolkit",
+      "Developed multi-step user authentication flow with login, signup, and account/orders access",
+      "Created editorial-style homepage with full-screen banner carousels and curated collection sections",
+      "Integrated order tracking page and returns/exchange policy flows",
+      "Added mobile app download section with QR code and App Store / Google Play deep links",
+      "Implemented payment method display supporting Visa, Mastercard, Amex, and bKash"
+    ],
+    "features": [
+      "Editorial homepage with full-screen hero banners and seasonal campaigns",
+      "Product catalog with size, color variants, and discount badges",
+      "Wishlist and shopping bag with persistent state",
+      "User authentication and account dashboard",
+      "Order tracking system",
+      "Studio section for curated editorial content",
+      "Mobile app integration with QR code download",
+      "Multiple payment method support (Visa, Mastercard, bKash)",
+      "Blog section",
+      "Responsive mobile-first layout"
+    ],
+    "featured": false,
+    "created_at": "2025-03-01T10:00:00.000000+00:00",
+    "admin_credentials": null
+  },
+  {
+    "id": "c4f6e8a0-3d5f-6a7c-9b1e-4f6a8d0c2e3f",
+    "category": "work",
+    "title": "Tarunya Prokashon",
+    "short_description": "Bangla-language e-commerce platform for one of Bangladesh's trusted Islamic and general book publishers.",
+    "year": "2025",
+    "role": "Frontend Developer",
+    "company": "Squad Innovators",
+    "screenshots_folder": "tarunyaprokashon",
+    "overview": "তারুণ্য প্রকাশন (Tarunya Prokashon) is a fully Bangla-language online bookstore and publishing platform based in Dhaka, Bangladesh. The platform serves as the digital storefront for Tarunya Prokashon and partner publisher Sanchalon Prokashoni, offering books across 11 categories including novels, poetry, history, science, self-development, Islamic books, children's books, travel, and parenting. Features include author pages, publisher pages, book bundles, flash discounts up to 50% off, an upcoming books section, a blog, and SSLCommerz-integrated payments with bKash, Nagad, and cash-on-delivery support.",
+    "image_url": null,
+    "live_url": "https://www.tarunyaprokashon.com",
+    "github_url": null,
+    "tech_stack": {
+      "frontend": [
+        "Next.js",
+        "Tailwind CSS",
+        "Redux Toolkit",
+        "React Query",
+        "Axios"
+      ],
+      "tools": [
+        "Git",
+        "Figma",
+        "Vercel",
+        "Postman"
+      ],
+      "card_techs": [
+        "Next.js",
+        "Tailwind CSS",
+        "Redux",
+        "React Query"
+      ]
+    },
+    "contributions": [
+      "Built the entire storefront UI in Bangla language including homepage, category pages, product detail pages, and author/publisher profile pages",
+      "Implemented 11-category book navigation with dynamic routing and Bengali slugs",
+      "Developed promotional sections including weekly featured book, new arrivals, bestsellers, and Boi Mela (book fair) bestsellers",
+      "Built author and publisher directory pages with dedicated book listing views",
+      "Created book bundle/package section showcasing combo deals with savings calculations",
+      "Integrated SSLCommerz payment gateway supporting bKash, Nagad, and cash on delivery",
+      "Implemented order tracking system with invoice-based lookup",
+      "Developed blog section and FAQ accordion for customer support",
+      "Built newsletter subscription and Messenger/WhatsApp floating chat support widgets",
+      "Ensured full Bangla Unicode text rendering and RTL-compatible typography across all pages"
+    ],
+    "features": [
+      "Fully Bangla-language UI with Unicode support",
+      "11-category book catalog with dynamic filtering",
+      "Author and publisher profile pages",
+      "Book bundle and combo package deals",
+      "Weekly featured book and new arrivals sections",
+      "Boi Mela (book fair) bestsellers section",
+      "Discount badges up to 50% off across products",
+      "Order tracking by invoice number",
+      "SSLCommerz payment with bKash, Nagad, and cash on delivery",
+      "Blog and reading tips section",
+      "FAQ accordion for common customer queries",
+      "Messenger and WhatsApp floating chat support",
+      "Upcoming books section",
+      "Newsletter subscription"
+    ],
+    "featured": true,
+    "created_at": "2026-01-25T15:26:20.914224+00:00",
     "admin_credentials": null
   }
 ]

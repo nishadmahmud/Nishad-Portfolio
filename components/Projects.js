@@ -1,41 +1,47 @@
 "use client";
 
 import { useState } from 'react';
-import { FaGithub, FaExternalLinkAlt, FaExpandArrowsAlt, FaPlus, FaEdit, FaTrash } from 'react-icons/fa';
-import ProjectDetail from './ProjectDetail';
+import { FaGithub, FaExternalLinkAlt, FaPlus, FaEdit, FaTrash } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import ProjectDetail from './ProjectDetail';
 import ProjectForm from './admin/ProjectForm';
 import AdminModal from './admin/AdminModal';
 import { createClient } from '@/utils/supabase/client';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-hot-toast';
 
+const TABS = [
+    { key: 'personal', label: 'Personal' },
+    { key: 'work', label: 'Work' },
+];
+
 const Projects = ({ projects = [], isAdmin }) => {
-    const [selectedProject, setSelectedProject] = useState(null); // For View Details
-    const [modalOpen, setModalOpen] = useState(false); // For View Details
+    const [activeTab, setActiveTab] = useState('personal');
+    const [selectedProject, setSelectedProject] = useState(null);
+    const [modalOpen, setModalOpen] = useState(false);
 
     // Admin States
-    const [editingProject, setEditingProject] = useState(null); // For Edit
-    const [isAdding, setIsAdding] = useState(false); // For Add
+    const [editingProject, setEditingProject] = useState(null);
+    const [isAdding, setIsAdding] = useState(false);
     const [adminModalOpen, setAdminModalOpen] = useState(false);
 
     const router = useRouter();
     const supabase = createClient();
 
+    const filteredProjects = projects.filter(p => p.category === activeTab);
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
-            transition: {
-                staggerChildren: 0.1
-            }
+            transition: { staggerChildren: 0.12 }
         }
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0 }
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
     };
 
     const openModal = (project) => {
@@ -86,21 +92,20 @@ const Projects = ({ projects = [], isAdmin }) => {
 
     return (
         <section id="projects" className="py-20 relative">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-transparent"></div>
-
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="container mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
+                {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16 relative"
+                    className="text-center mb-12 relative"
                 >
                     <p className="text-xs tracking-[0.3em] text-[var(--text-dim)] uppercase mb-6 flex items-center justify-center gap-4">
-                        Projects
+                        Portfolio
                     </p>
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light text-[var(--white)] mb-6">
-                        Creative solutions and <em>recent work.</em>
+                        Things I've <em>Built.</em>
                     </h2>
 
                     {isAdmin && (
@@ -115,102 +120,142 @@ const Projects = ({ projects = [], isAdmin }) => {
                     )}
                 </motion.div>
 
-                {projects.length === 0 ? (
-                    <div className="text-center text-slate-400 py-10">
-                        <p>No projects found. {isAdmin && 'Click "Add Project" to start!'}</p>
+                {/* Tabs */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="flex items-center justify-center gap-1 mb-16"
+                >
+                    <div className="flex border border-[var(--line)] rounded-none overflow-hidden">
+                        {TABS.map((tab) => (
+                            <button
+                                key={tab.key}
+                                onClick={() => setActiveTab(tab.key)}
+                                className={`relative px-8 py-3 text-xs uppercase tracking-[0.25em] font-mono transition-all duration-300
+                                    ${activeTab === tab.key
+                                        ? 'bg-[var(--accent)] text-[var(--bg)] font-bold'
+                                        : 'bg-[var(--bg2)] text-[var(--text-dim)] hover:text-[var(--white)] hover:bg-[var(--bg3)]'
+                                    }`}
+                            >
+                                {tab.label}
+                            </button>
+                        ))}
                     </div>
-                ) : (
+                </motion.div>
+
+                {/* Projects Grid */}
+                <AnimatePresence mode="wait">
                     <motion.div
+                        key={activeTab}
                         variants={containerVariants}
                         initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                        animate="visible"
+                        exit={{ opacity: 0, y: -20 }}
+                        className="grid grid-cols-1 lg:grid-cols-2 gap-6"
                     >
-                        {projects.map((project) => (
+                        {filteredProjects.length === 0 ? (
                             <motion.div
-                                key={project.id}
                                 variants={itemVariants}
-                                className="group relative bg-[var(--bg2)] border border-[var(--line)] rounded-none overflow-hidden hover:bg-[var(--bg3)] hover:border-[var(--line-bright)] transition-colors duration-300 flex flex-col h-full"
+                                className="col-span-full text-center py-20"
                             >
-                                {/* Admin Actions Overlay */}
-                                {isAdmin && (
-                                    <div className="absolute top-2 right-2 z-30 flex gap-2">
-                                        <button
-                                            onClick={(e) => handleEdit(e, project)}
-                                            className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 shadow-md transition-colors"
-                                            title="Edit Project"
-                                        >
-                                            <FaEdit size={16} />
-                                        </button>
-                                        <button
-                                            onClick={(e) => handleDelete(e, project.id)}
-                                            className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-500 shadow-md transition-colors"
-                                            title="Delete Project"
-                                        >
-                                            <FaTrash size={16} />
-                                        </button>
-                                    </div>
-                                )}
-
-                                {/* Image Container */}
-                                <div
-                                    className="relative h-56 w-full cursor-pointer overflow-hidden"
+                                <p className="text-sm tracking-[0.1em] text-[var(--text-dim)] uppercase">
+                                    No {activeTab} projects yet.
+                                </p>
+                            </motion.div>
+                        ) : (
+                            filteredProjects.map((project, index) => (
+                                <motion.div
+                                    key={project.id}
+                                    variants={itemVariants}
+                                    className="group relative bg-[var(--bg2)] border border-[var(--line)] rounded-none overflow-hidden hover:border-[var(--line-bright)] transition-all duration-500 cursor-pointer"
                                     onClick={() => openModal(project)}
                                 >
-                                    <Image
-                                        src={project.image_url || '/placeholder.jpg'}
-                                        alt={project.title}
-                                        width={600}
-                                        height={400}
-                                        unoptimized
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                    />
-                                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                        <span className="text-white font-medium flex items-center gap-2 px-4 py-2 border border-white/30 rounded-full backdrop-blur-md bg-white/10 hover:bg-white/20 transition-colors">
-                                            <FaExpandArrowsAlt /> View Details
-                                        </span>
+                                    {/* Admin Actions */}
+                                    {isAdmin && (
+                                        <div className="absolute top-3 right-3 z-30 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <button
+                                                onClick={(e) => handleEdit(e, project)}
+                                                className="p-2 bg-blue-600 text-white rounded-none hover:bg-blue-500 shadow-md transition-colors"
+                                                title="Edit"
+                                            >
+                                                <FaEdit size={14} />
+                                            </button>
+                                            <button
+                                                onClick={(e) => handleDelete(e, project.id)}
+                                                className="p-2 bg-red-600 text-white rounded-none hover:bg-red-500 shadow-md transition-colors"
+                                                title="Delete"
+                                            >
+                                                <FaTrash size={14} />
+                                            </button>
+                                        </div>
+                                    )}
+
+                                    {/* Image */}
+                                    <div className="relative h-56 lg:h-64 w-full overflow-hidden">
+                                        <Image
+                                            src={project.screenshots?.[0] || project.image_url || '/placeholder.jpg'}
+                                            alt={project.title}
+                                            width={800}
+                                            height={500}
+                                            unoptimized
+                                            className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg2)] via-transparent to-transparent opacity-60" />
+
+                                        {/* Year badge */}
+                                        {project.year && (
+                                            <span className="absolute top-4 left-4 text-[10px] tracking-[0.3em] uppercase font-mono text-[var(--text-muted)] bg-[var(--bg)]/80 backdrop-blur-sm border border-[var(--line)] px-3 py-1">
+                                                {project.year}
+                                            </span>
+                                        )}
                                     </div>
-                                </div>
 
-                                {/* Content */}
-                                <div className="p-10 flex flex-col flex-grow relative">
-                                    <h3 className="text-3xl font-serif font-light text-[var(--white)] mb-4 leading-tight group-hover:text-[var(--accent)] transition-colors">
-                                        {project.title}
-                                    </h3>
-
-                                    <p className="text-sm tracking-[0.04em] text-[var(--text-muted)] mb-8 line-clamp-3 leading-[2]">
-                                        {project.overview}
-                                    </p>
-
-                                    <div className="mt-auto pt-6 border-t border-[var(--line)] flex flex-col gap-6">
-                                        {/* Tech Stack */}
-                                        <div className="flex flex-wrap gap-2">
-                                            {project.tech_stack?.card_techs?.slice(0, 4).map((tech, index) => (
-                                                <span
-                                                    key={index}
-                                                    className="text-xs uppercase tracking-[0.25em] px-3 py-1 bg-transparent text-[var(--text-muted)] rounded-none border border-[var(--line)]"
-                                                >
-                                                    {tech}
-                                                </span>
-                                            ))}
-                                            {project.tech_stack?.card_techs?.length > 4 && (
-                                                <span className="text-xs uppercase tracking-[0.25em] px-3 py-1 text-[var(--text-dim)]">+{project.tech_stack.card_techs.length - 4}</span>
-                                            )}
+                                    {/* Content */}
+                                    <div className="p-6 lg:p-8">
+                                        {/* Project number + title */}
+                                        <div className="flex items-start gap-4 mb-3">
+                                            <span className="text-xs tracking-[0.2em] text-[var(--text-dim)] font-mono mt-2 shrink-0">
+                                                {String(index + 1).padStart(2, '0')}
+                                            </span>
+                                            <h3 className="text-2xl lg:text-3xl font-serif font-light text-[var(--white)] group-hover:text-[var(--accent)] transition-colors duration-300 leading-tight">
+                                                {project.title}
+                                            </h3>
                                         </div>
 
-                                        {/* Action Buttons */}
-                                        <div className="flex items-center justify-between gap-3 mt-2">
-                                            <div className="flex gap-4">
+                                        <p className="text-sm tracking-[0.02em] text-[var(--text-muted)] leading-[1.8] mb-6 ml-10">
+                                            {project.short_description || project.overview}
+                                        </p>
+
+                                        {/* Tech chips + links */}
+                                        <div className="ml-10 pt-5 border-t border-[var(--line)] flex items-center justify-between">
+                                            <div className="flex flex-wrap gap-2">
+                                                {project.tech_stack?.card_techs?.slice(0, 3).map((tech, i) => (
+                                                    <span
+                                                        key={i}
+                                                        className="text-[10px] uppercase tracking-[0.2em] px-2 py-0.5 text-[var(--text-dim)] border border-[var(--line)] font-mono"
+                                                    >
+                                                        {tech}
+                                                    </span>
+                                                ))}
+                                                {project.tech_stack?.card_techs?.length > 3 && (
+                                                    <span className="text-[10px] uppercase tracking-[0.2em] px-2 py-0.5 text-[var(--text-dim)] font-mono">
+                                                        +{project.tech_stack.card_techs.length - 3}
+                                                    </span>
+                                                )}
+                                            </div>
+
+                                            <div className="flex items-center gap-3">
                                                 {project.github_url && (
                                                     <a
                                                         href={project.github_url}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="text-[var(--text-dim)] hover:text-[var(--text)] transition-colors"
-                                                        title="View Code"
+                                                        onClick={(e) => e.stopPropagation()}
+                                                        className="text-[var(--text-dim)] hover:text-[var(--accent)] transition-colors"
                                                     >
-                                                        <FaGithub size={18} />
+                                                        <FaGithub size={16} />
                                                     </a>
                                                 )}
                                                 {project.live_url && (
@@ -218,59 +263,58 @@ const Projects = ({ projects = [], isAdmin }) => {
                                                         href={project.live_url}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="text-[var(--text-dim)] hover:text-[var(--text)] transition-colors"
-                                                        title="Live Demo"
+                                                        onClick={(e) => e.stopPropagation()}
+                                                        className="text-[var(--text-dim)] hover:text-[var(--accent)] transition-colors"
                                                     >
-                                                        <FaExternalLinkAlt size={16} />
+                                                        <FaExternalLinkAlt size={14} />
                                                     </a>
                                                 )}
+                                                <span className="text-lg text-[var(--text-dim)] group-hover:text-[var(--accent)] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 ml-1">
+                                                    ↗
+                                                </span>
                                             </div>
-                                            <span className="text-xl text-[var(--text-dim)] group-hover:text-[var(--accent)] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">
-                                                ↗
-                                            </span>
                                         </div>
                                     </div>
-                                </div>
-                            </motion.div>
-                        ))}
+                                </motion.div>
+                            ))
+                        )}
                     </motion.div>
-                )}
+                </AnimatePresence>
             </div>
 
-            {/* Public Details Modal */}
+            {/* Project Detail Modal */}
             <AnimatePresence>
                 {modalOpen && selectedProject && (
                     <div
-                        className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+                        className="fixed inset-0 z-50 flex items-center justify-center"
                         onClick={closeModal}
                     >
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+                            className="absolute inset-0 bg-[var(--bg)]/95 backdrop-blur-sm"
                         />
 
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                            transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                            className="relative bg-slate-900 border border-slate-700 w-full max-w-5xl max-h-[90vh] rounded-2xl shadow-2xl overflow-hidden flex flex-col"
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 40 }}
+                            transition={{ type: "spring", damping: 30, stiffness: 300 }}
+                            className="relative w-full h-full max-w-[1400px] max-h-[95vh] mx-4 my-4 lg:mx-8 bg-[var(--bg2)] border border-[var(--line)] rounded-none shadow-2xl overflow-hidden flex flex-col lg:flex-row overflow-y-auto lg:overflow-y-hidden"
                             onClick={(e) => e.stopPropagation()}
                         >
+                            {/* Close button */}
                             <button
                                 onClick={closeModal}
-                                className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors backdrop-blur-md"
+                                className="absolute top-4 right-4 z-20 w-10 h-10 flex items-center justify-center bg-[var(--bg)] border border-[var(--line)] text-[var(--text-muted)] hover:text-[var(--white)] hover:border-[var(--line-bright)] transition-all"
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
 
-                            <div className="overflow-y-auto custom-scrollbar flex-1">
-                                <ProjectDetail project={selectedProject} />
-                            </div>
+                            <ProjectDetail project={selectedProject} onClose={closeModal} />
                         </motion.div>
                     </div>
                 )}
@@ -286,7 +330,7 @@ const Projects = ({ projects = [], isAdmin }) => {
                     project={editingProject}
                     onSuccess={() => {
                         closeAdminModal();
-                        router.refresh(); // Ensure data refreshes
+                        router.refresh();
                     }}
                 />
             </AdminModal>

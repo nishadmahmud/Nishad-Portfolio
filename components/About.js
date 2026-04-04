@@ -109,15 +109,15 @@ const About = ({ profile, highlights = [], featured = [], isAdmin }) => {
     };
 
     return (
-        <section id="about" className="py-20 relative">
+        <section id="about" className="py-12 sm:py-20 relative">
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="container mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-8 sm:mb-16"
                 >
                     <p className="text-xs tracking-[0.3em] text-[var(--text-dim)] uppercase mb-6 flex items-center justify-center gap-4">
                         Discover
@@ -135,8 +135,7 @@ const About = ({ profile, highlights = [], featured = [], isAdmin }) => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    viewport={{ once: true }}
-                    className="bg-[var(--bg2)] border border-[var(--line)] rounded-none p-8 mb-8 max-w-4xl mx-auto relative group"
+                    className="bg-[var(--bg2)] border border-[var(--line)] rounded-none p-5 sm:p-8 mb-6 sm:mb-8 max-w-4xl mx-auto relative group"
                 >
                     {isAdmin && (
                         <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -149,7 +148,7 @@ const About = ({ profile, highlights = [], featured = [], isAdmin }) => {
                         </div>
                     )}
 
-                    <h3 className="text-3xl font-serif font-light text-[var(--white)] mb-6">
+                    <h3 className="text-2xl sm:text-3xl font-serif font-light text-[var(--white)] mb-4 sm:mb-6">
                         Hi, I'm {profile?.full_name}
                     </h3>
                     <p className="text-sm tracking-[0.04em] text-[var(--text-muted)] leading-[2] mb-4">
@@ -161,8 +160,8 @@ const About = ({ profile, highlights = [], featured = [], isAdmin }) => {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mb-8">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:col-span-2 relative">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8 mb-6 sm:mb-8">
+                    <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-4 lg:col-span-2 relative">
                         {isAdmin && (
                             <div className="absolute -top-12 right-0">
                                 <button
@@ -183,11 +182,7 @@ const About = ({ profile, highlights = [], featured = [], isAdmin }) => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
                                     viewport={{ once: true }}
-                                    whileHover={{
-                                        backgroundColor: "var(--bg3)",
-                                        borderColor: "var(--line-bright)"
-                                    }}
-                                    className="group/card relative bg-[var(--bg2)] border border-[var(--line)] rounded-none p-6 h-full flex flex-col justify-center transition-all duration-300"
+                                    className="group/card relative bg-[var(--bg2)] border border-[var(--line)] rounded-none p-4 sm:p-6 h-full flex flex-col justify-center transition-all duration-150 hover:bg-[var(--bg3)] hover:border-[var(--line-bright)]"
                                 >
                                     {/* Admin Actions Overlay for Card */}
                                     {isAdmin && (
@@ -209,13 +204,13 @@ const About = ({ profile, highlights = [], featured = [], isAdmin }) => {
                                         </div>
                                     )}
 
-                                    <div className="flex items-center gap-3 mb-4">
+                                    <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-4">
                                         <div className="text-[var(--accent)]">
-                                            <Icon size={20} className="sm:w-6 sm:h-6" />
+                                            <Icon size={16} className="sm:w-5 sm:h-5" />
                                         </div>
-                                        <h4 className="text-[var(--white)] font-serif font-light text-xl sm:text-2xl leading-none">{highlight.title}</h4>
+                                        <h4 className="text-[var(--white)] font-serif font-light text-base sm:text-xl lg:text-2xl leading-none">{highlight.title}</h4>
                                     </div>
-                                    <p className="text-sm tracking-[0.04em] text-[var(--text-muted)] leading-[2]">
+                                    <p className="text-xs sm:text-sm tracking-[0.04em] text-[var(--text-muted)] leading-[1.8] sm:leading-[2]">
                                         {highlight.description}
                                     </p>
                                 </motion.div>
@@ -227,7 +222,6 @@ const About = ({ profile, highlights = [], featured = [], isAdmin }) => {
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        viewport={{ once: true }}
                         viewport={{ once: true }}
                         className="bg-[var(--bg2)] border border-[var(--line)] rounded-none p-8 h-full flex flex-col relative group"
                     >

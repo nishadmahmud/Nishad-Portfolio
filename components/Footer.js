@@ -7,6 +7,7 @@ import {
     FaEnvelope,
     FaHeart,
 } from "react-icons/fa";
+import { FaResearchgate } from "react-icons/fa6";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -14,13 +15,14 @@ const Footer = () => {
     const socialLinks = [
         { icon: FaGithub, href: "https://github.com/nishadmahmud", label: "GitHub", external: true },
         { icon: FaLinkedin, href: "https://www.linkedin.com/in/nishadmahmud/", label: "LinkedIn", external: true },
+        { icon: FaResearchgate, href: "https://www.researchgate.net/profile/Nishad-Mahmud-Opu/", label: "ResearchGate", external: true },
         { icon: FaEnvelope, href: "#contact", label: "Email", external: false },
     ];
 
     return (
         <footer className="relative mt-20">
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="container mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
                 <div className="bg-[var(--bg2)] border border-[var(--line)] rounded-none p-6 sm:p-8 lg:p-12 mb-6 sm:mb-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                         <div className="lg:col-span-2">
@@ -126,14 +128,7 @@ const Footer = () => {
                         viewport={{ once: true }}
                         className="flex items-center gap-2 text-[var(--text-dim)] text-xs uppercase tracking-[0.2em]"
                     >
-                        <span>© {currentYear} Nishad. Made with</span>
-                        <motion.div
-                            animate={{ scale: [1, 1.2, 1] }}
-                            transition={{ duration: 1, repeat: Infinity }}
-                        >
-                            <FaHeart className="text-[var(--accent)] sm:w-4 sm:h-4" size={12} />
-                        </motion.div>
-                        <span>and caffeine</span>
+                        <span>© {currentYear} Nishad.</span>
                     </motion.div>
                 </div>
             </div>

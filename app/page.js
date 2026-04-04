@@ -8,6 +8,7 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { createClient } from "@/utils/supabase/server";
+import { enrichProjectsWithScreenshots } from "@/lib/screenshots";
 
 import profileData from "@/lib/data/profile.json";
 import skillsData from "@/lib/data/skills.json";
@@ -44,7 +45,7 @@ export default async function Home() {
     const activeSkills = skillsData;
     const activeExperience = experienceData;
     const activePublications = publicationsData;
-    const activeProjects = projectsData;
+    const activeProjects = enrichProjectsWithScreenshots(projectsData);
     const activeHighlights = highlightsData;
     const activeFeatured = featuredData;
 
