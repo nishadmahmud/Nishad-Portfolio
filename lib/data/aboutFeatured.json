@@ -1,22 +1,22 @@
 [
   {
     "id": "c4c172bc-1498-49fb-bcbf-7d9ea3a912cf",
-    "name": "Logic Gates Simulator",
-    "description": "Java-based tool to design and simulate digital circuits",
+    "name": "Kitbase",
+    "description": "Privacy-first web tools platform with 20+ client-side utilities - no uploads, no tracking",
     "display_order": 1,
     "created_at": "2026-01-25T18:30:00.824795+00:00"
   },
   {
     "id": "c323f5a0-1610-4fb8-97f2-45eea4697029",
-    "name": "Plantopia",
-    "description": "Full-stack e-commerce platform for gardening and plant care",
+    "name": "RoverNote",
+    "description": "Social travel journaling platform with scrapbook-style stories and interactive world map",
     "display_order": 2,
     "created_at": "2026-01-25T18:30:00.824795+00:00"
   },
   {
     "id": "f34c7546-7e74-4ee7-a949-feb6b53a320d",
-    "name": "Algorithm Visualizer",
-    "description": "Interactive tool for visualizing data structures and algorithms",
+    "name": "Logic Gates Simulator",
+    "description": "Java-based digital circuit designer with real-time simulation, K-maps, and timing diagrams",
     "display_order": 3,
     "created_at": "2026-01-25T18:30:00.824795+00:00"
   }

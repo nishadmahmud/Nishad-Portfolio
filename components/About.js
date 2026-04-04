@@ -155,8 +155,7 @@ const About = ({ profile, highlights = [], featured = [], isAdmin }) => {
                         {profile?.bio}
                     </p>
                     <p className="text-sm tracking-[0.04em] text-[var(--text-muted)] leading-[2]">
-                        Currently learning and building with React, Node.js, and Firebase, while also experienced in Java,
-                        JavaScript, Python, and C++. I enjoy developing visual tools, automation scripts, and educational software.
+                        My research focuses on deep learning for plant disease detection and environmental monitoring using YOLOv8/v11 and ML classification models. On the development side, I enjoy building privacy-focused tools, SaaS platforms, and visual simulators.
                     </p>
                 </motion.div>
 

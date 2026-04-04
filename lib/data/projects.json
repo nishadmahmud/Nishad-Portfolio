@@ -1,38 +1,231 @@
 [
   {
+    "id": "f1e3c5a7-9b2d-4f6e-8a0c-1d3e5f7b9c2a",
+    "category": "personal",
+    "title": "Kitbase",
+    "short_description": "Privacy-first, client-side web utility platform with 20+ tools across PDF, image, dev, text, and more.",
+    "year": "2025",
+    "screenshots_folder": "kitbase",
+    "overview": "Kitbase is a privacy-first, fully client-side web tools platform built with Next.js App Router and Tailwind CSS. It offers 20+ free utilities across 11 categories - PDF tools (merge, split, compress via Ghostscript WASM), image tools (resize, crop, compress, filters), developer tools (JSON formatter, Base64, Markdown viewer), text analysis, design tools (color, gradient, CSS), security tools (password generator, hash), cryptography (Caesar, Vigenère, Playfair ciphers), productivity timers, file metadata tools, calculators, and data visualization with chart and EDA workspaces. Files never leave the browser. The platform is also installable as a PWA with offline support via a service worker, and is open-source under AGPL-3.0.",
+    "image_url": null,
+    "live_url": "https://kitbase.tech",
+    "github_url": "https://github.com/nishadmahmud/kitbase",
+    "tech_stack": {
+      "frontend": [
+        "Next.js (App Router)",
+        "Tailwind CSS",
+        "Ghostscript WASM",
+        "React",
+        "PWA (Service Worker)"
+      ],
+      "tools": [
+        "Git",
+        "VS Code",
+        "Vercel"
+      ],
+      "card_techs": [
+        "Next.js",
+        "Tailwind CSS",
+        "WASM",
+        "PWA"
+      ]
+    },
+    "contributions": [
+      "Architected and built the entire platform from scratch using Next.js App Router with a category-based dynamic routing system",
+      "Implemented 20+ client-side tools across 11 categories: PDF, image, developer, text, design, security, cryptography, productivity, file, calculators, and visualization",
+      "Integrated Ghostscript compiled to WebAssembly for high-quality client-side PDF compression that preserves text and vector content",
+      "Built a PWA setup with service worker and web manifest for offline support and desktop/mobile installability",
+      "Implemented a global command palette search (⌘K) for fast tool discovery across the entire platform",
+      "Built an EDA Workspace tool supporting exploratory data analysis with descriptive statistics and advanced plot generation from CSV input",
+      "Designed a clean, minimal UI with a focus on zero-tracking, no-upload, and no-ad privacy principles",
+      "Licensed the project under AGPL-3.0 and set up proper source disclosure in the footer to comply with Ghostscript WASM licensing requirements"
+    ],
+    "features": [
+      "20+ browser-based tools - no uploads, no server, no tracking",
+      "PDF tools: merge, split, compress (Ghostscript WASM)",
+      "Image tools: resize, crop, compress, filters",
+      "Developer tools: JSON formatter, Markdown viewer, Base64 encoder",
+      "Text tools: word counter, formatter, cleaner",
+      "Design tools: color picker, gradient builder, CSS utilities",
+      "Security tools: password generator, hash generator, token generator",
+      "Cryptography: Caesar, Vigenère, Playfair cipher demos",
+      "Productivity: Pomodoro timer, focus tools",
+      "Visualization: chart generator (Bar, Line, Area, Pie) and EDA Workspace from CSV",
+      "File tools: metadata extractor, checksum, hash",
+      "Calculators: unit, currency, percentage",
+      "Global command palette search (⌘K)",
+      "Installable PWA with offline support",
+      "Open-source under AGPL-3.0"
+    ],
+    "featured": true,
+    "created_at": "2025-08-01T10:00:00.000000+00:00",
+    "admin_credentials": null
+  },
+  {
+    "id": "e2d4b6f8-0a1c-3e5d-7f9b-2c4d6e8a0f1b",
+    "category": "personal",
+    "title": "RoverNote",
+    "short_description": "Social travel journaling platform where users create and share scrapbook-style digital travel stories.",
+    "year": "2026",
+    "screenshots_folder": "rovernote",
+    "overview": "RoverNote is a MERN-Stack social travel journaling platform where users transform their adventures into beautiful, scrapbook-style digital stories. The platform features a community feed of public travel journals, an interactive world map for pinning visited locations, a personal scrapbook builder with photos and handwritten-style notes, and a public/private journal toggle for sharing with friends or the wider community. Built on Next.js with a Supabase backend (PostgreSQL + Storage), Supabase Auth, and Paddle for subscription-based payments, RoverNote is a production-grade MERN-Stack application with a freemium model.",
+    "image_url": null,
+    "live_url": "https://www.rovernote.live",
+    "github_url": null,
+    "tech_stack": {
+      "frontend": [
+        "Next.js (App Router)",
+        "Tailwind CSS",
+        "Framer Motion",
+        "React",
+        "Unsplash API"
+      ],
+      "backend": [
+        "Supabase (PostgreSQL)",
+        "Supabase Storage",
+        "Supabase Auth",
+        "Paddle (Payment Gateway)"
+      ],
+      "tools": [
+        "Git",
+        "VS Code",
+        "Vercel",
+        "Supabase Studio"
+      ],
+      "card_techs": [
+        "Next.js",
+        "Supabase",
+        "PostgreSQL",
+        "Paddle"
+      ]
+    },
+    "contributions": [
+      "Designed and built the Full-Stack application from scratch using Next.js App Router and Supabase as the backend",
+      "Implemented Supabase Auth for user authentication and session management with secure role-based access to private and public journals",
+      "Built a scrapbook-style journal editor supporting photo uploads (Supabase Storage), handwritten-style captions, stickers, stamps, and layout customization",
+      "Developed an interactive world map feature allowing users to pin visited destinations and visualize their travel history geographically",
+      "Created a community feed for discovering and browsing public travel stories, filterable by destination",
+      "Integrated Paddle as the payment gateway for a freemium subscription model offering expanded storage and premium features",
+      "Built public/private journal visibility toggles and sharing controls for individual scrapbook entries",
+      "Designed the full UI with an editorial travel aesthetic using Tailwind CSS and Framer Motion animations"
+    ],
+    "features": [
+      "Scrapbook-style travel journal builder with photos, notes, stickers, and stamps",
+      "Interactive world map for pinning and tracking visited destinations",
+      "Community feed of public travel stories",
+      "Public/private journal visibility controls",
+      "Supabase Storage for photo uploads and media management",
+      "Supabase Auth for secure user authentication",
+      "Paddle payment gateway for freemium subscription model",
+      "Destination-based discovery with popular locations feed",
+      "Responsive design with editorial travel aesthetic",
+      "Free forever for personal use with premium upgrade path"
+    ],
+    "featured": true,
+    "created_at": "2026-01-01T10:00:00.000000+00:00",
+    "admin_credentials": null
+  },
+  {
+    "id": "c7f72ba2-b315-43ca-aa60-8325b8242060",
+    "category": "personal",
+    "title": "Logic Gates Simulator",
+    "short_description": "Comprehensive visual digital circuit designer with real-time simulation, sequential logic, and automated circuit analysis tools.",
+    "year": "2026",
+    "screenshots_folder": "logic-gates",
+    "overview": "Logic Gates Simulator is a feature-rich, visually interactive desktop application for designing, simulating, and analyzing digital circuits in real time. Built with Java 17 using LWJGL and Slick2D for rendering, and JNA for native system integration, the simulator supports a wide range of components - from basic logic gates and arithmetic circuits to sequential flip-flops and data processing units like encoders, decoders, multiplexers, and demultiplexers. Circuit analysis tools include automatic truth table generation, Boolean equation simplification, Karnaugh map reduction via the Quine-McCluskey algorithm, and real-time timing diagram visualization. Circuits can be saved and loaded using a custom binary file format (.lgsworld). Built as a Software Development II course project and designed for students, hobbyists, and professionals.",
+    "image_url": "https://camo.githubusercontent.com/39c2ae7fc65bc4cf2eca6a517c25f207206aa820776cbbb82849c81b192b2d70/68747470733a2f2f6177346f7a71313462742e7566732e73682f662f566439454278574c706d6f5172416b716b6935745767433452366933544f5950484c68796e5a6f62514b324a4d4e6d77",
+    "live_url": null,
+    "github_url": "https://github.com/nishadmahmud/Logic-Gates-Simulator",
+    "tech_stack": {
+      "frontend": [
+        "Java 17",
+        "LWJGL",
+        "Slick2D",
+        "JNA"
+      ],
+      "backend": [
+        "Java 17"
+      ],
+      "tools": [
+        "IntelliJ IDEA",
+        "Gradle",
+        "Git"
+      ],
+      "card_techs": [
+        "Java 17",
+        "LWJGL",
+        "Slick2D",
+        "JNA"
+      ]
+    },
+    "contributions": [
+      "Designed and implemented the full simulator engine in Java 17 with real-time circuit evaluation and continuous signal propagation",
+      "Built a drag-and-drop visual circuit designer with zoom/pan navigation, wire connection management, and multi-gate selection",
+      "Implemented all 8 basic logic gates (AND, OR, NOT, NAND, NOR, XOR, XNOR, Buffer) and combinational components including half/full adders, subtractors, comparators, encoders, decoders, multiplexers, and demultiplexers",
+      "Added sequential logic support: D, JK, SR, and T flip-flops with a configurable clock generator running at 0.5s intervals",
+      "Built circuit analysis tools: automatic truth table generator, Boolean equation generator with simplification, real-time timing diagram viewer, and Karnaugh map simplifier using the Quine-McCluskey algorithm",
+      "Implemented a custom binary save/load file format (.lgsworld) with version control for persistent circuit storage",
+      "Added clipboard operations (Ctrl+C / Ctrl+V) with multi-gate selection supporting both Ctrl+click and box selection",
+      "Packaged the application as a cross-platform runnable JAR with Gradle build system, supporting Windows, Linux, and macOS"
+    ],
+    "features": [
+      "8 basic logic gates: AND, OR, NOT, NAND, NOR, XOR, XNOR, Buffer",
+      "Arithmetic components: Half/Full Adders and Half/Full Subtractors",
+      "Data processing: 4-to-2 and 8-to-3 Encoders, 2-to-4 and 3-to-8 Decoders",
+      "Comparators: 1-bit and 2-bit with full A>B, A=B, A<B outputs",
+      "Multiplexers (2-to-1, 4-to-1) and Demultiplexers (1-to-2, 1-to-4)",
+      "Sequential logic: D, JK, SR, T flip-flops with clock generator",
+      "Truth table auto-generator for any circuit",
+      "Boolean equation generator with expression simplification",
+      "Real-time timing diagram visualization",
+      "Karnaugh map simplification via Quine-McCluskey algorithm",
+      "Custom binary save/load format (.lgsworld) with version control",
+      "Drag-and-drop visual design with zoom, pan, and wire routing",
+      "Multi-gate selection (Ctrl+click and box select) with clipboard copy/paste",
+      "Cross-platform: Windows, Linux, macOS",
+      "Packaged as runnable JAR via Gradle"
+    ],
+    "featured": true,
+    "created_at": "2026-01-25T15:26:20.914224+00:00",
+    "admin_credentials": null
+  },
+  {
     "id": "6a29ac94-246d-4e5e-96d6-ddeef03d9ed2",
     "category": "personal",
     "title": "Earnzy",
-    "short_description": "Micro-task marketplace connecting buyers and workers with real-time dashboards.",
+    "short_description": "Micro-task marketplace connecting buyers and workers with role-based dashboards and a coin reward system.",
     "year": "2026",
     "screenshots_folder": "earnzy",
-    "overview": "Earnzy is a modern, full-stack web application for connecting buyers and workers for micro-tasks, featuring real-time dashboards, role-based access, and a beautiful, responsive UI.",
+    "overview": "Earnzy is a Full-Stack micro-task marketplace where buyers post tasks and workers complete them for coin-based rewards. The platform features three distinct role-based dashboards - Worker, Buyer, and Admin - with real-time updates, a coin economy for task payouts, Cloudinary-powered media uploads, and Firebase Authentication for secure access control. Built with a React frontend on Vite and an Express/MongoDB backend, Earnzy demonstrates end-to-end MERN-Stack architecture including REST API design, JWT-based auth with Firebase Admin SDK, and React Query for optimized data fetching.",
     "image_url": "https://camo.githubusercontent.com/110a89224eb11a76a13629ab1ef9d50c47bae23739af069641ad3e688beb036d/68747470733a2f2f62337274706275716c652e7566732e73682f662f556d446c4b6844774831546a703163784d6d42303634326c4e4c434a56653846453063446a6b33486e4f68535957714d",
     "live_url": "https://earnzyy.netlify.app/",
     "github_url": "https://github.com/nishadmahmud/Earnzy-Client",
     "tech_stack": {
-      "tools": [
-        "Git",
-        "VS Code",
-        "MongoDB Atlas",
-        "Netlify",
-        "Vercel",
-        "Cloudinary"
-      ],
-      "backend": [
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Firebase Admin SDK",
-        "Firebase Authentication"
-      ],
       "frontend": [
         "React.js",
         "Vite",
         "Tailwind CSS",
         "Framer Motion",
         "React Router DOM",
-        "React Hot Toast"
+        "React Query",
+        "React Hot Toast",
+        "Axios"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Firebase Authentication",
+        "Firebase Admin SDK"
+      ],
+      "tools": [
+        "Git",
+        "VS Code",
+        "MongoDB Atlas",
+        "Netlify",
+        "Vercel",
+        "Cloudinary",
+        "Postman"
       ],
       "card_techs": [
         "React",
@@ -43,15 +236,28 @@
         "Cloudinary"
       ]
     },
+    "contributions": [
+      "Architected and built the MERN-Stack application with a React/Vite frontend and a Node.js/Express REST API backend connected to MongoDB Atlas",
+      "Implemented Firebase Authentication with role-based access control, routing protection, and Firebase Admin SDK token verification on the server",
+      "Built three fully distinct dashboards for Worker, Buyer, and Admin roles with role-specific views, actions, and real-time data updates",
+      "Designed and implemented a coin-based micro-economy where buyers fund tasks with coins and workers earn coins upon task approval",
+      "Integrated Cloudinary for media management, enabling buyers to upload proof assets and workers to submit task completion evidence",
+      "Used React Query for efficient server state management, caching, background refetching, and optimistic UI updates",
+      "Built a real-time notification system for task status changes, submission approvals, and coin transactions",
+      "Designed a glassmorphism-styled UI with Framer Motion animations and a fully mobile-first responsive layout"
+    ],
     "features": [
-      "Modern UI/UX with glassmorphism design and smooth animations",
-      "Firebase Authentication with role-based access control",
-      "Worker, Buyer, and Admin dashboards with real-time updates",
-      "Coin-based micro-task reward and payment system",
-      "Cloudinary integration for media management",
-      "Mobile-first responsive design",
-      "Real-time notification system",
-      "React Query for optimized data fetching"
+      "Role-based access: Worker, Buyer, and Admin dashboards",
+      "Firebase Authentication with protected routes per role",
+      "Coin-based micro-task reward and payment economy",
+      "Buyers can post tasks with coin bounties and approve/reject submissions",
+      "Workers can browse and submit tasks for coin rewards",
+      "Admin panel for platform oversight and user management",
+      "Cloudinary integration for media uploads and task proof assets",
+      "React Query for optimized, cached data fetching and real-time updates",
+      "Real-time notification system for task lifecycle events",
+      "Glassmorphism design with smooth Framer Motion animations",
+      "Mobile-first responsive layout"
     ],
     "featured": false,
     "created_at": "2026-01-25T15:26:20.914224+00:00",
@@ -59,215 +265,6 @@
       "email": "admin@earnzy.com",
       "password": "Earnzy01"
     }
-  },
-  {
-    "id": "ba6764d2-fb6d-4e76-9d6c-e421ef39c664",
-    "category": "personal",
-    "title": "Plantopia",
-    "short_description": "Full-stack plant e-commerce platform with admin dashboard and Stripe payments.",
-    "year": "2026",
-    "screenshots_folder": "plantopia",
-    "overview": "A modern, full-stack e-commerce platform for plant enthusiasts built with React, Node.js, and MongoDB.",
-    "image_url": "https://camo.githubusercontent.com/c25a86372b706ba8b8a8fcda0de922ff744563c6ccded3fba97a555bfb4813f7/68747470733a2f2f35667071323073646e6a2e7566732e73682f662f78714c6c76596870564b68614c363458594b6770714b31527a78443764393632494d54456f33566d4a426c7768667438",
-    "live_url": "https://plantopia-store.netlify.app/",
-    "github_url": "https://github.com/nishadmahmud/Plantopia-Client/",
-    "tech_stack": {
-      "tools": [
-        "Git",
-        "VS Code",
-        "MongoDB Atlas",
-        "Netlify",
-        "Vercel",
-        "Cloudinary"
-      ],
-      "backend": [
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Mongoose",
-        "JWT",
-        "Multer",
-        "Cloudinary"
-      ],
-      "frontend": [
-        "React 18",
-        "Vite",
-        "Tailwind CSS",
-        "Framer Motion",
-        "React Router",
-        "Axios"
-      ],
-      "card_techs": [
-        "React",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Firebase",
-        "Stripe"
-      ]
-    },
-    "features": [
-      "Product catalog with shopping cart and checkout",
-      "User profiles with order history and wishlist",
-      "Admin dashboard for product and order management",
-      "Stripe payment integration",
-      "Responsive design with search and filter",
-      "Product reviews and blog system"
-    ],
-    "featured": false,
-    "created_at": "2026-01-25T15:26:20.914224+00:00",
-    "admin_credentials": {
-      "email": "admin.plantopia@gmail.com",
-      "password": "Plantopia"
-    }
-  },
-  {
-    "id": "71820bce-802f-4489-89ee-a47eb3b0ffc0",
-    "category": "personal",
-    "title": "RelicVeil",
-    "short_description": "Historical artifacts tracking platform for collectors and researchers.",
-    "year": "2026",
-    "screenshots_folder": "relicveil",
-    "overview": "RelicVeil is a modern web application designed for history enthusiasts, collectors, and researchers to document, share, and discover historical artifacts.",
-    "image_url": "https://camo.githubusercontent.com/160baae8fb06ad283b775778e9b9b4dc28c42149e862c2167576c3e2dccbc092/68747470733a2f2f626f7a7435357a6269302e7566732e73682f662f697642547963756a6445774a3648556f5a6a386e52496d7a735066546c5932474a5379514e576874624f63466f433170",
-    "live_url": "https://relicveil.netlify.app/",
-    "github_url": "https://github.com/nishadmahmud/RelicVeil-Client",
-    "tech_stack": {
-      "tools": [
-        "Git",
-        "VS Code",
-        "MongoDB Atlas",
-        "Netlify",
-        "Vercel"
-      ],
-      "backend": [
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Firebase Admin SDK"
-      ],
-      "frontend": [
-        "React.js",
-        "Vite",
-        "Tailwind CSS",
-        "Framer Motion",
-        "React Router DOM"
-      ],
-      "card_techs": [
-        "React",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "JWT"
-      ]
-    },
-    "features": [
-      "Firebase authentication for secure user management",
-      "Full CRUD artifact management with detailed information",
-      "Interactive like/dislike functionality",
-      "Full-text search across artifacts",
-      "Responsive layout for all devices",
-      "Real-time dynamic content updates"
-    ],
-    "featured": false,
-    "created_at": "2026-01-25T15:26:20.914224+00:00",
-    "admin_credentials": null
-  },
-  {
-    "id": "3ff78656-203f-4d36-9e64-72e5584af1da",
-    "category": "personal",
-    "title": "TalentForge",
-    "short_description": "Freelance marketplace for posting, browsing, and bidding on tasks.",
-    "year": "2026",
-    "screenshots_folder": "talentforge",
-    "overview": "TalentForge is a modern freelance marketplace platform where users can post, browse, and bid on tasks.",
-    "image_url": "https://camo.githubusercontent.com/8cb32c1ce25383de3cd881fe04c943a0231690e4efce7c630a38a145f74e955d/68747470733a2f2f74616a33676265796d722e7566732e73682f662f6c6431757a4169576649415077694e714f3544614c6257724e78423265764947556e3648377a71546d6b756c39665052",
-    "live_url": "https://talentforg.netlify.app/",
-    "github_url": "https://github.com/nishadmahmud/TalentForge-client",
-    "tech_stack": {
-      "tools": [
-        "Git",
-        "VS Code",
-        "MongoDB Atlas",
-        "Netlify",
-        "Vercel"
-      ],
-      "backend": [
-        "Node.js",
-        "Express.js",
-        "MongoDB"
-      ],
-      "frontend": [
-        "React",
-        "Tailwind CSS",
-        "Framer Motion",
-        "SweetAlert2"
-      ],
-      "card_techs": [
-        "React",
-        "Node.js",
-        "Express.js",
-        "MongoDB"
-      ]
-    },
-    "features": [
-      "Post, edit, and delete freelance tasks",
-      "Browse and filter tasks by category",
-      "Bid system with full bid management",
-      "User authentication with Google sign-in",
-      "Dark mode toggle",
-      "Animated homepage with typewriter effects",
-      "Mobile-friendly responsive design"
-    ],
-    "featured": false,
-    "created_at": "2026-01-25T15:26:20.914224+00:00",
-    "admin_credentials": null
-  },
-  {
-    "id": "c7f72ba2-b315-43ca-aa60-8325b8242060",
-    "category": "personal",
-    "title": "Logic Gates Simulator",
-    "short_description": "Visual digital circuit designer with real-time simulation and analysis tools.",
-    "year": "2026",
-    "screenshots_folder": "logic-gates",
-    "overview": "A comprehensive Logic Gates Simulator built with Java 17, LWJGL, Slick2D, and JNA. Design, simulate, and analyze digital circuits visually with real-time feedback and advanced circuit analysis tools.",
-    "image_url": "https://camo.githubusercontent.com/39c2ae7fc65bc4cf2eca6a517c25f207206aa820776cbbb82849c81b192b2d70/68747470733a2f2f6177346f7a71313462742e7566732e73682f662f566439454278574c706d6f5172416b716b6935745767433452366933544f5950484c68796e5a6f62514b324a4d4e6d77",
-    "live_url": null,
-    "github_url": "https://github.com/nishadmahmud/Logic-Gates-Simulator",
-    "tech_stack": {
-      "tools": [
-        "IntelliJ IDEA",
-        "Git"
-      ],
-      "backend": [
-        "Java 17"
-      ],
-      "frontend": [
-        "Java 17",
-        "LWJGL",
-        "Slick2D",
-        "JNA"
-      ],
-      "card_techs": [
-        "Java",
-        "LWJGL",
-        "Slick2D",
-        "JNA"
-      ]
-    },
-    "features": [
-      "Basic logic gates: AND, OR, NOT, NAND, NOR, XOR, XNOR, Buffer",
-      "Half/Full adders and subtractors",
-      "Encoders, decoders, and comparators",
-      "Multiplexers and demultiplexers",
-      "Sequential logic: D, JK, SR, T flip-flops",
-      "Circuit analysis: truth tables, Boolean equations, timing diagrams, K-maps",
-      "Save/Load with custom file format",
-      "Drag-and-drop visual design with zoom and pan"
-    ],
-    "featured": false,
-    "created_at": "2026-01-25T15:26:20.914224+00:00",
-    "admin_credentials": null
   },
   {
     "id": "a2f4c6e8-1b3d-4e5a-9f7c-2d4e6f8a0b1c",
@@ -338,7 +335,7 @@
     "role": "Frontend Developer",
     "company": "Brand Empire",
     "screenshots_folder": "brandempire",
-    "overview": "Brand Empire is a premium fashion e-commerce platform operating out of Jamuna Future Park, Dhaka. The site offers a curated catalog of men's and women's clothing — jackets, jeans, trousers, and more — with a focus on editorial aesthetics, seasonal collections, and a seamless shopping experience. Features include wishlist management, a shopping bag, user authentication, order tracking, a studio section, and mobile app download integration.",
+    "overview": "Brand Empire is a premium fashion e-commerce platform operating out of Jamuna Future Park, Dhaka. The site offers a curated catalog of men's and women's clothing - jackets, jeans, trousers, and more - with a focus on editorial aesthetics, seasonal collections, and a seamless shopping experience. Features include wishlist management, a shopping bag, user authentication, order tracking, a studio section, and mobile app download integration.",
     "image_url": null,
     "live_url": "https://www.brandempirebd.com",
     "github_url": null,
@@ -395,7 +392,7 @@
     "category": "work",
     "title": "Tarunya Prokashon",
     "short_description": "Bangla-language e-commerce platform for one of Bangladesh's trusted Islamic and general book publishers.",
-    "year": "2025",
+    "year": "2026",
     "role": "Frontend Developer",
     "company": "Squad Innovators",
     "screenshots_folder": "tarunyaprokashon",

@@ -39,7 +39,7 @@ const Footer = () => {
                                     </h2>
                                 </div>
                                 <p className="text-[var(--text-muted)] text-sm tracking-[0.04em] leading-[2] max-w-md pt-2">
-                                    Full-stack developer passionate about creating innovative
+                                    MERN-Stack developer passionate about creating innovative
                                     digital experiences and bringing ideas to life through modern
                                     web technologies.
                                 </p>

@@ -1,0 +1,163 @@
+  {
+    "id": "ba6764d2-fb6d-4e76-9d6c-e421ef39c664",
+    "category": "personal",
+    "title": "Plantopia",
+    "short_description": "MERN-Stack plant e-commerce platform with admin dashboard and Stripe payments.",
+    "year": "2026",
+    "screenshots_folder": "plantopia",
+    "overview": "A modern, MERN-Stack e-commerce platform for plant enthusiasts built with React, Node.js, and MongoDB.",
+    "image_url": "https://camo.githubusercontent.com/c25a86372b706ba8b8a8fcda0de922ff744563c6ccded3fba97a555bfb4813f7/68747470733a2f2f35667071323073646e6a2e7566732e73682f662f78714c6c76596870564b68614c363458594b6770714b31527a78443764393632494d54456f33566d4a426c7768667438",
+    "live_url": "https://plantopia-store.netlify.app/",
+    "github_url": "https://github.com/nishadmahmud/Plantopia-Client/",
+    "tech_stack": {
+      "tools": [
+        "Git",
+        "VS Code",
+        "MongoDB Atlas",
+        "Netlify",
+        "Vercel",
+        "Cloudinary"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "JWT",
+        "Multer",
+        "Cloudinary"
+      ],
+      "frontend": [
+        "React 18",
+        "Vite",
+        "Tailwind CSS",
+        "Framer Motion",
+        "React Router",
+        "Axios"
+      ],
+      "card_techs": [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Firebase",
+        "Stripe"
+      ]
+    },
+    "features": [
+      "Product catalog with shopping cart and checkout",
+      "User profiles with order history and wishlist",
+      "Admin dashboard for product and order management",
+      "Stripe payment integration",
+      "Responsive design with search and filter",
+      "Product reviews and blog system"
+    ],
+    "featured": false,
+    "created_at": "2026-01-25T15:26:20.914224+00:00",
+    "admin_credentials": {
+      "email": "admin.plantopia@gmail.com",
+      "password": "Plantopia"
+    }
+  },
+  {
+    "id": "71820bce-802f-4489-89ee-a47eb3b0ffc0",
+    "category": "personal",
+    "title": "RelicVeil",
+    "short_description": "Historical artifacts tracking platform for collectors and researchers.",
+    "year": "2026",
+    "screenshots_folder": "relicveil",
+    "overview": "RelicVeil is a modern web application designed for history enthusiasts, collectors, and researchers to document, share, and discover historical artifacts.",
+    "image_url": "https://camo.githubusercontent.com/160baae8fb06ad283b775778e9b9b4dc28c42149e862c2167576c3e2dccbc092/68747470733a2f2f626f7a7435357a6269302e7566732e73682f662f697642547963756a6445774a3648556f5a6a386e52496d7a735066546c5932474a5379514e576874624f63466f433170",
+    "live_url": "https://relicveil.netlify.app/",
+    "github_url": "https://github.com/nishadmahmud/RelicVeil-Client",
+    "tech_stack": {
+      "tools": [
+        "Git",
+        "VS Code",
+        "MongoDB Atlas",
+        "Netlify",
+        "Vercel"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Firebase Admin SDK"
+      ],
+      "frontend": [
+        "React.js",
+        "Vite",
+        "Tailwind CSS",
+        "Framer Motion",
+        "React Router DOM"
+      ],
+      "card_techs": [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "JWT"
+      ]
+    },
+    "features": [
+      "Firebase authentication for secure user management",
+      "Full CRUD artifact management with detailed information",
+      "Interactive like/dislike functionality",
+      "Full-text search across artifacts",
+      "Responsive layout for all devices",
+      "Real-time dynamic content updates"
+    ],
+    "featured": false,
+    "created_at": "2026-01-25T15:26:20.914224+00:00",
+    "admin_credentials": null
+  },
+  {
+    "id": "3ff78656-203f-4d36-9e64-72e5584af1da",
+    "category": "personal",
+    "title": "TalentForge",
+    "short_description": "Freelance marketplace for posting, browsing, and bidding on tasks.",
+    "year": "2026",
+    "screenshots_folder": "talentforge",
+    "overview": "TalentForge is a modern freelance marketplace platform where users can post, browse, and bid on tasks.",
+    "image_url": "https://camo.githubusercontent.com/8cb32c1ce25383de3cd881fe04c943a0231690e4efce7c630a38a145f74e955d/68747470733a2f2f74616a33676265796d722e7566732e73682f662f6c6431757a4169576649415077694e714f3544614c6257724e78423265764947556e3648377a71546d6b756c39665052",
+    "live_url": "https://talentforg.netlify.app/",
+    "github_url": "https://github.com/nishadmahmud/TalentForge-client",
+    "tech_stack": {
+      "tools": [
+        "Git",
+        "VS Code",
+        "MongoDB Atlas",
+        "Netlify",
+        "Vercel"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "MongoDB"
+      ],
+      "frontend": [
+        "React",
+        "Tailwind CSS",
+        "Framer Motion",
+        "SweetAlert2"
+      ],
+      "card_techs": [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB"
+      ]
+    },
+    "features": [
+      "Post, edit, and delete freelance tasks",
+      "Browse and filter tasks by category",
+      "Bid system with full bid management",
+      "User authentication with Google sign-in",
+      "Dark mode toggle",
+      "Animated homepage with typewriter effects",
+      "Mobile-friendly responsive design"
+    ],
+    "featured": false,
+    "created_at": "2026-01-25T15:26:20.914224+00:00",
+    "admin_credentials": null
+  },

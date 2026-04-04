@@ -2,15 +2,15 @@
   {
     "id": "b5044243-2249-4d16-b28d-e45f03c4f5d4",
     "title": "Computer Science Student",
-    "description": "Currently pursuing Computer Science with a passion for software development and problem-solving.",
+    "description": "Pursuing Computer Science with a focus on deep learning, computer vision, and applied machine learning research.",
     "icon": "FaGraduationCap",
     "display_order": 1,
     "created_at": "2026-01-25T17:36:11.457477+00:00"
   },
   {
     "id": "0902391e-16ec-4c23-8be0-652573067382",
-    "title": "Full-Stack Developer",
-    "description": "Experienced in building web applications with React, Node.js, and modern technologies.",
+    "title": "MERN-Stack Developer",
+    "description": "Building production-grade web applications with Next.js, React, Node.js, and Supabase - from client-side tools to SaaS platforms.",
     "icon": "FaCode",
     "display_order": 2,
     "created_at": "2026-01-25T17:36:11.457477+00:00"
@@ -25,8 +25,8 @@
   },
   {
     "id": "23aa21ce-3074-42e9-bbbf-5cb7f762ba11",
-    "title": "Always Learning",
-    "description": "Currently learning React, Node.js, Firebase, and exploring new technologies.",
+    "title": "Researcher",
+    "description": "Published 5 IEEE/ICCIT papers on deep learning for plant disease detection, water quality prediction, and flood hazard classification.",
     "icon": "FaRocket",
     "display_order": 4,
     "created_at": "2026-01-25T17:36:11.457477+00:00"

@@ -2,10 +2,35 @@ import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 export const metadata = {
-    title: "Nishad Mahmud",
-    description: "Nishad Mahmud - Portfolio",
+    title: "Nishad Mahmud - MERN-Stack Developer & Researcher",
+    description: "MERN-Stack developer building production-grade web apps with React, Next.js & Supabase. 5 accepted IEEE/ICCIT publications in deep learning and computer vision.",
+    keywords: ["Nishad Mahmud", "MERN-Stack Developer", "React", "Next.js", "Researcher", "Deep Learning", "Portfolio"],
+    authors: [{ name: "Nishad Mahmud" }],
+    creator: "Nishad Mahmud",
     icons: {
         icon: "/ico.png",
+    },
+    openGraph: {
+        type: "website",
+        locale: "en_US",
+        url: "https://nishad-mahmud.me",
+        siteName: "Nishad Mahmud",
+        title: "Nishad Mahmud - MERN-Stack Developer & Researcher",
+        description: "Building production-grade web apps with React, Next.js & Supabase. Published researcher in deep learning and computer vision.",
+        images: [
+            {
+                url: "/og-image.png",
+                width: 1200,
+                height: 630,
+                alt: "Nishad Mahmud - MERN-Stack Developer & Researcher",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Nishad Mahmud - MERN-Stack Developer & Researcher",
+        description: "Building production-grade web apps with React, Next.js & Supabase. Published researcher in deep learning and computer vision.",
+        images: ["/og-image.png"],
     },
 };
 

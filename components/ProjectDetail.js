@@ -33,7 +33,7 @@ const ProjectDetail = ({ project, onClose }) => {
 
     return (
         <>
-            {/* Left Panel — Browser Viewport / Screenshot Viewer */}
+            {/* Left Panel - Browser Viewport / Screenshot Viewer */}
             <div className="h-[50vh] lg:h-auto lg:flex-1 lg:w-[60%] flex flex-col shrink-0 border-b lg:border-b-0 lg:border-r border-[var(--line)]">
                 {/* Fake Browser Chrome */}
                 <div className="shrink-0 flex items-center gap-3 px-4 py-3 bg-[var(--bg)] border-b border-[var(--line)]">
@@ -121,7 +121,7 @@ const ProjectDetail = ({ project, onClose }) => {
                 )}
             </div>
 
-            {/* Right Panel — Project Metadata */}
+            {/* Right Panel - Project Metadata */}
             <div className="lg:w-[40%] w-full overflow-y-auto bg-[var(--bg2)]">
                 <div className="p-6 lg:p-8 space-y-8">
                     {/* Title + Year */}
